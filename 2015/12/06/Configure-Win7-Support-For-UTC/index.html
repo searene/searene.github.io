@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://searene.github.io/2015/12/06/Configure-Win7-Support-For-UTC/index.html">
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="I have a virtual machine installed on ubuntu, the virtual machine contains an operation system of Win7. Win7 uses localtime, but ubuntu uses UTC, so the time they display is different. To fix this, I">
-<meta property="og:updated_time" content="2016-05-23T17:38:39.692Z">
+<meta property="og:updated_time" content="2016-07-04T01:17:04.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Configure Win7 Support For UTC">
 <meta name="twitter:description" content="I have a virtual machine installed on ubuntu, the virtual machine contains an operation system of Win7. Win7 uses localtime, but ubuntu uses UTC, so the time they display is different. To fix this, I">
@@ -160,10 +160,14 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>I have a virtual machine installed on ubuntu, the virtual machine contains an operation system of Win7. Win7 uses localtime, but ubuntu uses UTC, so the time they display is different. To fix this, I decided to set Win7 to use UTC. Here is the solution(from <a href="http://crashmag.net/configuring-windows-7-support-for-utc-bios-time" target="_blank" rel="external">CONFIGURING WINDOWS 7 SUPPORT FOR UTC BIOS TIME</a>):</p>
-<p>Copy the following into a text document using notepad and save it as utc.reg</p>
-<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE<span class="symbol">\S</span>YSTEM<span class="symbol">\C</span>urrentControlSet<span class="symbol">\C</span>ontrol<span class="symbol">\T</span>imeZoneInformation] “RealTimeIsUniversal”=dword:00000001</span><br></pre></td></tr></table></figure>
-<p>Run it, reboot and you’re done.</p>
+            <p>I have a virtual machine installed on ubuntu, the virtual machine contains an operation system of Win7. Win7 uses localtime, but ubuntu uses UTC, so the time they display is different. To fix this, I decided to set Win7 to use UTC. Here is the solution.</p>
+<ol>
+<li><code>Win</code> + <code>S</code>, register, <code>enter</code></li>
+<li>Navigate to the key <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation</code></li>
+<li>Create new DWORD (32-bit) Value, name it <code>RealTimeIsUniversal</code>.</li>
+<li>Set its value to <code>1</code>.</li>
+<li>Reboot to BIOS settings, set the hardware clock to the correct time in UTC.</li>
+</ol>
 
         </div>
         <footer class="article-footer">
