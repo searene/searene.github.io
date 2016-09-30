@@ -123,17 +123,4 @@
     }
   });
 
-  // add mathjax
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-      inlineMath: [[ '$','$']],
-      displayMath:  [['$$','$$']],
-      processEscapes: true
-    },
-    "HTML-CSS": { availableFonts: ["TeX"] }
-  });
-  $.getScript("http://cdn.mathjax.org/mathjax/latest/MathJax.js")
-
-  })(jQuery);
+})(jQuery);
