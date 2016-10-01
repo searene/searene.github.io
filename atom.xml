@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2016-10-01T07:26:32.476Z</updated>
+  <updated>2016-10-01T11:31:46.646Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Proof of $$\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d$$</title>
+    <link href="http://searene.github.io/2016/10/01/Proof-of-limit-f-x-g-x-c-d/"/>
+    <id>http://searene.github.io/2016/10/01/Proof-of-limit-f-x-g-x-c-d/</id>
+    <published>2016-10-01T11:29:59.000Z</published>
+    <updated>2016-10-01T11:31:46.646Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Theorem</strong>:</p>
+<p><span class="math display">\[c,\ d\in {\bf R},\  \lim_{x\rightarrow \infty} f(x)=c&gt;0,\ \lim_{x\rightarrow \infty} g(x) =d&gt;0\]</span></p>
+<p>then</p>
+<p><span class="math display">\[\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d\]</span></p>
+<p><strong>Proof</strong>: Because</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(y(x)=ln(x)\)</span> is continuous at <span class="math inline">\(x = c &gt; 0\)</span></p></li>
+<li><p><span class="math inline">\(\lim\limits_{x\to \infty}f(x) = c\)</span></p></li>
+</ol>
+<p>according to the <a href="http://math.oregonstate.edu/home/programs/undergrad/CalculusQuestStudyGuides/SandS/lHopital/limit_laws.html#composition_law" target="_blank" rel="external">composition law</a>, we have</p>
+<p><span class="math display">\[\lim\limits_{x \to \infty}lnf(x) = ln\lim\limits_{x \to \infty}f(x) = lnc\]</span></p>
+<p>Because <span class="math inline">\(\lim\limits_{x \to \infty}g(x) = d\)</span>, we have</p>
+<p><span class="math display">\[\lim\limits_{x\to \infty}g(x)lnf(x) = \lim\limits_{x\to \infty}g(x)\cdot\lim\limits_{x \to \infty}lnf(x) = dlnc\]</span></p>
+<p>Apply <a href="http://math.oregonstate.edu/home/programs/undergrad/CalculusQuestStudyGuides/SandS/lHopital/limit_laws.html#composition_law" target="_blank" rel="external">composition law</a> again, we get</p>
+<p><span class="math display">\[\lim\limits_{x\to \infty}f(x)^{g(x)} = \lim\limits_{x\to \infty}e^{g(x)lnf(x)} = e^{\lim\limits_{x\to \infty}g(x)lnf(x)} = e^{dlnc} = c^d\]</span></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;\[c,\ d\in {\bf R},\  \lim_{x\rightarrow \infty} f(x)=c&amp;gt;0,\ \lim_{x\righta
+    
+    </summary>
+    
+      <category term="Math" scheme="http://searene.github.io/categories/Math/"/>
+    
+    
+      <category term="math" scheme="http://searene.github.io/tags/math/"/>
+    
+      <category term="limit" scheme="http://searene.github.io/tags/limit/"/>
+    
+  </entry>
   
   <entry>
     <title>Let hexo support mathjax</title>
@@ -154,29 +194,6 @@
     
     
       <category term="math" scheme="http://searene.github.io/tags/math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>I&#39;m a nerd</title>
-    <link href="http://searene.github.io/2016/08/25/I-m-a-nerd/"/>
-    <id>http://searene.github.io/2016/08/25/I-m-a-nerd/</id>
-    <published>2016-08-25T13:41:39.000Z</published>
-    <updated>2016-08-25T13:54:08.846Z</updated>
-    
-    <content type="html"><![CDATA[<p>现在工作已经有一个多月的时间了，之前还抱怨过windows的事情，但是我想，如果习惯了，也就习惯了，尤其是在遇到了cygwin这一个神器后，windows编程开发给我带来的阻碍越来越少，虽然我现在还是不太明白cygwin是什么原理，竟然可以几乎完美的运行linux下的各种命令行工具，好像是虚拟机机制？没有深入研究过。</p>
-<p>我想现在我的主要问题是，我是一个书呆子式的人物，我越来越不喜欢交流，越来越喜欢自己一个人钻研和琢磨。但是人毕竟是一个群居动物，独居的时间长了难免出问题，所以我一直都非常矛盾。我一度想过我应该去学数学，搞研究，因为这是一个可以单打独斗的领域。但是程序员也许更适合我，因为一个人独居时间长了会出问题的。我不喜欢交流，但是我的基因在逼着我去交流，这样我才能在一个平衡的状态下生活。</p>
-<p>如果不是现在的信息传播如此便捷，我大概不会知道这个世界上有很多和我类似的人，好像Mark Zurkerberg, Linus和John Nash都跟我很像，而不同之处在于他们有着更高的智商和更好的机遇。我并不觉得智商有多重要，但我很看重机遇。如果当初能够把握好机遇的话，也许我能够有更好的生活。既然现在如此，那只能把现在当成另一个起点，做好自己的事情，努力，奋斗，追求梦想的生活。I deserve a better life.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;现在工作已经有一个多月的时间了，之前还抱怨过windows的事情，但是我想，如果习惯了，也就习惯了，尤其是在遇到了cygwin这一个神器后，windows编程开发给我带来的阻碍越来越少，虽然我现在还是不太明白cygwin是什么原理，竟然可以几乎完美的运行linux下的各种命
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://searene.github.io/categories/Journal/"/>
-    
     
   </entry>
   
