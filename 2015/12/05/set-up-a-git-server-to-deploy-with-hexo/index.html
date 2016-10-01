@@ -8,20 +8,17 @@
     
         <meta name="keywords" content="git" />
     
-    <meta name="description" content="Preface
-I used rsync to deploy my website for the past few days, but it seemed that there were some bugs with hexo rsync deployment, I could only use rsync by running rsync -a localfiles username@serv">
+    <meta name="description" content="PrefaceI used rsync to deploy my website for the past few days, but it seemed that there were some bugs with hexo rsync deployment, I could only use rsync by running rsync -a localfiles username@serve">
 <meta property="og:type" content="article">
 <meta property="og:title" content="set up a git server to deploy with hexo">
 <meta property="og:url" content="http://searene.github.io/2015/12/05/set-up-a-git-server-to-deploy-with-hexo/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="Preface
-I used rsync to deploy my website for the past few days, but it seemed that there were some bugs with hexo rsync deployment, I could only use rsync by running rsync -a localfiles username@serv">
+<meta property="og:description" content="PrefaceI used rsync to deploy my website for the past few days, but it seemed that there were some bugs with hexo rsync deployment, I could only use rsync by running rsync -a localfiles username@serve">
 <meta property="og:image" content="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/03/1458791372git.png">
 <meta property="og:updated_time" content="2016-09-30T13:09:54.590Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="set up a git server to deploy with hexo">
-<meta name="twitter:description" content="Preface
-I used rsync to deploy my website for the past few days, but it seemed that there were some bugs with hexo rsync deployment, I could only use rsync by running rsync -a localfiles username@serv">
+<meta name="twitter:description" content="PrefaceI used rsync to deploy my website for the past few days, but it seemed that there were some bugs with hexo rsync deployment, I could only use rsync by running rsync -a localfiles username@serve">
 <meta name="twitter:image" content="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/03/1458791372git.png">
     
 
@@ -165,23 +162,18 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="preface">Preface</h1>
-<p>I used <code>rsync</code> to deploy my website for the past few days, but it seemed that there were some bugs with <code>hexo rsync deployment</code>, I could only use rsync by running <code>rsync -a localfiles username@server:/remote/path</code> manually instead of simply <code>hexo deploy</code>. Instead of looking for the reason why <code>rsync</code> doesn’t work in hexo, I decided to set up a git server for deployment, because git provides an extra version control feature, which might come in handy sometime in the future. It actually took me a lot of time to do this because there were little information on the Internet regarding it, so writing a blog to record this process is important, I think.</p>
-<h1 id="nginx">Nginx</h1>
-<p>First we need to set up an nginx on the server, I use <code>centos</code>, so the command works for me</p>
+            <h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>I used <code>rsync</code> to deploy my website for the past few days, but it seemed that there were some bugs with <code>hexo rsync deployment</code>, I could only use rsync by running <code>rsync -a localfiles username@server:/remote/path</code> manually instead of simply <code>hexo deploy</code>. Instead of looking for the reason why <code>rsync</code> doesn’t work in hexo, I decided to set up a git server for deployment, because git provides an extra version control feature, which might come in handy sometime in the future. It actually took me a lot of time to do this because there were little information on the Internet regarding it, so writing a blog to record this process is important, I think.</p>
+<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p>First we need to set up an nginx on the server, I use <code>centos</code>, so the command works for me</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> nginx</span><br></pre></td></tr></table></figure>
 <p>If you are using ubuntu, the following command would work for you</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install nginx</span><br></pre></td></tr></table></figure>
 <p>When the installation finishes, start your nginx</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx start</span><br></pre></td></tr></table></figure>
 <p>You can test whether <code>nginx</code> works or not by typing in your server’s IP address on your client.</p>
-<h1 id="git-server">Git Server</h1>
-<h2 id="create-a-user-name-on-the-server-for-git-sync">Create A User Name On The Server For Git Sync</h2>
-<p>To set up a git server, the first thing we need to do is to create a username for it, let’s call it <code>git</code>, you should run this command on your server.</p>
+<h1 id="Git-Server"><a href="#Git-Server" class="headerlink" title="Git Server"></a>Git Server</h1><h2 id="Create-A-User-Name-On-The-Server-For-Git-Sync"><a href="#Create-A-User-Name-On-The-Server-For-Git-Sync" class="headerlink" title="Create A User Name On The Server For Git Sync"></a>Create A User Name On The Server For Git Sync</h2><p>To set up a git server, the first thing we need to do is to create a username for it, let’s call it <code>git</code>, you should run this command on your server.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd git</span><br></pre></td></tr></table></figure>
 <p>It will prompt you for a password.</p>
-<h2 id="create-a-ssh-key-pair-to-avoid-typing-in-password-every-time">Create A SSH Key Pair To Avoid Typing In Password Every Time</h2>
-<p>To avoid typing in the password every time we use <code>git</code>, we need to set up a ssh key pair. Run the command on your client.</p>
+<h2 id="Create-A-SSH-Key-Pair-To-Avoid-Typing-In-Password-Every-Time"><a href="#Create-A-SSH-Key-Pair-To-Avoid-Typing-In-Password-Every-Time" class="headerlink" title="Create A SSH Key Pair To Avoid Typing In Password Every Time"></a>Create A SSH Key Pair To Avoid Typing In Password Every Time</h2><p>To avoid typing in the password every time we use <code>git</code>, we need to set up a ssh key pair. Run the command on your client.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
 <p>Just punch <code>enter</code> when a prompt shows up. Then you will find a file called <code>id_rsa.pub</code> in <code>.ssh</code> folder of your home directory, this is the public key. Now turn to the server, switch your username to git.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su git</span><br></pre></td></tr></table></figure>
@@ -193,19 +185,16 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .ssh/id_rsa.pub | ssh user@123.45.56.78 <span class="string">"cat &gt;&gt; ~/.ssh/authorized_keys"</span></span><br></pre></td></tr></table></figure>
 <p>Change the permissions to avoid others modifying your ssh key pair</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 700 ~/.ssh &amp;&amp; chmod 400 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<h2 id="set-up-a-bare-local-repository-on-the-server">Set Up A Bare Local Repository On The Server</h2>
-<p>OK, the next time you log on to your server with the user name <code>git</code>, you won’t need the password anymore. Now Let’s turn to the server side and set up a bare local repository</p>
+<h2 id="Set-Up-A-Bare-Local-Repository-On-The-Server"><a href="#Set-Up-A-Bare-Local-Repository-On-The-Server" class="headerlink" title="Set Up A Bare Local Repository On The Server"></a>Set Up A Bare Local Repository On The Server</h2><p>OK, the next time you log on to your server with the user name <code>git</code>, you won’t need the password anymore. Now Let’s turn to the server side and set up a bare local repository</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init --bare website.git</span><br></pre></td></tr></table></figure>
-<h2 id="use-the-remote-repository-on-the-client">Use The Remote Repository On The Client</h2>
-<p>Now turn to your client, go to the hexo directory, install hexo-deployer-git</p>
+<h2 id="Use-The-Remote-Repository-On-The-Client"><a href="#Use-The-Remote-Repository-On-The-Client" class="headerlink" title="Use The Remote Repository On The Client"></a>Use The Remote Repository On The Client</h2><p>Now turn to your client, go to the hexo directory, install hexo-deployer-git</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>Then find the <code>_config.yml</code> file and open it. Add the following lines at the end of the file. Notice that you should replace the IP address with your server’s. If there is other deployment setting in your file like this, please remove it.</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@123</span>.<span class="number">456.78</span>.<span class="number">90</span>:website.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br><span class="line">  <span class="attribute">message</span>:</span><br></pre></td></tr></table></figure>
 <p>Let’s use git to sync our website to the server</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
 <p>If nothing error occurs, you’re successful till now.</p>
-<h2 id="use-git-hook-to-deploy-your-website-automatically-on-your-server">Use Git Hook To Deploy Your Website Automatically On Your Server</h2>
-<p>Now that you’ve synced your website to the server, but you cannot find these files on your server, why? In fact, it took me a lot of time to search for my website in the <code>website.git</code> folder, but I just couldn’t find it. After gleaning information on the Internet, I realized that my website is still on my server, but not in the way it is stored on my client. Those website files are stored as the <code>object</code> in the <code>git bare repository</code>, you cannot <em>see</em> those files, but you can <code>pull</code> or <code>clone</code> them.</p>
+<h2 id="Use-Git-Hook-To-Deploy-Your-Website-Automatically-On-Your-Server"><a href="#Use-Git-Hook-To-Deploy-Your-Website-Automatically-On-Your-Server" class="headerlink" title="Use Git Hook To Deploy Your Website Automatically On Your Server"></a>Use Git Hook To Deploy Your Website Automatically On Your Server</h2><p>Now that you’ve synced your website to the server, but you cannot find these files on your server, why? In fact, it took me a lot of time to search for my website in the <code>website.git</code> folder, but I just couldn’t find it. After gleaning information on the Internet, I realized that my website is still on my server, but not in the way it is stored on my client. Those website files are stored as the <code>object</code> in the <code>git bare repository</code>, you cannot <em>see</em> those files, but you can <code>pull</code> or <code>clone</code> them.</p>
 <p>So what we need do is deploy these synced files to our web server’s root directory. Go to your nginx’s root directory (it’s usually <code>/usr/share/nginx/html</code>, but I noticed that it’s <code>/var/www/html</code> on ubuntu 15.10), set up a git repository and add the remote server(localhost, actually)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init /usr/share/nginx/html &amp;&amp; git remote add origin git@localhost:website.git</span><br></pre></td></tr></table></figure>
 <p>To enable <code>git</code> user the permission to modify our website, we need to change the ownership of those files to <code>git</code></p>
@@ -214,12 +203,10 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">su git</span><br><span class="line"><span class="built_in">cd</span> ~/website.git/hooks/</span><br><span class="line">cat &lt;&lt;EOT &gt; post-receive</span><br><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">unset</span> $(git rev-parse --local-env-vars)</span><br><span class="line"><span class="built_in">cd</span> /usr/share/nginx/html</span><br><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master</span><br><span class="line">EOT</span><br></pre></td></tr></table></figure>
 <p>To avoid the authorization issue, add the public key of <code>root</code> to the <code>authorized_keys</code> of user <code>git</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su <span class="comment"># switch to user root</span></span><br><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; /home/git/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<h1 id="test-the-result">Test The Result</h1>
-<p>OK, now we are ready to go. Turn to the client side and deploy your files with hexo-git-deployer</p>
+<h1 id="Test-The-Result"><a href="#Test-The-Result" class="headerlink" title="Test The Result"></a>Test The Result</h1><p>OK, now we are ready to go. Turn to the client side and deploy your files with hexo-git-deployer</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/hexo/root/directory</span><br><span class="line">rm .deploy_git <span class="comment">#remove the previous deployment info</span></span><br><span class="line">hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
 <p>Then check your website on your server.</p>
-<h1 id="conclusion">Conclusion</h1>
-<p>This is a long story for me. So there might be something that I didn’t mention, or you get confused about something in the post. If so, please leave a comment below to let me know, I’d like to help you.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>This is a long story for me. So there might be something that I didn’t mention, or you get confused about something in the post. If so, please leave a comment below to let me know, I’d like to help you.</p>
 
         </div>
         <footer class="article-footer">
@@ -227,7 +214,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2015/12/05/set-up-a-git-server-to-deploy-with-hexo/" data-id="citr4ds58003aoybuybow491j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2015/12/05/set-up-a-git-server-to-deploy-with-hexo/" data-id="citr6wyb5003d4hbuxvu0itwh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -611,20 +598,5 @@ ga('send', 'pageview');
 </script>
 
     </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

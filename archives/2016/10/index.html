@@ -185,13 +185,13 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            Theorem:
-\[c,\ d\in {\bf R},\  \lim_{x\rightarrow \infty} f(x)=c&gt;0,\ \lim_{x\rightarrow \infty} g(x) =d&gt;0\]
+            Theorem: 
+$$c, d\in {\bf R},  \lim_{x\rightarrow \infty} f(x)=c&gt;0, \lim_{x\rightarrow \infty} g(x) =d&gt;0$$
 then
-\[\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d\]
-Proof: Because
+$$\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d$$
+Proof: Because 
 
-\(y(x)=ln(x)\) i
+$y(x)=ln(x)$ is c
         </p>
     </div>
 </article>
@@ -284,9 +284,9 @@ Create a new file called mathjax.ejs in themes/hueman/l
     
 
         <p class="article-excerpt">
-            Theorem: If \(f(x)\) is continous at \(b\) and \(\lim\limits_{x \to\infty}g(x) = b\), then
-\[\lim\limits_{x \to \infty}f(g(x)) = f(b) = f(\lim\limits_{x\to \infty}g(x))\tag1\]
-Proof: Because \(f(x)\) 
+            Theorem: If $f(x)$ is continous at $b$ and $\lim\limits_{x \to\infty}g(x) = b$, then 
+$$\lim\limits_{x \to \infty}f(g(x)) = f(b) = f(\lim\limits_{x\to \infty}g(x))\tag1$$
+Proof:  Because $f(x)$ is con
         </p>
     </div>
 </article>
@@ -584,20 +584,5 @@ Proof: Because \(f(x)\)
 </script>
 
     </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

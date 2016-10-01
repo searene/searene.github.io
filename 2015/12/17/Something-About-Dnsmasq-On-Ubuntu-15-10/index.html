@@ -8,26 +8,20 @@
     
         <meta name="keywords" content="linux,dnsmasq" />
     
-    <meta name="description" content="Preface
-There are something confusing about dnsmasq on ubuntu 15.10. I would like to write them down here, in case I might forget down the road.
-How Dnsmasq Starts On Ubuntu 15.10
-You can find the ans">
+    <meta name="description" content="PrefaceThere are something confusing about dnsmasq on ubuntu 15.10. I would like to write them down here, in case I might forget down the road.
+How Dnsmasq Starts On Ubuntu 15.10You can find the answe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Something About Dnsmasq On Ubuntu 15.10">
 <meta property="og:url" content="http://searene.github.io/2015/12/17/Something-About-Dnsmasq-On-Ubuntu-15-10/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="Preface
-There are something confusing about dnsmasq on ubuntu 15.10. I would like to write them down here, in case I might forget down the road.
-How Dnsmasq Starts On Ubuntu 15.10
-You can find the ans">
+<meta property="og:description" content="PrefaceThere are something confusing about dnsmasq on ubuntu 15.10. I would like to write them down here, in case I might forget down the road.
+How Dnsmasq Starts On Ubuntu 15.10You can find the answe">
 <meta property="og:image" content="http://recursostic.educacion.es/observatorio/web/images/upload/ccam0040/dnslinux/Servidor-DNS-con-dnsmasq_html_m6de5e09c.png">
 <meta property="og:updated_time" content="2016-05-23T17:38:39.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Something About Dnsmasq On Ubuntu 15.10">
-<meta name="twitter:description" content="Preface
-There are something confusing about dnsmasq on ubuntu 15.10. I would like to write them down here, in case I might forget down the road.
-How Dnsmasq Starts On Ubuntu 15.10
-You can find the ans">
+<meta name="twitter:description" content="PrefaceThere are something confusing about dnsmasq on ubuntu 15.10. I would like to write them down here, in case I might forget down the road.
+How Dnsmasq Starts On Ubuntu 15.10You can find the answe">
 <meta name="twitter:image" content="http://recursostic.educacion.es/observatorio/web/images/upload/ccam0040/dnslinux/Servidor-DNS-con-dnsmasq_html_m6de5e09c.png">
     
 
@@ -171,14 +165,11 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="preface">Preface</h1>
-<p>There are something confusing about dnsmasq on ubuntu 15.10. I would like to write them down here, in case I might forget down the road.</p>
-<h1 id="how-dnsmasq-starts-on-ubuntu-15.10">How Dnsmasq Starts On Ubuntu 15.10</h1>
-<p>You can find the answer in the file <code>/etc/NetworkManager/NetworkManager.conf</code>:</p>
+            <h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>There are something confusing about dnsmasq on ubuntu 15.10. I would like to write them down here, in case I might forget down the road.</p>
+<h1 id="How-Dnsmasq-Starts-On-Ubuntu-15-10"><a href="#How-Dnsmasq-Starts-On-Ubuntu-15-10" class="headerlink" title="How Dnsmasq Starts On Ubuntu 15.10"></a>How Dnsmasq Starts On Ubuntu 15.10</h1><p>You can find the answer in the file <code>/etc/NetworkManager/NetworkManager.conf</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[main]</span><br><span class="line">plugins=ifupdown,keyfile,ofono</span><br><span class="line">dns=dnsmasq</span><br><span class="line"></span><br><span class="line">[ifupdown]</span><br><span class="line">managed=<span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <p>If you notice the line <code>dns=dnsmasq</code>, you may figure out that it is <code>network-manager</code> that starts dnsmasq. So if you run <code>sudo service network-manager restart</code>, <code>dnsmasq</code> will get retarted too.</p>
-<h1 id="configure-network-manager-not-to-use-dnsmasq">Configure Network-Manager Not To Use Dnsmasq</h1>
-<p>How to let network-manager not use dnsmasq, but use the dns servers specified in the file <code>/etc/resolv.conf</code> instead? Just comment the line <code>dns=dnsmasq</code> in <code>/etc/NetworkManager/NetworkManager.conf</code> would be fine, as follows:</p>
+<h1 id="Configure-Network-Manager-Not-To-Use-Dnsmasq"><a href="#Configure-Network-Manager-Not-To-Use-Dnsmasq" class="headerlink" title="Configure Network-Manager Not To Use Dnsmasq"></a>Configure Network-Manager Not To Use Dnsmasq</h1><p>How to let network-manager not use dnsmasq, but use the dns servers specified in the file <code>/etc/resolv.conf</code> instead? Just comment the line <code>dns=dnsmasq</code> in <code>/etc/NetworkManager/NetworkManager.conf</code> would be fine, as follows:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[main]</span><br><span class="line">plugins=ifupdown,keyfile,ofono</span><br><span class="line"><span class="comment">#dns=dnsmasq</span></span><br><span class="line"></span><br><span class="line">[ifupdown]</span><br><span class="line">managed=<span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <p>Then edit <code>/etc/resolv.conf</code>, add your dns server:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">namesever 8.8.8.8</span><br></pre></td></tr></table></figure>
@@ -191,7 +182,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2015/12/17/Something-About-Dnsmasq-On-Ubuntu-15-10/" data-id="citr4ds3y0017oybuze6ysx1g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2015/12/17/Something-About-Dnsmasq-On-Ubuntu-15-10/" data-id="citr6wy9x001c4hbul2y4gnjj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -575,20 +566,5 @@ ga('send', 'pageview');
 </script>
 
     </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

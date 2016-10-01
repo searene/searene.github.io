@@ -163,7 +163,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>I have a virtual machine installed on ubuntu, the virtual machine contains an operation system of Win7. Win7 uses localtime, but ubuntu uses UTC, so the time they display is different. To fix this, I decided to set Win7 to use UTC. Here is the solution.</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li><code>Win</code> + <code>S</code>, register, <code>enter</code></li>
 <li>Navigate to the key <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation</code></li>
 <li>Create new DWORD (32-bit) Value, name it <code>RealTimeIsUniversal</code>.</li>
@@ -177,7 +177,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2015/12/06/Configure-Win7-Support-For-UTC/" data-id="citr4ds330005oybug4t99w4d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2015/12/06/Configure-Win7-Support-For-UTC/" data-id="citr6wy9000054hbuiagdd5ge" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -561,20 +561,5 @@ ga('send', 'pageview');
 </script>
 
     </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

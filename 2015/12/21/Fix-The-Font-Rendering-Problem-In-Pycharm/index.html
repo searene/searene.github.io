@@ -165,11 +165,11 @@ ga('send', 'pageview');
             <p>Almost all the java desktop apps running on PC/Mac have a common problem: font rendering. The font rendering in pycharm was so crappy that I couldn’t live with it any more. So I began to search for a way to fix it. Luckily I found a solution <a href="https://www.reddit.com/r/Python/comments/1ez6ro/fixing_pycharms_font_rendering_in_linux_64bit/" target="_blank" rel="external">here</a></p>
 <p>I added these lines to my ../pycharm/bin/pycharm64.vmoptions file:</p>
 <blockquote>
-<p>-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel</p>
+<p>-Dawt.useSystemAAFontSettings=on<br>-Dswing.aatext=true<br>-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel </p>
 </blockquote>
 <p>To make it even more clear, this is my complete <code>pycharm64.vmoptions</code> file:</p>
 <blockquote>
-<p>-Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel</p>
+<p>-Xms128m<br>-Xmx750m<br>-XX:MaxPermSize=350m<br>-XX:ReservedCodeCacheSize=225m<br>-XX:+UseConcMarkSweepGC<br>-XX:SoftRefLRUPolicyMSPerMB=50<br>-ea<br>-Dsun.io.useCanonCaches=false<br>-Djava.net.preferIPv4Stack=true<br>-Dawt.useSystemAAFontSettings=on<br>-Dswing.aatext=true<br>-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel</p>
 </blockquote>
 <p>Now the font rendering is much better now. Great! By the way, I love the default font-rendering method on ubuntu, it is much better than that on Windows.</p>
 
@@ -179,7 +179,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2015/12/21/Fix-The-Font-Rendering-Problem-In-Pycharm/" data-id="citr4ds350006oybuetgvlqok" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2015/12/21/Fix-The-Font-Rendering-Problem-In-Pycharm/" data-id="citr6wy9200064hbuovpv7b89" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -563,20 +563,5 @@ ga('send', 'pageview');
 </script>
 
     </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

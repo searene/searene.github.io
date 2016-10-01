@@ -8,17 +8,17 @@
     
         <meta name="keywords" content="virtualbox" />
     
-    <meta name="description" content="I’m more accustomed to Linux compared with Windows, but some apps are not accessible in Linux, e.g. QQ. And sometimes I have to use Visual Studio, which is a cumbersome, slow developing tool. I don’t">
+    <meta name="description" content="I’m more accustomed to Linux compared with Windows, but some apps are not accessible in Linux, e.g. QQ. And sometimes I have to use Visual Studio, which is a cumbersome, slow developing tool. I don’t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="enlarge the size of a vdi of virtualbox">
 <meta property="og:url" content="http://searene.github.io/2015/12/03/enlarge-the-size-of-a-vdi-of-virtualbox/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="I’m more accustomed to Linux compared with Windows, but some apps are not accessible in Linux, e.g. QQ. And sometimes I have to use Visual Studio, which is a cumbersome, slow developing tool. I don’t">
+<meta property="og:description" content="I’m more accustomed to Linux compared with Windows, but some apps are not accessible in Linux, e.g. QQ. And sometimes I have to use Visual Studio, which is a cumbersome, slow developing tool. I don’t">
 <meta property="og:image" content="http://i.imgur.com/FUCOGNn.png">
 <meta property="og:updated_time" content="2016-05-23T17:38:39.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="enlarge the size of a vdi of virtualbox">
-<meta name="twitter:description" content="I’m more accustomed to Linux compared with Windows, but some apps are not accessible in Linux, e.g. QQ. And sometimes I have to use Visual Studio, which is a cumbersome, slow developing tool. I don’t">
+<meta name="twitter:description" content="I’m more accustomed to Linux compared with Windows, but some apps are not accessible in Linux, e.g. QQ. And sometimes I have to use Visual Studio, which is a cumbersome, slow developing tool. I don’t">
 <meta name="twitter:image" content="http://i.imgur.com/FUCOGNn.png">
     
 
@@ -162,31 +162,19 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>I’m more accustomed to Linux compared with Windows, but some apps are not accessible in Linux, e.g. QQ. And sometimes I have to use Visual Studio, which is a cumbersome, slow developing tool. I don’t like that. But I have to use that sometimes. So I use a virtual machine to access Windows, which could help to access those windows apps. For example, today my classmate asked for help, which was about building a client-server app with windows socket. But I didn’t install C++ development environment in my Visual Studio, so I have to install them. But one afternoon passed, and I found that I’ve got no place to install any extra packages any more, since Visual Studio installed a lot of tools on my virtual machine before C++ development tools were installed. Anyway, this is just some bullshit. I know this paragraph has little to do with the title, you can skip the paragraph if you want. But I guess you’ve finished reading it, so, anyway. :)</p>
+            <p>I’m more accustomed to Linux compared with Windows, but some apps are not accessible in Linux, e.g. QQ. And sometimes I have to use Visual Studio, which is a cumbersome, slow developing tool. I don’t like that. But I have to use that sometimes. So I use a virtual machine to access Windows, which could help to access those windows apps. For example, today my classmate asked for help, which was about building a client-server app with windows socket. But I didn’t install C++ development environment in my Visual Studio, so I have to install them. But one afternoon passed, and I found that I’ve got no place to install any extra packages any more, since Visual Studio installed a lot of tools on my virtual machine before C++ development tools were installed. Anyway, this is just some bullshit. I know this paragraph has little to do with the title, you can skip the paragraph if you want. But I guess you’ve finished reading it, so, anyway. :)</p>
 <p>The way to enlarge a vdi is unbelievably simple, it’s just like this:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VBoxManage modifyhd ~/VirtualBox\ VMs/win7/win7.vdi --resize 61440 <span class="comment">#61440MB = 60GB</span></span><br></pre></td></tr></table></figure>
 <p>Then you will find the output like this:</p>
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span><span class="meta">%</span>..<span class="number">.10</span><span class="meta">%</span>..<span class="number">.20</span><span class="meta">%</span>..<span class="number">.30</span><span class="meta">%</span>..<span class="number">.40</span><span class="meta">%</span>..<span class="number">.50</span><span class="meta">%</span>..<span class="number">.60</span><span class="meta">%</span>..<span class="number">.70</span><span class="meta">%</span>..<span class="number">.80</span><span class="meta">%</span>..<span class="number">.90</span><span class="meta">%</span>..<span class="number">.100</span><span class="meta">%</span></span><br></pre></td></tr></table></figure>
 <p>It’s very fast, no more than 1 second. Then you can find that the size of the disk has been enlarged to 60GB</p>
-<div class="figure">
-<img src="http://i.imgur.com/FUCOGNn.png">
-
-</div>
+<p><img src="http://i.imgur.com/FUCOGNn.png" alt=""></p>
 <p>But when you start Virtual Machine, you will find that the size of the disk doesn’t change in the system, This is because you haven’t extended the volume in the System.</p>
-<div class="figure">
-<img src="http://i.imgur.com/DAYxcvh.png">
-
-</div>
-<p>Open <code>Control Panel</code>, and search <code>disk</code> in it. Click on <code>Create and format hard disk partiton</code> to open <code>Disk Management</code>.</p>
-<div class="figure">
-<img src="https://i.imgur.com/EIW1UBv.png">
-
-</div>
+<p><img src="http://i.imgur.com/DAYxcvh.png" alt=""></p>
+<p>Open <code>Control Panel</code>, and search <code>disk</code> in it. Click on <code>Create and format hard disk partiton</code> to open <code>Disk Management</code>. </p>
+<p><img src="https://i.imgur.com/EIW1UBv.png" alt=""></p>
 <p>You will find 10GB or whatever the size is that is not allocated yet. Click on the disk that you want to extend, click on <code>extend volume</code>.</p>
-<div class="figure">
-<img src="http://i.imgur.com/8Y81k4V.png">
-
-</div>
+<p><img src="http://i.imgur.com/8Y81k4V.png" alt=""></p>
 <p>Then next, next… All done!</p>
 
         </div>
@@ -195,7 +183,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2015/12/03/enlarge-the-size-of-a-vdi-of-virtualbox/" data-id="citr4ds4l0025oybuem3a1lh4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2015/12/03/enlarge-the-size-of-a-vdi-of-virtualbox/" data-id="citr6wyan002f4hbuli33vnsa" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -579,20 +567,5 @@ ga('send', 'pageview');
 </script>
 
     </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
