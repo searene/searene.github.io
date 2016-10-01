@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="I came upon the calculation of \(\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n\) when I was reviewing Poisson distribution. Notice that \(\lambda_n = np_n(n\in\mathbb{Z}_{\geq 0}, 0\leq p \leq 1)\)">
 <meta property="og:image" content="http://www.codeforest.net/wp-content/uploads/2010/11/lambda.jpg">
-<meta property="og:updated_time" content="2016-10-01T12:30:43.233Z">
+<meta property="og:updated_time" content="2016-10-01T12:32:40.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Calculate $$\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n$$">
 <meta name="twitter:description" content="I came upon the calculation of \(\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n\) when I was reviewing Poisson distribution. Notice that \(\lambda_n = np_n(n\in\mathbb{Z}_{\geq 0}, 0\leq p \leq 1)\)">
@@ -189,7 +189,9 @@ ga('send', 'pageview');
 <p>Combine (3) and (4), we get</p>
 <p><span class="math display">\[e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n}\leq (1-\frac{\lambda_n} n)^n \leq e^{-\lambda_n}\]</span></p>
 <p>According to <a href="https://searene.github.io/2016/10/01/Proof-of-limit-f-x-g-x-c-d/">this theorem</a>, because <span class="math inline">\(1 - \frac{\lambda_n} n &gt; 0, \lambda_n &gt; 0, \lim\limits_{n\to\infty}\lambda_n = \lambda\)</span>, we have</p>
-<p><span class="math inline">\(\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)^{\lambda_n} = [\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)]^{\lim\limits_{n\to\infty}\lambda_n} = \lim\limits_{n\to\infty}(1-\lambda_n\cdot\frac 1 n)^\lambda\)</span> $ = (<em>{n}1 - </em>{n}<em>n</em>{n}1 n)^$ $ = (1 -0)^= 1$</p>
+<p><span class="math inline">\(\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)^{\lambda_n} = [\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)]^{\lim\limits_{n\to\infty}\lambda_n}\)</span></p>
+<p>$ = <em>{n}(1-<em>n1 n)^= (</em>{n}1 - </em>{n}<em>n</em>{n}1 n)^$</p>
+<p>$ = (1 -0)^= 1$</p>
 <p>So</p>
 <p><span class="math display">\[\lim\limits_{n\to\infty}e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n} = e^{-\lambda}\]</span></p>
 <p><span class="math display">\[\lim\limits_{n\to\infty}e^{-\lambda_n} = e^{-\lambda}\]</span></p>

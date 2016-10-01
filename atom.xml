@@ -152,7 +152,7 @@
     <link href="http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/"/>
     <id>http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/</id>
     <published>2016-09-30T13:49:00.000Z</published>
-    <updated>2016-10-01T12:30:43.233Z</updated>
+    <updated>2016-10-01T12:32:40.763Z</updated>
     
     <content type="html"><![CDATA[<p>I came upon the calculation of <span class="math inline">\(\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n\)</span> when I was reviewing Poisson distribution. Notice that <span class="math inline">\(\lambda_n = np_n(n\in\mathbb{Z}_{\geq 0}, 0\leq p \leq 1)\)</span> and <span class="math inline">\(\lim\limits_{n\to\infty}\lambda_n = \lambda(\lambda\in\mathbb{R})\)</span>.</p>
 <p>So how to calculate it? The first thought that came to my mind was that</p>
@@ -181,7 +181,9 @@
 <p>Combine (3) and (4), we get</p>
 <p><span class="math display">\[e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n}\leq (1-\frac{\lambda_n} n)^n \leq e^{-\lambda_n}\]</span></p>
 <p>According to <a href="https://searene.github.io/2016/10/01/Proof-of-limit-f-x-g-x-c-d/">this theorem</a>, because <span class="math inline">\(1 - \frac{\lambda_n} n &gt; 0, \lambda_n &gt; 0, \lim\limits_{n\to\infty}\lambda_n = \lambda\)</span>, we have</p>
-<p><span class="math inline">\(\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)^{\lambda_n} = [\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)]^{\lim\limits_{n\to\infty}\lambda_n} = \lim\limits_{n\to\infty}(1-\lambda_n\cdot\frac 1 n)^\lambda\)</span> $ = (<em>{n}1 - </em>{n}<em>n</em>{n}1 n)^$ $ = (1 -0)^= 1$</p>
+<p><span class="math inline">\(\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)^{\lambda_n} = [\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)]^{\lim\limits_{n\to\infty}\lambda_n}\)</span></p>
+<p>$ = <em>{n}(1-<em>n1 n)^= (</em>{n}1 - </em>{n}<em>n</em>{n}1 n)^$</p>
+<p>$ = (1 -0)^= 1$</p>
 <p>So</p>
 <p><span class="math display">\[\lim\limits_{n\to\infty}e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n} = e^{-\lambda}\]</span></p>
 <p><span class="math display">\[\lim\limits_{n\to\infty}e^{-\lambda_n} = e^{-\lambda}\]</span></p>
