@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2016-10-01T11:33:44.156Z</updated>
+  <updated>2016-10-01T11:46:02.593Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Proof of $\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d$</title>
+    <title>Proof of $$\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d$$</title>
     <link href="http://searene.github.io/2016/10/01/Proof-of-limit-f-x-g-x-c-d/"/>
     <id>http://searene.github.io/2016/10/01/Proof-of-limit-f-x-g-x-c-d/</id>
     <published>2016-10-01T11:29:59.000Z</published>
-    <updated>2016-10-01T11:33:44.156Z</updated>
+    <updated>2016-10-01T11:46:02.593Z</updated>
     
     <content type="html"><![CDATA[<p><strong>Theorem</strong>:</p>
 <p><span class="math display">\[c,\ d\in {\bf R},\  \lim_{x\rightarrow \infty} f(x)=c&gt;0,\ \lim_{x\rightarrow \infty} g(x) =d&gt;0\]</span></p>
