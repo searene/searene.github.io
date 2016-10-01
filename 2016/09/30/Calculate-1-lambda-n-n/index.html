@@ -8,17 +8,17 @@
     
         <meta name="keywords" content="math" />
     
-    <meta name="description" content="I came upon the calculation of \((1-\frac{\lambda_n}n)^n\) when I was reviewing Poisson distribution. Notice that \(\lambda_n = np_n(n\geq 0, p_n\geq 0)\) and \(\lim\limits_{n\to\infty}\lambda_n = \la">
+    <meta name="description" content="I came upon the calculation of $(1-\frac{\lambda_n}n)^n$ when I was reviewing Poisson distribution. Notice that $\lambda_n = np_n(n\geq 0, pn\geq 0)$ and $\lim\limits{n\to\infty}\lambda_n = \lambda$.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Calculate $(1-\frac{\lambda_n}n)^n$">
 <meta property="og:url" content="http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="I came upon the calculation of \((1-\frac{\lambda_n}n)^n\) when I was reviewing Poisson distribution. Notice that \(\lambda_n = np_n(n\geq 0, p_n\geq 0)\) and \(\lim\limits_{n\to\infty}\lambda_n = \la">
+<meta property="og:description" content="I came upon the calculation of $(1-\frac{\lambda_n}n)^n$ when I was reviewing Poisson distribution. Notice that $\lambda_n = np_n(n\geq 0, pn\geq 0)$ and $\lim\limits{n\to\infty}\lambda_n = \lambda$.">
 <meta property="og:image" content="http://www.codeforest.net/wp-content/uploads/2010/11/lambda.jpg">
 <meta property="og:updated_time" content="2016-09-30T16:11:53.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Calculate $(1-\frac{\lambda_n}n)^n$">
-<meta name="twitter:description" content="I came upon the calculation of \((1-\frac{\lambda_n}n)^n\) when I was reviewing Poisson distribution. Notice that \(\lambda_n = np_n(n\geq 0, p_n\geq 0)\) and \(\lim\limits_{n\to\infty}\lambda_n = \la">
+<meta name="twitter:description" content="I came upon the calculation of $(1-\frac{\lambda_n}n)^n$ when I was reviewing Poisson distribution. Notice that $\lambda_n = np_n(n\geq 0, pn\geq 0)$ and $\lim\limits{n\to\infty}\lambda_n = \lambda$.">
 <meta name="twitter:image" content="http://www.codeforest.net/wp-content/uploads/2010/11/lambda.jpg">
     
 
@@ -162,34 +162,34 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>I came upon the calculation of <span class="math inline">\((1-\frac{\lambda_n}n)^n\)</span> when I was reviewing Poisson distribution. Notice that <span class="math inline">\(\lambda_n = np_n(n\geq 0, p_n\geq 0)\)</span> and <span class="math inline">\(\lim\limits_{n\to\infty}\lambda_n = \lambda\)</span>.</p>
+            <p>I came upon the calculation of $(1-\frac{\lambda_n}n)^n$ when I was reviewing Poisson distribution. Notice that $\lambda_n = np_n(n\geq 0, p<em>n\geq 0)$ and $\lim\limits</em>{n\to\infty}\lambda_n = \lambda$.</p>
 <p>So how to calculate it? The first thought that came to my mind was that</p>
-<p><span class="math display">\[\lim\limits_{n\to\infty}(1 + \frac1 n)^n = e \tag 1\]</span></p>
-<p>So replace <span class="math inline">\(n\)</span> with <span class="math inline">\(-n\)</span>, I got</p>
-<p><span class="math display">\[\lim\limits_{n\to\infty}(1 - \frac1 n)^n = \frac1 e \tag 2\]</span></p>
-<p>Then I have no clue about what to do next, I’m not even sure whether (2) is right or not. So I started digging from the calculation of <span class="math inline">\(\lim\limits_{n\to\infty}(1 + \frac1 n)^n\)</span>.</p>
+<p>$$\lim\limits_{n\to\infty}(1 + \frac1 n)^n = e \tag 1$$</p>
+<p>So replace $n$ with $-n$, I got</p>
+<p>$$\lim\limits_{n\to\infty}(1 - \frac1 n)^n = \frac1 e \tag 2$$</p>
+<p>Then I have no clue about what to do next, I’m not even sure whether (2) is right or not. So I started digging from the calculation of $\lim\limits_{n\to\infty}(1 + \frac1 n)^n$.</p>
 <p>Here is how I solve the problem.</p>
-<p>Let <span class="math inline">\(t\)</span> be any number in the interval <span class="math inline">\([1-\frac{\lambda_n}n, 1]\)</span>, then we get</p>
-<p><span class="math display">\[1-\frac{\lambda_n} n\leq t\leq1\]</span></p>
+<p>Let $t$ be any number in the interval $[1-\frac{\lambda_n}n, 1]$, then we get</p>
+<p>$$1-\frac{\lambda_n} n\leq t\leq1$$</p>
 <p>Therefore</p>
-<p><span class="math display">\[\frac 1{1-\frac{\lambda_n} n} \leq \frac 1 t \leq 1\]</span></p>
+<p>$$\frac 1{1-\frac{\lambda_n} n} \leq \frac 1 t \leq 1$$</p>
 <p>Therefore</p>
-<p><span class="math display">\[\int_{1-\frac{\lambda_n}n}^1\frac 1{1-\frac{\lambda_n} n}dt \leq \int_{1-\frac{\lambda_n}n}^1\frac 1 t dt\leq \int_{1-\frac{\lambda_n}n}^1 1dt\]</span></p>
-<p>The first integral equals <span class="math inline">\(\frac{\lambda_n}n\)</span>, the second integral equals <span class="math inline">\(ln(1-\frac{\lambda_n} n)^{-1}\)</span>, the third integral equals <span class="math inline">\(\frac{\lambda_n}{n-\lambda_n}\)</span>, so we get</p>
-<p><span class="math display">\[\frac{\lambda_n}n\leq ln(1-\frac{\lambda_n} n)^{-1} \leq \frac{\lambda_n}{n-\lambda_n}\]</span></p>
+<p>$$\int_{1-\frac{\lambda_n}n}^1\frac 1{1-\frac{\lambda<em>n} n}dt \leq \int</em>{1-\frac{\lambda<em>n}n}^1\frac 1 t dt\leq \int</em>{1-\frac{\lambda_n}n}^1 1dt$$</p>
+<p>The first integral equals $\frac{\lambda_n}n$, the second integral equals $ln(1-\frac{\lambda_n} n)^{-1}$, the third integral equals $\frac{\lambda_n}{n-\lambda_n}$, so we get</p>
+<p>$$\frac{\lambda_n}n\leq ln(1-\frac{\lambda_n} n)^{-1} \leq \frac{\lambda_n}{n-\lambda_n}$$</p>
 <p>Exponentiating, we find that</p>
-<p><span class="math display">\[e^{\frac{\lambda_n} n}\leq(1-\frac{\lambda_n}n)^{-1}\leq e^{\frac{\lambda_n}{n-\lambda_n}}\]</span></p>
-<p>Taking the <span class="math inline">\((-n)^{st}\)</span> power of the left inequality gives us</p>
-<p><span class="math display">\[e^{-{\lambda_n}}\geq (1-\frac{\lambda_n} n)^n\tag{3}\]</span></p>
-<p>Taking the <span class="math inline">\((\lambda_n - n)^{th}\)</span> power of the right inequality gives us</p>
-<p><span class="math display">\[(1-\frac{\lambda_n} n)^{(n-\lambda_n)}\geq e^{-\lambda_n}\]</span></p>
-<p>Why was <span class="math inline">\(\geq\)</span> replaced with <span class="math inline">\(\leq\)</span>? Because <span class="math inline">\(\lambda_n = np_n, n\geq 0, 0\leq p_n\leq 1\)</span>(<span class="math inline">\(p_n\)</span> denotes the probability), so <span class="math inline">\(\lambda_n-n = np_n - n = n(p_n - 1)\leq 0\)</span>, the power is less or equal to 0, so we need change the direction of the sign.</p>
-<p>Multiply each side of the inequality by <span class="math inline">\((1-\frac{\lambda_n} n)^{\lambda_n}\)</span>, we get</p>
-<p><span class="math display">\[(1-\frac{\lambda_n} n)^n\geq {e^{-\lambda_n}} {(1-\frac{\lambda_n} n)^{\lambda_n}}\tag 4\]</span></p>
+<p>$$e^{\frac{\lambda_n} n}\leq(1-\frac{\lambda_n}n)^{-1}\leq e^{\frac{\lambda_n}{n-\lambda_n}}$$</p>
+<p>Taking the $(-n)^{st}$ power of the left inequality gives us</p>
+<p>$$e^{-{\lambda_n}}\geq (1-\frac{\lambda_n} n)^n\tag{3}$$</p>
+<p>Taking the $(\lambda_n - n)^{th}$ power of the right inequality gives us</p>
+<p>$$(1-\frac{\lambda_n} n)^{(n-\lambda_n)}\geq e^{-\lambda_n}$$</p>
+<p>Why was $\geq$ replaced with $\leq$?  Because $\lambda_n = np_n, n\geq 0, 0\leq p_n\leq 1$($p_n$ denotes the probability), so $\lambda_n-n = np_n - n = n(p_n - 1)\leq 0$, the power is less or equal to 0, so we need change the direction of the sign.</p>
+<p>Multiply each side of the inequality by $(1-\frac{\lambda_n} n)^{\lambda_n}$, we get</p>
+<p>$$(1-\frac{\lambda_n} n)^n\geq {e^{-\lambda_n}} {(1-\frac{\lambda_n} n)^{\lambda_n}}\tag 4$$</p>
 <p>Combine (3) and (4), we get</p>
-<p><span class="math display">\[e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n}\leq (1-\frac{\lambda_n} n)^n \leq e^{-\lambda_n}\]</span></p>
+<p>$$e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n}\leq (1-\frac{\lambda_n} n)^n \leq e^{-\lambda_n}$$</p>
 <p>Consider</p>
-<p><span class="math display">\[\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)^{\lambda_n}\]</span></p>
+<p>$$\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)^{\lambda_n}$$</p>
 
         </div>
         <footer class="article-footer">
@@ -197,7 +197,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/" data-id="citquzxzu0005xwbuxwmmcnjr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/" data-id="citqv0we100011bbutib8u1xh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -581,5 +581,20 @@ ga('send', 'pageview');
 </script>
 
     </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

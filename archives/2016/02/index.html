@@ -185,8 +185,7 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            Preface
-Recently I began to use sublime and I found that fcitx couldn’t work in sublime. This is quite weird. After searching online for a while, I found a solution which could solve the problem in a 
+            PrefaceRecently I began to use sublime and I found that fcitx couldn’t work in sublime. This is quite weird. After searching online for a while, I found a solution which could solve the problem in a “
         </p>
     </div>
 </article>
@@ -230,8 +229,7 @@ Recently I began to use sublime and I found that fcitx couldn’t work in sublim
     
 
         <p class="article-excerpt">
-            Introduction
-GoldenDict is an excellent dictionary management software. It can handle most dictionary formats, some of these dictionaries contain audios and/or images. This addon can import the images
+            IntroductionGoldenDict is an excellent dictionary management software. It can handle most dictionary formats, some of these dictionaries contain audios and/or images. This addon can import the images 
         </p>
     </div>
 </article>
@@ -279,10 +277,8 @@ GoldenDict is an excellent dictionary management software. It can handle most di
     
 
         <p class="article-excerpt">
-            Introduction
-PurgeAttributes is used to purge the font-size attribute originally. But you can purge any attribute defined in something like style='font-size: 100px; color: red'.
-Install
-Put PurgeAttri
+            IntroductionPurgeAttributes is used to purge the font-size attribute originally. But you can purge any attribute defined in something like style=&#39;font-size: 100px; color: red&#39;.
+InstallPut Purg
         </p>
     </div>
 </article>
@@ -326,9 +322,8 @@ Put PurgeAttri
     
 
         <p class="article-excerpt">
-            Introduction
-ImageResizer is a simple anki addon used to resize the image stored in the clipboard. So images that are too big or too small to be used in reviewing are not a problem any more.
-Before re
+            IntroductionImageResizer is a simple anki addon used to resize the image stored in the clipboard. So images that are too big or too small to be used in reviewing are not a problem any more.
+Before res
         </p>
     </div>
 </article>
@@ -626,5 +621,20 @@ Before re
 </script>
 
     </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

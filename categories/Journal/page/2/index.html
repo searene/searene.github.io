@@ -229,12 +229,12 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            Today I added a new daily-recursive task to my taskwarrior list:
+            Today I added a new daily-recursive task to my taskwarrior list: 
 Read 5% of the book in my kindle
 So right now I’ve four tasks I need to finish every day.
 
 Read 5% of the book in my kindle
-Run for at 
+Run for at
         </p>
     </div>
 </article>
@@ -538,5 +538,20 @@ Run for at
 </script>
 
     </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

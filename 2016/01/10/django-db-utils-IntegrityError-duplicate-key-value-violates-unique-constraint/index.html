@@ -8,23 +8,20 @@
     
         <meta name="keywords" content="python,django" />
     
-    <meta name="description" content="Error
-Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
-12345class Category(models.">
+    <meta name="description" content="ErrorRecently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
+12345class Category(models.M">
 <meta property="og:type" content="article">
 <meta property="og:title" content="django.db.utils.IntegrityError: duplicate key value violates unique constraint">
 <meta property="og:url" content="http://searene.github.io/2016/01/10/django-db-utils-IntegrityError-duplicate-key-value-violates-unique-constraint/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="Error
-Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
-12345class Category(models.">
+<meta property="og:description" content="ErrorRecently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
+12345class Category(models.M">
 <meta property="og:image" content="http://blog.djangostars.com/content/images/2015/12/maxresdefault.jpg">
 <meta property="og:updated_time" content="2016-05-23T17:38:39.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="django.db.utils.IntegrityError: duplicate key value violates unique constraint">
-<meta name="twitter:description" content="Error
-Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
-12345class Category(models.">
+<meta name="twitter:description" content="ErrorRecently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
+12345class Category(models.M">
 <meta name="twitter:image" content="http://blog.djangostars.com/content/images/2015/12/maxresdefault.jpg">
     
 
@@ -168,15 +165,13 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="error">Error</h1>
-<p>Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this</p>
+            <h1 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h1><p>Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">		...</span><br><span class="line">    title = models.CharField(_(<span class="string">"title"</span>), max_length=<span class="number">75</span>)</span><br><span class="line">    description = models.CharField(_(<span class="string">"description"</span>), max_length=<span class="number">255</span>, blank=<span class="keyword">True</span>)</span><br><span class="line">		...</span><br></pre></td></tr></table></figure>
 <p>The only thing you need to know is that, there’s no such thing as an <code>id</code> in the model, which means django and postgresql will take care of the primary key. It seems fine, right? Until I ran a test, which created a category:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserViewTest</span><span class="params">(TestCase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        cache.clear()</span><br><span class="line">        self.category = utils.create_category()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">simple_test</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.assertEqual(<span class="number">1</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <p>This is a very simple test, <code>create_category</code> is only responsible for creating a brand new category. Everything should work fine. Then I got an error:</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">django<span class="selector-class">.db</span><span class="selector-class">.utils</span><span class="selector-class">.IntegrityError</span>: duplicate key value violates unique constraint <span class="string">"spirit_category_category_pkey"</span></span><br><span class="line">DETAIL:  Key (id)=(<span class="number">1</span>) already exists.</span><br></pre></td></tr></table></figure>
-<h1 id="try-to-find-the-reason">Try to find the reason</h1>
-<p>Is there an already existing <code>Key (id)=(1)</code>? I leafed through the migration file, and found this:</p>
+<h1 id="Try-to-find-the-reason"><a href="#Try-to-find-the-reason" class="headerlink" title="Try to find the reason"></a>Try to find the reason</h1><p>Is there an already existing <code>Key (id)=(1)</code>? I leafed through the migration file, and found this:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> Category.objects.filter(pk=settings.ST_TOPIC_PRIVATE_CATEGORY_PK).exists():</span><br><span class="line">		Category.objects.create(</span><br><span class="line">				pk=settings.ST_TOPIC_PRIVATE_CATEGORY_PK,</span><br><span class="line">				title=<span class="string">"Private"</span>,</span><br><span class="line">				slug=<span class="string">"private"</span>,</span><br><span class="line">				is_private=<span class="keyword">True</span></span><br><span class="line">		)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> Category.objects.filter(pk=settings.ST_UNCATEGORIZED_CATEGORY_PK).exists():</span><br><span class="line">		Category.objects.create(</span><br><span class="line">				pk=settings.ST_UNCATEGORIZED_CATEGORY_PK,</span><br><span class="line">				title=<span class="string">"Uncategorized"</span>,</span><br><span class="line">				slug=<span class="string">"uncategorized"</span></span><br><span class="line">		)</span><br></pre></td></tr></table></figure>
 <p>So django will create two default categories due to the migration file. OK, that’s fine. But why did postgresql insert a record with a <code>Key (id)=(1)</code> instead of <code>Key (id)=(3)</code>? Maybe it’s django’s fault? Maybe django was trying to insert a specified record with <code>Key (id)=(1)</code>? To find out the reason, I debugged all the way to this part:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">execute</span><span class="params">(self, sql, params=None)</span>:</span></span><br><span class="line">	self.db.validate_no_broken_transaction()</span><br><span class="line">	<span class="keyword">with</span> self.db.wrap_database_errors:</span><br><span class="line">		<span class="keyword">if</span> params <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">			<span class="keyword">return</span> self.cursor.execute(sql)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">return</span> self.cursor.execute(sql, params)</span><br></pre></td></tr></table></figure>
@@ -185,16 +180,13 @@ ga('send', 'pageview');
 <p>So django didn’t include the <code>id</code> part, but why didn’t postgresql auto increment the <code>id</code>? After searching online for a long time, I found <a href="http://centoshowtos.org/web-services/django-and-postgres-duplicate-key/" target="_blank" rel="external">this website</a>. I followed its process and ran the following code to find out the <code>last_value</code> of the <code>id</code> sequence(the primary key is usually a sequence in postgresql if you use django to generate the tables automatically)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">last_value</span> <span class="keyword">from</span> spirit_category_category_id_seq;</span><br></pre></td></tr></table></figure>
 <p>And the answer I got was <code>1</code>. It’s ONE! What does it mean? It means the next <code>id</code> to be generated will be <code>1</code>. This is so not what we want. This is why the error happened.</p>
-<h1 id="fix-the-problem">Fix the problem</h1>
-<p>Let’s alter it to <code>3</code>.</p>
+<h1 id="Fix-the-problem"><a href="#Fix-the-problem" class="headerlink" title="Fix the problem"></a>Fix the problem</h1><p>Let’s alter it to <code>3</code>.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">sequence</span> spirit_category_category_id_seq restart <span class="keyword">with</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
 <p>Continue the test, and you will pass it. Wait, this is a test, right? So the next time you run the test, it will create all kinds of brand new tables again in order to start a fresh test. So it’s meaningless to alter the sequence, because it would be flushed. Don’t believe it? Run the test again, and it will fail.</p>
-<h1 id="fix-it-for-a-test">Fix it for a test</h1>
-<p>So how to fix this? Just remove the line which <code>id</code> was specified in the migration file, i.e. let postgresql handle the primary key for us. Don’t insert the primary key manually, don’t try to calculate the next avaible id number, you will mess it up. In my case, I just need to remove the following two lines in file <code>0002_auto_20150728_0442.py</code></p>
+<h1 id="Fix-it-for-a-test"><a href="#Fix-it-for-a-test" class="headerlink" title="Fix it for a test"></a>Fix it for a test</h1><p>So how to fix this? Just remove the line which <code>id</code> was specified in the migration file, i.e. let postgresql handle the primary key for us. Don’t insert the primary key manually, don’t try to calculate the next avaible id number, you will mess it up. In my case, I just need to remove the following two lines in file <code>0002_auto_20150728_0442.py</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pk=settings.ST_TOPIC_PRIVATE_CATEGORY_PK,</span><br><span class="line">pk=settings.ST_UNCATEGORIZED_CATEGORY_PK,</span><br></pre></td></tr></table></figure>
 <p>Run the test again, it will pass.</p>
-<h1 id="conclusion">Conclusion</h1>
-<p>It’s a long story, I’ve debugged for days to find out the reason, but it’s totally fine. Though the solution is quite simple, I have to fight all the way to find. During the process, I read a lot of django source code, I learned a lot of python features. I learned how postgresql’s sequence worked. It’s very helpful to me.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>It’s a long story, I’ve debugged for days to find out the reason, but it’s totally fine. Though the solution is quite simple, I have to fight all the way to find. During the process, I read a lot of django source code, I learned a lot of python features. I learned how postgresql’s sequence worked. It’s very helpful to me.</p>
 
         </div>
         <footer class="article-footer">
@@ -202,7 +194,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2016/01/10/django-db-utils-IntegrityError-duplicate-key-value-violates-unique-constraint/" data-id="citquzy1i002fxwbujhn9c2cf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2016/01/10/django-db-utils-IntegrityError-duplicate-key-value-violates-unique-constraint/" data-id="citqv0wfs00241bbusuob4vut" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -586,5 +578,20 @@ ga('send', 'pageview');
 </script>
 
     </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

@@ -8,20 +8,17 @@
     
         <meta name="keywords" content="linux,vim" />
     
-    <meta name="description" content="Edit 1
-Sometimes the method mentioned below just stops working, and I don’t know why. For now I just switch Esc and CapsLock, and leave Control part behind. It’s quite easy if you just want to switch">
+    <meta name="description" content="Edit 1Sometimes the method mentioned below just stops working, and I don’t know why. For now I just switch Esc and CapsLock, and leave Control part behind. It’s quite easy if you just want to switch E">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Switch CapsLock And Esc And Take CapsLock As Control When It Is Pressed">
 <meta property="og:url" content="http://searene.github.io/2015/12/16/Switch-CapsLock-And-Esc-And-Take-CapsLock-As-Control-When-It-Is-Pressed/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="Edit 1
-Sometimes the method mentioned below just stops working, and I don’t know why. For now I just switch Esc and CapsLock, and leave Control part behind. It’s quite easy if you just want to switch">
+<meta property="og:description" content="Edit 1Sometimes the method mentioned below just stops working, and I don’t know why. For now I just switch Esc and CapsLock, and leave Control part behind. It’s quite easy if you just want to switch E">
 <meta property="og:image" content="http://i.imgur.com/qfmc5A0.png">
 <meta property="og:updated_time" content="2016-05-23T17:38:39.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Switch CapsLock And Esc And Take CapsLock As Control When It Is Pressed">
-<meta name="twitter:description" content="Edit 1
-Sometimes the method mentioned below just stops working, and I don’t know why. For now I just switch Esc and CapsLock, and leave Control part behind. It’s quite easy if you just want to switch">
+<meta name="twitter:description" content="Edit 1Sometimes the method mentioned below just stops working, and I don’t know why. For now I just switch Esc and CapsLock, and leave Control part behind. It’s quite easy if you just want to switch E">
 <meta name="twitter:image" content="http://i.imgur.com/qfmc5A0.png">
     
 
@@ -165,45 +162,29 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="edit-1">Edit 1</h1>
-<p>Sometimes the method mentioned below just stops working, and I don’t know why. For now I just switch Esc and CapsLock, and leave Control part behind. It’s quite easy if you just want to switch Esc and CapsLock, all you need to do is install <code>gnome-tweak-tool</code> and find <code>CapsLock key behavior</code> under <code>Typing</code>, and choose <code>Swap Esc and Caps Lock</code>, just as shown below:</p>
-<div class="figure">
-<img src="http://i.imgur.com/qfmc5A0.png" alt="gnome-tweak-tool">
-<p class="caption">gnome-tweak-tool</p>
-</div>
+            <h1 id="Edit-1"><a href="#Edit-1" class="headerlink" title="Edit 1"></a>Edit 1</h1><p>Sometimes the method mentioned below just stops working, and I don’t know why. For now I just switch Esc and CapsLock, and leave Control part behind. It’s quite easy if you just want to switch Esc and CapsLock, all you need to do is install <code>gnome-tweak-tool</code> and find <code>CapsLock key behavior</code> under <code>Typing</code>, and choose <code>Swap Esc and Caps Lock</code>, just as shown below:</p>
+<p><img src="http://i.imgur.com/qfmc5A0.png" alt="gnome-tweak-tool"></p>
 <hr>
-<h1 id="edit-2">Edit 2</h1>
-<p>I found a way to make it work. First, open <code>gnome-tweak-tool</code> and find <code>CapsLock key behavior</code> under <code>Typing</code>, and choose <code>Make Caps Lock an additional Ctrl</code></p>
-<div class="figure">
-<img src="http://i.imgur.com/LrpiLjH.png" alt="gnome-tweak-tool">
-<p class="caption">gnome-tweak-tool</p>
-</div>
+<h1 id="Edit-2"><a href="#Edit-2" class="headerlink" title="Edit 2"></a>Edit 2</h1><p>I found a way to make it work. First, open <code>gnome-tweak-tool</code> and find <code>CapsLock key behavior</code> under <code>Typing</code>, and choose <code>Make Caps Lock an additional Ctrl</code></p>
+<p><img src="http://i.imgur.com/LrpiLjH.png" alt="gnome-tweak-tool"></p>
 <p>Then add the following line in your <code>~/.bashrc</code> file:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcape <span class="_">-e</span> <span class="string">'Caps_Lock=Escape'</span></span><br></pre></td></tr></table></figure>
 <p>It works for me. The only problem is that you don’t have a CapsLock key anymore. But I guess you can map another key with <code>gnome-tweak-tool</code>. I don’t use that key a lot, so I haven’t done that yet. By the way, you don’t have to see the method below, it doesn’t work properly, at least for me.</p>
 <hr>
-<h1 id="preface">Preface</h1>
-<p>I’ve been using vim for years, and I’ve been using <code>Esc</code> for years. A few days before, I heard about an idea that I could switch <code>Caps Lock</code> and <code>Esc</code> to make vim more convenient, because you know, <code>Caps Lock</code> is nearer than <code>Esc</code>. This is interesting, but lately I heard about a even more convenient idea, which not only includes switching <code>Caps Lock</code> and <code>Esc</code>, but also taking <code>Caps Lock</code> as <code>Control</code> when it’s pressed. So in this way, <code>Caps Lock</code> has two distinct functionalities, one is to be used as <code>Esc</code> when punched, the other is to be used as <code>Control</code> when pressed, what a great idea! Let’s get started to make it real.</p>
-<h1 id="installation">Installation</h1>
-<p>I’m using ubuntu 15.10, so I can only guarantee it works in linux. First thing you need to do is to install xcape.</p>
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>I’ve been using vim for years, and I’ve been using <code>Esc</code> for years. A few days before, I heard about an idea that I could switch <code>Caps Lock</code> and <code>Esc</code> to make vim more convenient, because you know, <code>Caps Lock</code> is nearer than <code>Esc</code>. This is interesting, but lately I heard about a even more convenient idea, which not only includes switching <code>Caps Lock</code> and <code>Esc</code>, but also taking <code>Caps Lock</code> as <code>Control</code> when it’s pressed. So in this way, <code>Caps Lock</code> has two distinct functionalities, one is to be used as <code>Esc</code> when punched, the other is to be used as <code>Control</code> when pressed, what a great idea! Let’s get started to make it real.</p>
+<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><p>I’m using ubuntu 15.10, so I can only guarantee it works in linux. First thing you need to do is to install xcape.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xcape</span><br></pre></td></tr></table></figure>
-<h1 id="script">Script</h1>
-<p>After that, create a new file called <code>xmodmaprc</code>, let’s put it under <code>~/Tools</code> (or wherever you want, ~ denotes your home folder). The contents of <code>xmodmaprc</code> are as follows:</p>
+<h1 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h1><p>After that, create a new file called <code>xmodmaprc</code>, let’s put it under <code>~/Tools</code> (or wherever you want, ~ denotes your home folder). The contents of <code>xmodmaprc</code> are as follows:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">!</span><br><span class="line">! make caps_lock an additional control</span><br><span class="line">clear Lock</span><br><span class="line">! NOTE: this keycode may need to be changed <span class="keyword">for</span> your control</span><br><span class="line">keycode 66 = Control_L</span><br><span class="line">add Control = Control_L</span><br><span class="line"></span><br><span class="line">!</span><br><span class="line">! make escape be caps_lock</span><br><span class="line">keysym Escape = Caps_Lock</span><br><span class="line">add Lock = Caps_Lock</span><br><span class="line"></span><br><span class="line">!</span><br><span class="line">! make a fake escape key (so we can map it with xcape)</span><br><span class="line">keycode 999 = Escape</span><br></pre></td></tr></table></figure>
 <p>Create another file called <code>switch.sh</code>, put it under <code>~/Tools</code> too.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment"># keyboard settings need the desktop to be fully loaded, so we let it sleep for 15s to wait for it.</span></span><br><span class="line">sleep 15</span><br><span class="line"></span><br><span class="line">xmodmap <span class="variable">$HOME</span>/Tools/xmodmaprc</span><br><span class="line">xcape <span class="_">-e</span> <span class="string">'Control_L=Escape'</span></span><br></pre></td></tr></table></figure>
 <p>Add permission to make it executable</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x ~/Tools/switch.sh</span><br></pre></td></tr></table></figure>
 <p>Now if you run <code>~/Tools/switch.sh</code>, you will find that it’s already working</p>
-<h1 id="startup">Startup</h1>
-<p>Of course you don’t want to run <code>~/Tools/switch.sh</code> manually every time a session starts. Open <code>Startup Applications</code> in unity dash and add a new entry:</p>
-<div class="figure">
-<img src="http://i.imgur.com/FWQ1gkg.png" alt="Startup Applications">
-<p class="caption">Startup Applications</p>
-</div>
+<h1 id="Startup"><a href="#Startup" class="headerlink" title="Startup"></a>Startup</h1><p>Of course you don’t want to run <code>~/Tools/switch.sh</code> manually every time a session starts. Open <code>Startup Applications</code> in unity dash and add a new entry:</p>
+<p><img src="http://i.imgur.com/FWQ1gkg.png" alt="Startup Applications"></p>
 <p>Now reboot, and you will find that you don’t have to run the command manually any more. <code>Startup Applications</code> does this for you automatically. Enjoy.</p>
-<h1 id="reference">Reference</h1>
-<p><a href="https://github.com/cmatheson/super-caps" target="_blank" rel="external">super-caps</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://github.com/cmatheson/super-caps" target="_blank" rel="external">super-caps</a></p>
 
         </div>
         <footer class="article-footer">
@@ -211,7 +192,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2015/12/16/Switch-CapsLock-And-Esc-And-Take-CapsLock-As-Control-When-It-Is-Pressed/" data-id="citquzy0z001ixwbunj749lmv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2015/12/16/Switch-CapsLock-And-Esc-And-Take-CapsLock-As-Control-When-It-Is-Pressed/" data-id="citqv0wfk001t1bbuldwq2nr4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -595,5 +576,20 @@ ga('send', 'pageview');
 </script>
 
     </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

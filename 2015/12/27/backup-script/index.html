@@ -6,28 +6,25 @@
     <title>backup script | Searene</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="linux,python" />
+        <meta name="keywords" content="python,linux" />
     
     <meta name="description" content="Recently I made a backup script with python2.7, and it worked fine by now. So I think it might be a good idea to share it here.
-Install megaFuse
-The first thing you need to do is to install megaFuse
-I">
+Install megaFuseThe first thing you need to do is to install megaFuse
+In">
 <meta property="og:type" content="article">
 <meta property="og:title" content="backup script">
 <meta property="og:url" content="http://searene.github.io/2015/12/27/backup-script/index.html">
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="Recently I made a backup script with python2.7, and it worked fine by now. So I think it might be a good idea to share it here.
-Install megaFuse
-The first thing you need to do is to install megaFuse
-I">
+Install megaFuseThe first thing you need to do is to install megaFuse
+In">
 <meta property="og:image" content="http://3.bp.blogspot.com/-K8PhVRHMmMQ/TyExkSKTRoI/AAAAAAAAFR0/zO8hnnIRykc/s1600/backup.png">
 <meta property="og:updated_time" content="2016-05-23T17:38:39.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="backup script">
 <meta name="twitter:description" content="Recently I made a backup script with python2.7, and it worked fine by now. So I think it might be a good idea to share it here.
-Install megaFuse
-The first thing you need to do is to install megaFuse
-I">
+Install megaFuseThe first thing you need to do is to install megaFuse
+In">
 <meta name="twitter:image" content="http://3.bp.blogspot.com/-K8PhVRHMmMQ/TyExkSKTRoI/AAAAAAAAFR0/zO8hnnIRykc/s1600/backup.png">
     
 
@@ -172,28 +169,19 @@ ga('send', 'pageview');
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>Recently I made a backup script with python2.7, and it worked fine by now. So I think it might be a good idea to share it here.</p>
-<h1 id="install-megafuse">Install megaFuse</h1>
-<p>The first thing you need to do is to install <a href="https://github.com/matteoserva/MegaFuse" target="_blank" rel="external">megaFuse</a></p>
-<h2 id="install-additional-packages">Install additional packages:</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libcrypto++-dev libcurl4-openssl-dev libdb5.1++-dev libfreeimage-dev libreadline-dev libfuse-dev</span><br></pre></td></tr></table></figure>
-<h2 id="compile-megafuse">Compile megaFuse</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> MegaFuse</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-<h2 id="fill-in-your-mega-username-password-and-mountpoint-in-megafuse.conf-just-as-follows">Fill in your mega username, password and mountpoint in <code>megafuse.conf</code>, just as follows:</h2>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">USERNAME</span> = username@email.com</span><br><span class="line"><span class="attr">PASSWORD</span> = your_password</span><br><span class="line"><span class="attr">MOUNTPOINT</span> = /media/mega</span><br></pre></td></tr></table></figure>
-<h2 id="enable-megafuse">Enable MegaFuse</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./MegaFuse <span class="_">-f</span> -o allow_other -o uid=1000</span><br></pre></td></tr></table></figure>
-<h2 id="run-megafuse-at-system-boot">Run MegaFuse at system boot</h2>
-<p>Save the following code as a bash file, e.g. <code>start_mega.sh</code>. Then run the file automatically every time the OS boots by using <code>Startup Applications</code> on ubuntu, note that you should modify <code>/path/to/MegaFuse</code> to the correct one</p>
+<h1 id="Install-megaFuse"><a href="#Install-megaFuse" class="headerlink" title="Install megaFuse"></a>Install megaFuse</h1><p>The first thing you need to do is to install <a href="https://github.com/matteoserva/MegaFuse" target="_blank" rel="external">megaFuse</a></p>
+<h2 id="Install-additional-packages"><a href="#Install-additional-packages" class="headerlink" title="Install additional packages:"></a>Install additional packages:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libcrypto++-dev libcurl4-openssl-dev libdb5.1++-dev libfreeimage-dev libreadline-dev libfuse-dev</span><br></pre></td></tr></table></figure>
+<h2 id="Compile-megaFuse"><a href="#Compile-megaFuse" class="headerlink" title="Compile megaFuse"></a>Compile megaFuse</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> MegaFuse</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<h2 id="Fill-in-your-mega-username-password-and-mountpoint-in-megafuse-conf-just-as-follows"><a href="#Fill-in-your-mega-username-password-and-mountpoint-in-megafuse-conf-just-as-follows" class="headerlink" title="Fill in your mega username, password and mountpoint in megafuse.conf, just as follows:"></a>Fill in your mega username, password and mountpoint in <code>megafuse.conf</code>, just as follows:</h2><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">USERNAME</span> = username@email.com</span><br><span class="line"><span class="attr">PASSWORD</span> = your_password</span><br><span class="line"><span class="attr">MOUNTPOINT</span> = /media/mega</span><br></pre></td></tr></table></figure>
+<h2 id="Enable-MegaFuse"><a href="#Enable-MegaFuse" class="headerlink" title="Enable MegaFuse"></a>Enable MegaFuse</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./MegaFuse <span class="_">-f</span> -o allow_other -o uid=1000</span><br></pre></td></tr></table></figure>
+<h2 id="Run-MegaFuse-at-system-boot"><a href="#Run-MegaFuse-at-system-boot" class="headerlink" title="Run MegaFuse at system boot"></a>Run MegaFuse at system boot</h2><p>Save the following code as a bash file, e.g. <code>start_mega.sh</code>. Then run the file automatically every time the OS boots by using <code>Startup Applications</code> on ubuntu, note that you should modify <code>/path/to/MegaFuse</code> to the correct one</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">sleep 100</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"yourpassword"</span> | sudo -S /path/to/MegaFuse/MegaFuse -c /path/to/MegaFuse/megafuse.conf <span class="_">-f</span> -o allow_other -o uid=1000</span><br></pre></td></tr></table></figure>
 <p>Why do you need <code>sleep 100</code>? I don’t know either. I tried to add the line <code>/path/to/MegaFuse -c /path/to/megafuse.conf -f -o allow_other -o uid=1000</code> in the file <code>/etc/rc.local</code> before, but it failed. I don’t know why. And it almost caused my PC fail to boot because it output way too many errors in <code>/var/log/syslog</code> file. Finally I decided to put it in <code>Startup Applications</code>. Notice that I used <code>sudo</code> here, and you have to put your password in plaintext. This is a security risk. But I don’t know to make it work without it, because you need to have root permission to mount it. If you know how to work without <code>sudo</code>, I’d like to hear your opinion.</p>
-<h1 id="megatools">MegaTools</h1>
-<p>You also need <a href="https://megatools.megous.com/" target="_blank" rel="external">MegaTools</a> to run this script, I put the tools in <code>/usr/local/bin/</code> to make it work.</p>
+<h1 id="MegaTools"><a href="#MegaTools" class="headerlink" title="MegaTools"></a>MegaTools</h1><p>You also need <a href="https://megatools.megous.com/" target="_blank" rel="external">MegaTools</a> to run this script, I put the tools in <code>/usr/local/bin/</code> to make it work.</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">~<span class="regexp">/Development/demos</span><span class="variable">$ </span>ls /usr/local/bin|grep mega</span><br><span class="line">megacopy</span><br><span class="line">megadf</span><br><span class="line">megadl</span><br><span class="line">megaget</span><br><span class="line">megals</span><br><span class="line">megamkdir</span><br><span class="line">megaput</span><br><span class="line">megareg</span><br><span class="line">megarm</span><br></pre></td></tr></table></figure>
-<h1 id="my-python-backup-script">my python backup script</h1>
-<p>My backup script was written with python. But I think maybe bash script would be easier. Anyway, this is my backup file</p>
+<h1 id="my-python-backup-script"><a href="#my-python-backup-script" class="headerlink" title="my python backup script"></a>my python backup script</h1><p>My backup script was written with python. But I think maybe bash script would be easier. Anyway, this is my backup file</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># the location in mega where you want to put your files</span></span><br><span class="line">    BACKUP_DIRECOTORY = <span class="string">"Backups"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># local location in which mega was mounted using MegaFuse</span></span><br><span class="line">    MOUNTED_LOCATION = <span class="string">"/media/mega"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># BACKUP_LIST: files you want to back up</span></span><br><span class="line">    <span class="comment">#     file: the file that you want to backup</span></span><br><span class="line">    <span class="comment">#     count: how many versions you want to keep</span></span><br><span class="line">    <span class="comment">#     name: backup basename</span></span><br><span class="line">    BACKUP_LIST = [</span><br><span class="line">            &#123;<span class="string">'file'</span>: <span class="string">'/var/www/html'</span>,</span><br><span class="line">             <span class="string">'count'</span>: <span class="number">3</span>,</span><br><span class="line">             <span class="string">'name'</span>: <span class="string">'html'</span>&#125;,</span><br><span class="line">            &#123;<span class="string">'file'</span>: <span class="string">'/home/searene/Documents/blog/source/_posts'</span>,</span><br><span class="line">             <span class="string">'count'</span>: <span class="number">3</span>,</span><br><span class="line">             <span class="string">'name'</span> : <span class="string">'blog'</span>&#125;</span><br><span class="line">            ]</span><br><span class="line"></span><br><span class="line">    devnull = open(os.devnull, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY)):</span><br><span class="line">        os.makedirs(os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> BACKUP_LIST:</span><br><span class="line">        today = datetime.datetime.today()</span><br><span class="line">        backup_path = os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY, f[<span class="string">'name'</span>])</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(backup_path):</span><br><span class="line">            os.makedirs(backup_path)</span><br><span class="line">        backup_name = <span class="string">'&#123;&#125;-TIME-&#123;&#125;.tar.gz'</span>.format(os.path.join(backup_path, f[<span class="string">'name'</span>]), today.strftime(<span class="string">"%Y-%m-%d-%H-%M-%S"</span>))</span><br><span class="line"></span><br><span class="line">        logging.info(<span class="string">'tar...'</span>)</span><br><span class="line">        subprocess.call([<span class="string">'tar'</span>, <span class="string">'-zcvf'</span>, backup_name, f[<span class="string">'file'</span>]], stdout=devnull)</span><br><span class="line">        file_list = subprocess.check_output([<span class="string">'/usr/local/bin/megals'</span>, backup_path]).split(<span class="string">'\n'</span>)</span><br><span class="line">        file_list = [x <span class="keyword">for</span> x <span class="keyword">in</span> file_list <span class="keyword">if</span> re.match(<span class="string">r'&#123;&#125;-TIME-.*'</span>.format(f[<span class="string">'name'</span>]), x)]</span><br><span class="line">        <span class="keyword">if</span> len(file_list) &gt; f[<span class="string">'count'</span>]:</span><br><span class="line">            redundant_files = sorted(file_list, reverse=<span class="keyword">True</span>)[f[<span class="string">'count'</span>]:]</span><br><span class="line">            <span class="keyword">for</span> f <span class="keyword">in</span> redundant_files:</span><br><span class="line">                logging.info(<span class="string">'&#123;&#125; is deprecated, removing'</span>.format(redundant_files))</span><br><span class="line">                subprocess.call([<span class="string">'rm'</span>, os.path.join(backup_path, f)])</span><br></pre></td></tr></table></figure>
-<h1 id="run-the-backup-script-every-day-at-500pm">run the backup script every day at 5:00pm</h1>
-<p>run <code>crontab -e</code>, add the following line</p>
+<h1 id="run-the-backup-script-every-day-at-5-00pm"><a href="#run-the-backup-script-every-day-at-5-00pm" class="headerlink" title="run the backup script every day at 5:00pm"></a>run the backup script every day at 5:00pm</h1><p>run <code>crontab -e</code>, add the following line</p>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">0 </span><span class="number">17</span> * * * python /home/searene/Tools/backupMega.py</span><br></pre></td></tr></table></figure>
 
         </div>
@@ -202,7 +190,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2015/12/27/backup-script/" data-id="citquzy16001vxwbui3696ydm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2015/12/27/backup-script/" data-id="citqv0wfn001v1bbuvcyj6r3i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -586,5 +574,20 @@ ga('send', 'pageview');
 </script>
 
     </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

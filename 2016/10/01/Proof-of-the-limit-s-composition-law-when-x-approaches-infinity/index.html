@@ -8,23 +8,23 @@
     
         <meta name="keywords" content="limit,composition,proof" />
     
-    <meta name="description" content="Theorem: If \(f(x)\) is continous at \(b\) and \(\lim\limits_{x \to\infty}g(x) = b\), then
-\[\lim\limits_{x \to \infty}f(g(x)) = f(b) = f(\lim\limits_{x\to \infty}g(x))\tag1\]
-Proof: Because \(f(x)\)">
+    <meta name="description" content="Theorem: If $f(x)$ is continous at $b$ and $\lim\limits_{x \to\infty}g(x) = b$, then 
+$$\lim\limits{x \to \infty}f(g(x)) = f(b) = f(\lim\limits{x\to \infty}g(x))\tag1$$
+Proof:  Because $f(x)$ is conti">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Proof of the limit's composition law when x approaches infinity">
 <meta property="og:url" content="http://searene.github.io/2016/10/01/Proof-of-the-limit-s-composition-law-when-x-approaches-infinity/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="Theorem: If \(f(x)\) is continous at \(b\) and \(\lim\limits_{x \to\infty}g(x) = b\), then
-\[\lim\limits_{x \to \infty}f(g(x)) = f(b) = f(\lim\limits_{x\to \infty}g(x))\tag1\]
-Proof: Because \(f(x)\)">
+<meta property="og:description" content="Theorem: If $f(x)$ is continous at $b$ and $\lim\limits_{x \to\infty}g(x) = b$, then 
+$$\lim\limits{x \to \infty}f(g(x)) = f(b) = f(\lim\limits{x\to \infty}g(x))\tag1$$
+Proof:  Because $f(x)$ is conti">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Limit-at-infinity-graph.png/306px-Limit-at-infinity-graph.png">
 <meta property="og:updated_time" content="2016-10-01T07:08:29.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Proof of the limit's composition law when x approaches infinity">
-<meta name="twitter:description" content="Theorem: If \(f(x)\) is continous at \(b\) and \(\lim\limits_{x \to\infty}g(x) = b\), then
-\[\lim\limits_{x \to \infty}f(g(x)) = f(b) = f(\lim\limits_{x\to \infty}g(x))\tag1\]
-Proof: Because \(f(x)\)">
+<meta name="twitter:description" content="Theorem: If $f(x)$ is continous at $b$ and $\lim\limits_{x \to\infty}g(x) = b$, then 
+$$\lim\limits{x \to \infty}f(g(x)) = f(b) = f(\lim\limits{x\to \infty}g(x))\tag1$$
+Proof:  Because $f(x)$ is conti">
 <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Limit-at-infinity-graph.png/306px-Limit-at-infinity-graph.png">
     
 
@@ -168,35 +168,35 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p><strong>Theorem</strong>: If <span class="math inline">\(f(x)\)</span> is continous at <span class="math inline">\(b\)</span> and <span class="math inline">\(\lim\limits_{x \to\infty}g(x) = b\)</span>, then</p>
-<p><span class="math display">\[\lim\limits_{x \to \infty}f(g(x)) = f(b) = f(\lim\limits_{x\to \infty}g(x))\tag1\]</span></p>
-<p><strong>Proof</strong>: Because <span class="math inline">\(f(x)\)</span> is continous at <span class="math inline">\(b\)</span>, so</p>
-<p><span class="math display">\[\lim\limits_{x\to b}f(x) = f(b)\tag2\]</span></p>
-<p>Because <span class="math display">\[\lim\limits_{x\to\infty}g(x) = b \tag3\]</span></p>
-<p>Combine <span class="math inline">\((1)\)</span> and <span class="math inline">\((2)\)</span>, we get</p>
-<p><span class="math display">\[\lim\limits_{x\to\infty}f(g(x)) = f(b)\]</span></p>
-<p>Thus we proved the right side of equation <span class="math inline">\((1)\)</span></p>
-<p>Now we need to prove <span class="math display">\[\lim\limits_{x \to \infty}f(g(x)) = f(b)\tag 4\]</span></p>
+            <p><strong>Theorem</strong>: If $f(x)$ is continous at $b$ and $\lim\limits_{x \to\infty}g(x) = b$, then </p>
+<p>$$\lim\limits<em>{x \to \infty}f(g(x)) = f(b) = f(\lim\limits</em>{x\to \infty}g(x))\tag1$$</p>
+<p><strong>Proof</strong>:  Because $f(x)$ is continous at $b$, so </p>
+<p>$$\lim\limits_{x\to b}f(x) = f(b)\tag2$$</p>
+<p>Because $$\lim\limits_{x\to\infty}g(x) = b \tag3$$</p>
+<p>Combine $(1)$ and $(2)$, we get</p>
+<p>$$\lim\limits_{x\to\infty}f(g(x)) = f(b)$$</p>
+<p>Thus we proved the right side of equation $(1)$</p>
+<p>Now we need to prove $$\lim\limits_{x \to \infty}f(g(x)) = f(b)\tag 4$$</p>
+<p>Because </p>
+<p>$$\lim\limits_{x\to b}f(x) = f(b)$$</p>
+<p>according to the definition of limit, $\forall \varepsilon &gt; 0$, there exists a $\delta’$ such that for all $|x-b|&lt;\delta’$, we have</p>
+<p>$$|f(x) - f(b)| &lt; \varepsilon\tag5$$</p>
+<p>Replace $x$ with $g(x)$ in the above conclusion, we get</p>
+<p>$\forall \varepsilon’ &gt; 0$, there exists a $\delta’$ such that for all $|g(x)-b|&lt;\delta’$, we have </p>
+<p>$$|f(g(x)) - f(b)| &lt; \varepsilon’\tag6$$</p>
+<p>Note that although $f(x)$ needs to be defined and has a limited value (6) around $b$, $g(x)$ doesn’t need to be so. For example, $g(x)$ may never be larger than $b$. But every time we get a $g(x)$ that meets the condition $|g(x) - b| &lt; \delta’$, $|f(g(x)) - f(b)| &lt; \varepsilon$ is guaranteed. </p>
 <p>Because</p>
-<p><span class="math display">\[\lim\limits_{x\to b}f(x) = f(b)\]</span></p>
-<p>according to the definition of limit, <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>, there exists a <span class="math inline">\(\delta&#39;\)</span> such that for all <span class="math inline">\(|x-b|&lt;\delta&#39;\)</span>, we have</p>
-<p><span class="math display">\[|f(x) - f(b)| &lt; \varepsilon\tag5\]</span></p>
-<p>Replace <span class="math inline">\(x\)</span> with <span class="math inline">\(g(x)\)</span> in the above conclusion, we get</p>
-<p><span class="math inline">\(\forall \varepsilon&#39; &gt; 0\)</span>, there exists a <span class="math inline">\(\delta&#39;\)</span> such that for all <span class="math inline">\(|g(x)-b|&lt;\delta&#39;\)</span>, we have</p>
-<p><span class="math display">\[|f(g(x)) - f(b)| &lt; \varepsilon&#39;\tag6\]</span></p>
-<p>Note that although <span class="math inline">\(f(x)\)</span> needs to be defined and has a limited value (6) around <span class="math inline">\(b\)</span>, <span class="math inline">\(g(x)\)</span> doesn’t need to be so. For example, <span class="math inline">\(g(x)\)</span> may never be larger than <span class="math inline">\(b\)</span>. But every time we get a <span class="math inline">\(g(x)\)</span> that meets the condition <span class="math inline">\(|g(x) - b| &lt; \delta&#39;\)</span>, <span class="math inline">\(|f(g(x)) - f(b)| &lt; \varepsilon\)</span> is guaranteed.</p>
-<p>Because</p>
-<p><span class="math display">\[\lim\limits_{x \to \infty}g(x) = b\]</span></p>
-<p>according to the definition of limit, <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>, there exists a <span class="math inline">\(\delta\)</span> such that for all <span class="math inline">\(x &gt; \delta\)</span> we have <span class="math inline">\(|g(x) -b| &lt; \varepsilon\)</span></p>
-<p>Let <span class="math inline">\(\varepsilon = \delta&#39;\)</span>, so <span class="math inline">\(\forall x&gt;\delta\)</span>, we have</p>
-<p><span class="math display">\[|g(x) - b| &lt; \delta&#39;\]</span></p>
-<p>Combine this with <span class="math inline">\((6)\)</span>, <span class="math inline">\(\forall \varepsilon&#39; &gt; 0\)</span>, there exists <span class="math inline">\(\delta\)</span>, whenever <span class="math inline">\(x &gt; \delta\)</span>, we have</p>
-<p><span class="math display">\[|f(g(x)) - f(b)| &lt; \varepsilon&#39;\]</span></p>
+<p>$$\lim\limits_{x \to \infty}g(x) = b$$</p>
+<p>according to the definition of limit, $\forall \varepsilon &gt; 0$, there exists a $\delta$ such that for all $x &gt; \delta$ we have $|g(x) -b| &lt; \varepsilon$</p>
+<p>Let $\varepsilon = \delta’$, so $\forall x&gt;\delta$, we have</p>
+<p>$$|g(x) - b| &lt; \delta’$$</p>
+<p>Combine this with $(6)$, $\forall \varepsilon’ &gt; 0$, there exists $\delta$, whenever $x &gt; \delta$, we have</p>
+<p>$$|f(g(x)) - f(b)| &lt; \varepsilon’$$</p>
 <p>Which is exactly the definition of the limit</p>
-<p><span class="math display">\[\lim\limits_{x \to \infty}f(g(x)) = f(b)\]</span></p>
-<p>So we proved the left side of <span class="math inline">\((1)\)</span> equation. So equation</p>
-<p><span class="math display">\[\lim\limits_{x \to \infty}f(g(x)) = f(b) = f(\lim\limits_{x\to \infty}g(x))\]</span></p>
-<p>holds.</p>
+<p>$$\lim\limits_{x \to \infty}f(g(x)) = f(b)$$</p>
+<p>So we proved the left side of $(1)$ equation. So equation</p>
+<p>$$\lim\limits<em>{x \to \infty}f(g(x)) = f(b) = f(\lim\limits</em>{x\to \infty}g(x))$$</p>
+<p> holds.</p>
 
         </div>
         <footer class="article-footer">
@@ -204,7 +204,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2016/10/01/Proof-of-the-limit-s-composition-law-when-x-approaches-infinity/" data-id="citquzy0q0017xwbu6qbvgzg4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2016/10/01/Proof-of-the-limit-s-composition-law-when-x-approaches-infinity/" data-id="citqv0wex000z1bbu9467m7ss" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -578,5 +578,20 @@ ga('send', 'pageview');
 </script>
 
     </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
