@@ -8,20 +8,23 @@
     
         <meta name="keywords" content="python,django" />
     
-    <meta name="description" content="ErrorRecently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
-12345class Category(models.M">
+    <meta name="description" content="Error
+Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
+12345class Category(models.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="django.db.utils.IntegrityError: duplicate key value violates unique constraint">
 <meta property="og:url" content="http://searene.github.io/2016/01/10/django-db-utils-IntegrityError-duplicate-key-value-violates-unique-constraint/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="ErrorRecently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
-12345class Category(models.M">
+<meta property="og:description" content="Error
+Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
+12345class Category(models.">
 <meta property="og:image" content="http://blog.djangostars.com/content/images/2015/12/maxresdefault.jpg">
 <meta property="og:updated_time" content="2016-05-23T17:38:39.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="django.db.utils.IntegrityError: duplicate key value violates unique constraint">
-<meta name="twitter:description" content="ErrorRecently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
-12345class Category(models.M">
+<meta name="twitter:description" content="Error
+Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this
+12345class Category(models.">
 <meta name="twitter:image" content="http://blog.djangostars.com/content/images/2015/12/maxresdefault.jpg">
     
 
@@ -165,13 +168,15 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h1><p>Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this</p>
+            <h1 id="error">Error</h1>
+<p>Recently I ran into a problem, which bugged me for days. I’m using django and spirit to build a website, there’s a model called category in spirit, which is like this</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">		...</span><br><span class="line">    title = models.CharField(_(<span class="string">"title"</span>), max_length=<span class="number">75</span>)</span><br><span class="line">    description = models.CharField(_(<span class="string">"description"</span>), max_length=<span class="number">255</span>, blank=<span class="keyword">True</span>)</span><br><span class="line">		...</span><br></pre></td></tr></table></figure>
 <p>The only thing you need to know is that, there’s no such thing as an <code>id</code> in the model, which means django and postgresql will take care of the primary key. It seems fine, right? Until I ran a test, which created a category:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserViewTest</span><span class="params">(TestCase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        cache.clear()</span><br><span class="line">        self.category = utils.create_category()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">simple_test</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.assertEqual(<span class="number">1</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <p>This is a very simple test, <code>create_category</code> is only responsible for creating a brand new category. Everything should work fine. Then I got an error:</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">django<span class="selector-class">.db</span><span class="selector-class">.utils</span><span class="selector-class">.IntegrityError</span>: duplicate key value violates unique constraint <span class="string">"spirit_category_category_pkey"</span></span><br><span class="line">DETAIL:  Key (id)=(<span class="number">1</span>) already exists.</span><br></pre></td></tr></table></figure>
-<h1 id="Try-to-find-the-reason"><a href="#Try-to-find-the-reason" class="headerlink" title="Try to find the reason"></a>Try to find the reason</h1><p>Is there an already existing <code>Key (id)=(1)</code>? I leafed through the migration file, and found this:</p>
+<h1 id="try-to-find-the-reason">Try to find the reason</h1>
+<p>Is there an already existing <code>Key (id)=(1)</code>? I leafed through the migration file, and found this:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> Category.objects.filter(pk=settings.ST_TOPIC_PRIVATE_CATEGORY_PK).exists():</span><br><span class="line">		Category.objects.create(</span><br><span class="line">				pk=settings.ST_TOPIC_PRIVATE_CATEGORY_PK,</span><br><span class="line">				title=<span class="string">"Private"</span>,</span><br><span class="line">				slug=<span class="string">"private"</span>,</span><br><span class="line">				is_private=<span class="keyword">True</span></span><br><span class="line">		)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> Category.objects.filter(pk=settings.ST_UNCATEGORIZED_CATEGORY_PK).exists():</span><br><span class="line">		Category.objects.create(</span><br><span class="line">				pk=settings.ST_UNCATEGORIZED_CATEGORY_PK,</span><br><span class="line">				title=<span class="string">"Uncategorized"</span>,</span><br><span class="line">				slug=<span class="string">"uncategorized"</span></span><br><span class="line">		)</span><br></pre></td></tr></table></figure>
 <p>So django will create two default categories due to the migration file. OK, that’s fine. But why did postgresql insert a record with a <code>Key (id)=(1)</code> instead of <code>Key (id)=(3)</code>? Maybe it’s django’s fault? Maybe django was trying to insert a specified record with <code>Key (id)=(1)</code>? To find out the reason, I debugged all the way to this part:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">execute</span><span class="params">(self, sql, params=None)</span>:</span></span><br><span class="line">	self.db.validate_no_broken_transaction()</span><br><span class="line">	<span class="keyword">with</span> self.db.wrap_database_errors:</span><br><span class="line">		<span class="keyword">if</span> params <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">			<span class="keyword">return</span> self.cursor.execute(sql)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">return</span> self.cursor.execute(sql, params)</span><br></pre></td></tr></table></figure>
@@ -180,13 +185,16 @@ ga('send', 'pageview');
 <p>So django didn’t include the <code>id</code> part, but why didn’t postgresql auto increment the <code>id</code>? After searching online for a long time, I found <a href="http://centoshowtos.org/web-services/django-and-postgres-duplicate-key/" target="_blank" rel="external">this website</a>. I followed its process and ran the following code to find out the <code>last_value</code> of the <code>id</code> sequence(the primary key is usually a sequence in postgresql if you use django to generate the tables automatically)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">last_value</span> <span class="keyword">from</span> spirit_category_category_id_seq;</span><br></pre></td></tr></table></figure>
 <p>And the answer I got was <code>1</code>. It’s ONE! What does it mean? It means the next <code>id</code> to be generated will be <code>1</code>. This is so not what we want. This is why the error happened.</p>
-<h1 id="Fix-the-problem"><a href="#Fix-the-problem" class="headerlink" title="Fix the problem"></a>Fix the problem</h1><p>Let’s alter it to <code>3</code>.</p>
+<h1 id="fix-the-problem">Fix the problem</h1>
+<p>Let’s alter it to <code>3</code>.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">sequence</span> spirit_category_category_id_seq restart <span class="keyword">with</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
 <p>Continue the test, and you will pass it. Wait, this is a test, right? So the next time you run the test, it will create all kinds of brand new tables again in order to start a fresh test. So it’s meaningless to alter the sequence, because it would be flushed. Don’t believe it? Run the test again, and it will fail.</p>
-<h1 id="Fix-it-for-a-test"><a href="#Fix-it-for-a-test" class="headerlink" title="Fix it for a test"></a>Fix it for a test</h1><p>So how to fix this? Just remove the line which <code>id</code> was specified in the migration file, i.e. let postgresql handle the primary key for us. Don’t insert the primary key manually, don’t try to calculate the next avaible id number, you will mess it up. In my case, I just need to remove the following two lines in file <code>0002_auto_20150728_0442.py</code></p>
+<h1 id="fix-it-for-a-test">Fix it for a test</h1>
+<p>So how to fix this? Just remove the line which <code>id</code> was specified in the migration file, i.e. let postgresql handle the primary key for us. Don’t insert the primary key manually, don’t try to calculate the next avaible id number, you will mess it up. In my case, I just need to remove the following two lines in file <code>0002_auto_20150728_0442.py</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pk=settings.ST_TOPIC_PRIVATE_CATEGORY_PK,</span><br><span class="line">pk=settings.ST_UNCATEGORIZED_CATEGORY_PK,</span><br></pre></td></tr></table></figure>
 <p>Run the test again, it will pass.</p>
-<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>It’s a long story, I’ve debugged for days to find out the reason, but it’s totally fine. Though the solution is quite simple, I have to fight all the way to find. During the process, I read a lot of django source code, I learned a lot of python features. I learned how postgresql’s sequence worked. It’s very helpful to me.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>It’s a long story, I’ve debugged for days to find out the reason, but it’s totally fine. Though the solution is quite simple, I have to fight all the way to find. During the process, I read a lot of django source code, I learned a lot of python features. I learned how postgresql’s sequence worked. It’s very helpful to me.</p>
 
         </div>
         <footer class="article-footer">
@@ -194,7 +202,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2016/01/10/django-db-utils-IntegrityError-duplicate-key-value-violates-unique-constraint/" data-id="citqv0wfs00241bbusuob4vut" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2016/01/10/django-db-utils-IntegrityError-duplicate-key-value-violates-unique-constraint/" data-id="citqvl3er0029blbu3hu9ljsf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -338,6 +346,25 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/10/01/Let-hexo-support-mathjax/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/mathjax.png)" alt="Let hexo support mathjax" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Coding/">Coding</a></p>
+                            <p class="item-title"><a href="/2016/10/01/Let-hexo-support-mathjax/" class="title">Let hexo support mathjax</a></p>
+                            <p class="item-date"><time datetime="2016-10-01T07:12:19.000Z" itemprop="datePublished">2016-10-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/10/01/Proof-of-the-limit-s-composition-law-when-x-approaches-infinity/" class="thumbnail">
     
     
@@ -411,25 +438,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/07/13/今天发现了一个新的比较有趣的youtube频道：DNews/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i.imgur.com/A7Qkb7t.png)" alt="今天发现了一个新的比较有趣的youtube频道：DNews" class="thumbnail-image"></span>
-    
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Journal/">Journal</a></p>
-                            <p class="item-title"><a href="/2016/07/13/今天发现了一个新的比较有趣的youtube频道：DNews/" class="title">今天发现了一个新的比较有趣的youtube频道：DNews</a></p>
-                            <p class="item-date"><time datetime="2016-07-12T16:00:00.000Z" itemprop="datePublished">2016-07-13</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -439,7 +447,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -449,7 +457,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">14</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -459,7 +467,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/anki/">anki</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/book/">book</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/composition/">composition</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dnsmasq/">dnsmasq</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fcitx/">fcitx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/limit/">limit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/network/">network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proof/">proof</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pycharm/">pycharm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win7/">win7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/anki/">anki</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/book/">book</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/composition/">composition</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dnsmasq/">dnsmasq</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fcitx/">fcitx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/limit/">limit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/network/">network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proof/">proof</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pycharm/">pycharm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win7/">win7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -469,7 +477,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/anki/" style="font-size: 16px;">anki</a> <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/composition/" style="font-size: 10px;">composition</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/dnsmasq/" style="font-size: 10px;">dnsmasq</a> <a href="/tags/fcitx/" style="font-size: 10px;">fcitx</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 12px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/limit/" style="font-size: 10px;">limit</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/proof/" style="font-size: 10px;">proof</a> <a href="/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/tags/python/" style="font-size: 18px;">python</a> <a href="/tags/shell/" style="font-size: 12px;">shell</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a> <a href="/tags/virtualbox/" style="font-size: 10px;">virtualbox</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a>
+            <a href="/tags/anki/" style="font-size: 16px;">anki</a> <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/composition/" style="font-size: 10px;">composition</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/dnsmasq/" style="font-size: 10px;">dnsmasq</a> <a href="/tags/fcitx/" style="font-size: 10px;">fcitx</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 12px;">git</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/limit/" style="font-size: 10px;">limit</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/proof/" style="font-size: 10px;">proof</a> <a href="/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/tags/python/" style="font-size: 18px;">python</a> <a href="/tags/shell/" style="font-size: 12px;">shell</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a> <a href="/tags/virtualbox/" style="font-size: 10px;">virtualbox</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a>
         </div>
     </div>
 
