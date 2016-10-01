@@ -148,13 +148,13 @@
   </entry>
   
   <entry>
-    <title>Calculate $(1-\frac{\lambda_n}n)^n$</title>
+    <title>Calculate $$\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n$$</title>
     <link href="http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/"/>
     <id>http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/</id>
     <published>2016-09-30T13:49:00.000Z</published>
-    <updated>2016-09-30T16:11:53.760Z</updated>
+    <updated>2016-10-01T12:23:53.143Z</updated>
     
-    <content type="html"><![CDATA[<p>I came upon the calculation of <span class="math inline">\((1-\frac{\lambda_n}n)^n\)</span> when I was reviewing Poisson distribution. Notice that <span class="math inline">\(\lambda_n = np_n(n\geq 0, p_n\geq 0)\)</span> and <span class="math inline">\(\lim\limits_{n\to\infty}\lambda_n = \lambda\)</span>.</p>
+    <content type="html"><![CDATA[<p>I came upon the calculation of <span class="math inline">\(\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n\)</span> when I was reviewing Poisson distribution. Notice that <span class="math inline">\(\lambda_n = np_n(n\in\mathbb{Z}_{\geq 0}, 0\leq p \leq 1)\)</span> and <span class="math inline">\(\lim\limits_{n\to\infty}\lambda_n = \lambda(\lambda\in\mathbb{R})\)</span>.</p>
 <p>So how to calculate it? The first thought that came to my mind was that</p>
 <p><span class="math display">\[\lim\limits_{n\to\infty}(1 + \frac1 n)^n = e \tag 1\]</span></p>
 <p>So replace <span class="math inline">\(n\)</span> with <span class="math inline">\(-n\)</span>, I got</p>
@@ -180,13 +180,39 @@
 <p><span class="math display">\[(1-\frac{\lambda_n} n)^n\geq {e^{-\lambda_n}} {(1-\frac{\lambda_n} n)^{\lambda_n}}\tag 4\]</span></p>
 <p>Combine (3) and (4), we get</p>
 <p><span class="math display">\[e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n}\leq (1-\frac{\lambda_n} n)^n \leq e^{-\lambda_n}\]</span></p>
-<p>Consider</p>
-<p><span class="math display">\[\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)^{\lambda_n}\]</span></p>
+<p>According to <a href="https://searene.github.io/2016/10/01/Proof-of-limit-f-x-g-x-c-d/">this theorem</a>, because <span class="math inline">\(1 - \frac{\lambda_n} n &gt; 0, \lambda_n &gt; 0, \lim\limits_{n\to\infty}\lambda_n = \lambda\)</span>, we have</p>
+<p><span class="math display">\[\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)^{\lambda_n} = [\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)]^{\lim\limits_{n\to\infty}\lambda_n} = \lim\limits_{n\to\infty}(1-\lambda_n\cdot\frac 1 n)^\lambda = (\lim\limits_{n\to\infty}1 - \lim\limits_{n\to\infty}\lambda_n\cdot\lim\limits_{n\to\infty}\frac 1 n)^\lambda = (1 -\lambda\cdot0)^\lambda = 1\]</span></p>
+<p>So</p>
+<p><span class="math display">\[\lim\limits_{n\to\infty}e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n} = e^{-\lambda}\]</span></p>
+<p><span class="math display">\[\lim\limits_{n\to\infty}e^{-\lambda_n} = e^{-\lambda}\]</span></p>
+<p>According to squeeze theorem, we get</p>
+<p><span class="math display">\[\lim\limits_{n\to\infty}(1-\frac{\lambda_n} n)^n = e^{-\lambda}\]</span> Therefore</p>
+<p><span class="math display">\[\int_{1-\frac{\lambda_n}n}^1\frac 1{1-\frac{\lambda_n} n}dt \leq \int_{1-\frac{\lambda_n}n}^1\frac 1 t dt\leq \int_{1-\frac{\lambda_n}n}^1 1dt\]</span></p>
+<p>The first integral equals <span class="math inline">\(\frac{\lambda_n}n\)</span>, the second integral equals <span class="math inline">\(ln(1-\frac{\lambda_n} n)^{-1}\)</span>, the third integral equals <span class="math inline">\(\frac{\lambda_n}{n-\lambda_n}\)</span>, so we get</p>
+<p><span class="math display">\[\frac{\lambda_n}n\leq ln(1-\frac{\lambda_n} n)^{-1} \leq \frac{\lambda_n}{n-\lambda_n}\]</span></p>
+<p>Exponentiating, we find that</p>
+<p><span class="math display">\[e^{\frac{\lambda_n} n}\leq(1-\frac{\lambda_n}n)^{-1}\leq e^{\frac{\lambda_n}{n-\lambda_n}}\]</span></p>
+<p>Taking the <span class="math inline">\((-n)^{st}\)</span> power of the left inequality gives us</p>
+<p><span class="math display">\[e^{-{\lambda_n}}\geq (1-\frac{\lambda_n} n)^n\tag{3}\]</span></p>
+<p>Taking the <span class="math inline">\((\lambda_n - n)^{th}\)</span> power of the right inequality gives us</p>
+<p><span class="math display">\[(1-\frac{\lambda_n} n)^{(n-\lambda_n)}\geq e^{-\lambda_n}\]</span></p>
+<p>Why was <span class="math inline">\(\geq\)</span> replaced with <span class="math inline">\(\leq\)</span>? Because <span class="math inline">\(\lambda_n = np_n, n\geq 0, 0\leq p_n\leq 1\)</span>(<span class="math inline">\(p_n\)</span> denotes the probability), so <span class="math inline">\(\lambda_n-n = np_n - n = n(p_n - 1)\leq 0\)</span>, the power is less or equal to 0, so we need change the direction of the sign.</p>
+<p>Multiply each side of the inequality by <span class="math inline">\((1-\frac{\lambda_n} n)^{\lambda_n}\)</span>, we get</p>
+<p><span class="math display">\[(1-\frac{\lambda_n} n)^n\geq {e^{-\lambda_n}} {(1-\frac{\lambda_n} n)^{\lambda_n}}\tag 4\]</span></p>
+<p>Combine (3) and (4), we get</p>
+<p><span class="math display">\[e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n}\leq (1-\frac{\lambda_n} n)^n \leq e^{-\lambda_n}\]</span></p>
+<p>According to <a href="https://searene.github.io/2016/10/01/Proof-of-limit-f-x-g-x-c-d/">this theorem</a>, because <span class="math inline">\(1 - \frac{\lambda_n} n &gt; 0, \lambda_n &gt; 0, \lim\limits_{n\to\infty}\lambda_n = \lambda\)</span>, we have</p>
+<p><span class="math display">\[\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)^{\lambda_n} = [\lim\limits_{n \to \infty}(1-\frac{\lambda_n} n)]^{\lim\limits_{n\to\infty}\lambda_n} = \lim\limits_{n\to\infty}(1-\lambda_n\cdot\frac 1 n)^\lambda = (\lim\limits_{n\to\infty}1 - \lim\limits_{n\to\infty}\lambda_n\cdot\lim\limits_{n\to\infty}\frac 1 n)^\lambda = (1 -\lambda\cdot0)^\lambda = 1\]</span></p>
+<p>So</p>
+<p><span class="math display">\[\lim\limits_{n\to\infty}e^{-\lambda_n}(1-\frac{\lambda_n} n)^{\lambda_n} = e^{-\lambda}\]</span></p>
+<p><span class="math display">\[\lim\limits_{n\to\infty}e^{-\lambda_n} = e^{-\lambda}\]</span></p>
+<p>According to squeeze theorem, we get</p>
+<p><span class="math display">\[\lim\limits_{n\to\infty}(1-\frac{\lambda_n} n)^n = e^{-\lambda}\]</span></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;I came upon the calculation of &lt;span class=&quot;math inline&quot;&gt;\((1-\frac{\lambda_n}n)^n\)&lt;/span&gt; when I was reviewing Poisson distribution. No
+      &lt;p&gt;I came upon the calculation of &lt;span class=&quot;math inline&quot;&gt;\(\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n\)&lt;/span&gt; when I was reviewing 
     
     </summary>
     
