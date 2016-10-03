@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="IntroductionPoisson distribution can be derived from Binomial distribution when $\lim\limits_{n\to\infty}np = \lambda(\lambda\in\mathbb R)$, in which $n$ is the number of trials, $p$ is the probabilit">
 <meta property="og:image" content="http://searene.github.io/images/call.jpg">
-<meta property="og:updated_time" content="2016-10-03T09:29:53.296Z">
+<meta property="og:updated_time" content="2016-10-03T10:01:57.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Understand poisson distribution">
 <meta name="twitter:description" content="IntroductionPoisson distribution can be derived from Binomial distribution when $\lim\limits_{n\to\infty}np = \lambda(\lambda\in\mathbb R)$, in which $n$ is the number of trials, $p$ is the probabilit">
@@ -223,7 +223,7 @@ ga('send', 'pageview');
 <p><strong>Q</strong>: If I was given the expected value $\lambda$, and I calculate the probability using the following equation, then I calculate the probability of there exising $x$ events in the total amount of time using the following equation.</p>
 <p>$$P(X=x) = \frac{e^{-\lambda}{\lambda}^x}{x!}$$</p>
 <p> Is it the exact value I want or just an approximation?</p>
-<p><strong>A</strong>: Yes. When $n$ is not large, the difference between $\binom n x{p_n}^x(1-p_n)^{(n-x)}$ and $\frac{e^{-\lambda}{\lambda}^x}{x!}$ is that $p_n$ is not exactly the value we want. That is, when $n$ is not large and we calculate the probability using $(1)$, the answer we get is</p>
+<p><strong>A</strong>: It’s the value you want. When $n$ is not large, the difference between $\binom n x{p_n}^x(1-p_n)^{(n-x)}$ and $\frac{e^{-\lambda}{\lambda}^x}{x!}$ is that $p_n$ is not exactly the value we want. That is, when $n$ is not large and we calculate the probability using $(1)$, the answer we get is</p>
 <p>$$P(X=x) = P_1 + P_2$$</p>
 <ul>
 <li>$X$: the number of pieces where one or more events exist</li>
@@ -243,7 +243,7 @@ ga('send', 'pageview');
 <p>$$P(X=x) = \binom n x {p_n}^x(1-p_n)^{(n-x)}$$</p>
 <p>So</p>
 <p>$$\lim\limits_{n\to\infty}P(Y=x) = \frac{e^{-\lambda}{\lambda}^x}{x!}$$</p>
-<p>Because P(Y=x) has nothing to do what $n$ is, so $\lim\limits_{n\to\infty}P(Y=x) = P(Y=x)$</p>
+<p>Because P(Y=x) has nothing to do with what $n$ is, so $\lim\limits_{n\to\infty}P(Y=x) = P(Y=x)$</p>
 <p>So</p>
 <p>$$P(Y=x) = \frac{e^{-\lambda}{\lambda}^x}{x!}$$</p>
 <p>That is, the number of total events is $\frac{e^{-\lambda}{\lambda}^x}{x!}$.</p>
