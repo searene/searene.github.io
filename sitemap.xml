@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://searene.github.io/2016/10/01/Let-hexo-support-mathjax/</loc>
+    <loc>http://searene.github.io/2016/10/01/Understanding-poisson-distribution/</loc>
     
-    <lastmod>2016-10-01T15:16:02.936Z</lastmod>
+    <lastmod>2016-10-03T03:49:26.900Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/</loc>
     
-    <lastmod>2016-10-01T12:35:09.946Z</lastmod>
+    <lastmod>2016-10-02T01:22:32.040Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/10/01/Let-hexo-support-mathjax/</loc>
+    
+    <lastmod>2016-10-02T01:20:22.693Z</lastmod>
     
   </url>
   
@@ -149,84 +156,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/05/22/I-started-programming-and-running-today/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/04/13/WriteToDisk/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/02/14/PurgeAttributes-an-Anki-addon-to-purge-unnecessary-attributes/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/05/21/bittorrent-sync/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/05/21/Midnight/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2015/12/27/backup-script/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/01/10/django-db-utils-IntegrityError-duplicate-key-value-violates-unique-constraint/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2015/12/09/get-selected-text-in-chrome/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2015/12/03/enlarge-the-size-of-a-vdi-of-virtualbox/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/03/26/learn-redirection-the-hard-way/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2015/12/17/Something-About-Dnsmasq-On-Ubuntu-15-10/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2015/12/25/map-Ctrl-V-as-Ctrl-Q-in-vim/</loc>
+    <loc>http://searene.github.io/2016/02/14/ImageResizer-an-anki-addon-to-resize-images/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
@@ -240,28 +170,63 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/02/14/GoldenDictMedia/</loc>
+    <loc>http://searene.github.io/2016/05/21/bittorrent-sync/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/05/20/new-task/</loc>
+    <loc>http://searene.github.io/2015/12/27/backup-script/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/02/16/make-fcitx-work-in-sublime-text-3/</loc>
+    <loc>http://searene.github.io/2016/05/21/Midnight/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/05/21/watched-alien-2-today/</loc>
+    <loc>http://searene.github.io/2015/12/17/Something-About-Dnsmasq-On-Ubuntu-15-10/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2015/12/09/get-selected-text-in-chrome/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/01/10/django-db-utils-IntegrityError-duplicate-key-value-violates-unique-constraint/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/02/14/PurgeAttributes-an-Anki-addon-to-purge-unnecessary-attributes/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/03/26/learn-redirection-the-hard-way/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2015/12/25/map-Ctrl-V-as-Ctrl-Q-in-vim/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
@@ -275,14 +240,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2015/12/21/Fix-The-Font-Rendering-Problem-In-Pycharm/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/02/14/ImageResizer-an-anki-addon-to-resize-images/</loc>
+    <loc>http://searene.github.io/2016/05/20/new-task/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
@@ -290,6 +248,55 @@
   
   <url>
     <loc>http://searene.github.io/2015/12/04/Ubuntu-crashes-when-entering-or-exiting-fullscreen-while-watching-youtube-videos/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/02/16/make-fcitx-work-in-sublime-text-3/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/04/13/WriteToDisk/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/05/21/watched-alien-2-today/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/02/14/GoldenDictMedia/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/05/22/I-started-programming-and-running-today/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2015/12/21/Fix-The-Font-Rendering-Problem-In-Pycharm/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2015/12/03/enlarge-the-size-of-a-vdi-of-virtualbox/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     

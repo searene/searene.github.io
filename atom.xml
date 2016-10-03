@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2016-10-01T11:46:02.593Z</updated>
+  <updated>2016-10-03T03:49:26.900Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Understanding poisson distribution</title>
+    <link href="http://searene.github.io/2016/10/01/Understanding-poisson-distribution/"/>
+    <id>http://searene.github.io/2016/10/01/Understanding-poisson-distribution/</id>
+    <published>2016-10-01T15:34:25.000Z</published>
+    <updated>2016-10-03T03:49:26.900Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Math" scheme="http://searene.github.io/categories/Math/"/>
+    
+    
+      <category term="math" scheme="http://searene.github.io/tags/math/"/>
+    
+      <category term="poisson" scheme="http://searene.github.io/tags/poisson/"/>
+    
+      <category term="probability" scheme="http://searene.github.io/tags/probability/"/>
+    
+  </entry>
   
   <entry>
     <title>Proof of $$\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d$$</title>
@@ -62,11 +84,11 @@
     <link href="http://searene.github.io/2016/10/01/Let-hexo-support-mathjax/"/>
     <id>http://searene.github.io/2016/10/01/Let-hexo-support-mathjax/</id>
     <published>2016-10-01T07:12:19.000Z</published>
-    <updated>2016-10-01T15:16:02.936Z</updated>
+    <updated>2016-10-02T01:20:22.693Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h1><p>The original answer fails on some mathjax expressions. So don’t use it. Currently changing <code>marked.js</code> works for me. Just use the method below.</p>
 <p>First introduce <code>mathjax</code> into our blog.  Create a new file called <code>mathjax.ejs</code> in <code>themes/hueman/layout/plugin</code>, and add the following contents in it.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- mathjax config similar to math.stackexchange --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span><br><span class="line">  MathJax.Hub.Config(&#123;</span><br><span class="line">    tex2jax: &#123;</span><br><span class="line">      inlineMath: [ ['$','$'], ["\\(","\\)"] ],</span><br><span class="line">      processEscapes: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span><br><span class="line">    MathJax.Hub.Config(&#123;</span><br><span class="line">      tex2jax: &#123;</span><br><span class="line">        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="xml"></span><br><span class="line">    MathJax.Hub.Queue(function() &#123;</span><br><span class="line">        var all = MathJax.Hub.getAllJax(), i;</span><br><span class="line">        for(i=0; i <span class="tag">&lt; <span class="attr">all.length</span>; <span class="attr">i</span> += <span class="string">1)</span> &#123;</span><br><span class="line">            <span class="attr">all</span>[<span class="attr">i</span>]<span class="attr">.SourceElement</span>()<span class="attr">.parentNode.className</span> += <span class="string">' has-jax'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- mathjax config similar to math.stackexchange --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="actionscript"></span><br><span class="line">  MathJax.Hub.Config(&#123;</span><br><span class="line">    tex2jax: &#123;</span><br><span class="line">      inlineMath: [ [<span class="string">'$'</span>,<span class="string">'$'</span>], [<span class="string">"\\("</span>,<span class="string">"\\)"</span>] ],</span><br><span class="line">      processEscapes: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="actionscript"></span><br><span class="line">    MathJax.Hub.Config(&#123;</span><br><span class="line">      tex2jax: &#123;</span><br><span class="line">        skipTags: [<span class="string">'script'</span>, <span class="string">'noscript'</span>, <span class="string">'style'</span>, <span class="string">'textarea'</span>, <span class="string">'pre'</span>, <span class="string">'code'</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="actionscript"></span><br><span class="line">    MathJax.Hub.Queue(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> all = MathJax.Hub.getAllJax(), i;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>; i &lt; all.length; i += <span class="number">1</span>) &#123;</span><br><span class="line">            all[i].SourceElement().parentNode.className += <span class="string">' has-jax'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Then add the following line before the end of the last <code>div</code> tag in <code>themes/hueman/layout/layout.ejs</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">plugin</span>/<span class="attr">mathjax</span>') %&gt;</span></span><br></pre></td></tr></table></figure>
 <p>The whole <code>layout.ejs</code> file looks like this:</p>
@@ -76,7 +98,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()# +\-.!_&gt;])/,</span><br></pre></td></tr></table></figure>
 <p>with</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([`*\[\]()# +\-.!_&gt;])/,</span><br></pre></td></tr></table></figure>
-<p>The above step is used to cancel the escaping of <code>\\</code>, <code>\{</code>, <code>\}</code>. Then replace</p>
+<p>The above step is used to avoid the escaping of <code>\\</code>, <code>\{</code>, <code>\}</code>. Then replace</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
 <p>with</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em:/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
@@ -85,7 +107,7 @@
 <p>It should work now.</p>
 <h1 id="Original-answer"><a href="#Original-answer" class="headerlink" title="Original answer"></a>Original answer</h1><p>Hexo doesn’t support mathjax by default. To make it work, we need to introduce mathjax to our theme. Take my current theme <code>hueman</code> as an example.</p>
 <p>Create a new file called <code>mathjax.ejs</code> in <code>themes/hueman/layout/plugin</code>, and add the following contents in it.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- mathjax config similar to math.stackexchange --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span><br><span class="line">  MathJax.Hub.Config(&#123;</span><br><span class="line">    tex2jax: &#123;</span><br><span class="line">      inlineMath: [ ['$','$'], ["\\(","\\)"] ],</span><br><span class="line">      processEscapes: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span><br><span class="line">    MathJax.Hub.Config(&#123;</span><br><span class="line">      tex2jax: &#123;</span><br><span class="line">        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="xml"></span><br><span class="line">    MathJax.Hub.Queue(function() &#123;</span><br><span class="line">        var all = MathJax.Hub.getAllJax(), i;</span><br><span class="line">        for(i=0; i <span class="tag">&lt; <span class="attr">all.length</span>; <span class="attr">i</span> += <span class="string">1)</span> &#123;</span><br><span class="line">            <span class="attr">all</span>[<span class="attr">i</span>]<span class="attr">.SourceElement</span>()<span class="attr">.parentNode.className</span> += <span class="string">' has-jax'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- mathjax config similar to math.stackexchange --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="actionscript"></span><br><span class="line">  MathJax.Hub.Config(&#123;</span><br><span class="line">    tex2jax: &#123;</span><br><span class="line">      inlineMath: [ [<span class="string">'$'</span>,<span class="string">'$'</span>], [<span class="string">"\\("</span>,<span class="string">"\\)"</span>] ],</span><br><span class="line">      processEscapes: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="actionscript"></span><br><span class="line">    MathJax.Hub.Config(&#123;</span><br><span class="line">      tex2jax: &#123;</span><br><span class="line">        skipTags: [<span class="string">'script'</span>, <span class="string">'noscript'</span>, <span class="string">'style'</span>, <span class="string">'textarea'</span>, <span class="string">'pre'</span>, <span class="string">'code'</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="actionscript"></span><br><span class="line">    MathJax.Hub.Queue(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> all = MathJax.Hub.getAllJax(), i;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>; i &lt; all.length; i += <span class="number">1</span>) &#123;</span><br><span class="line">            all[i].SourceElement().parentNode.className += <span class="string">' has-jax'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Then add the following line before the end of the last <code>div</code> tag in <code>themes/hueman/layout/layout.ejs</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">plugin</span>/<span class="attr">mathjax</span>') %&gt;</span></span><br></pre></td></tr></table></figure>
 <p>The whole <code>layout.ejs</code> file looks like this:</p>
@@ -96,6 +118,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
 <p>OK, everything is done. Write a blog containing any mathjax formula and run the following command to deploy it to your server.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><a href="http://blog.csdn.net/emptyset110/article/details/50123231" target="_blank" rel="external">搭建一个支持LaTEX的hexo博客</a></li>
+</ol>
 ]]></content>
     
     <summary type="html">
@@ -174,7 +199,7 @@
     <link href="http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/"/>
     <id>http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/</id>
     <published>2016-09-30T13:49:00.000Z</published>
-    <updated>2016-10-01T12:35:09.946Z</updated>
+    <updated>2016-10-02T01:22:32.040Z</updated>
     
     <content type="html"><![CDATA[<p>I came upon the calculation of $\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n$ when I was reviewing Poisson distribution. Notice that $\lambda_n = np_n(n\in\mathbb{Z}_{\geq 0}, 0\leq p \leq 1)$ and $\lim\limits_{n\to\infty}\lambda_n = \lambda(\lambda\in\mathbb{R})$.</p>
 <p>So how to calculate it? The first thought that came to my mind was that</p>
@@ -213,6 +238,9 @@
 <p>According to squeeze theorem, we get</p>
 <p>$$\lim\limits_{n\to\infty}(1-\frac{\lambda_n} n)^n = e^{-\lambda}$$</p>
 <p>Which is the answer.</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><a href="http://aleph0.clarku.edu/~djoyce/ma122/elimit.pdf" target="_blank" rel="external">$e$ as the limit of $(1+\frac 1 n)^n$</a></li>
+</ol>
 ]]></content>
     
     <summary type="html">
@@ -740,40 +768,6 @@
     <summary type="html">
     
       &lt;p&gt;It’s already late, more than 2:00, and I haven’t gotten on bed. I changed my blog theme to hueman, which was more friendly to English tex
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://searene.github.io/categories/Journal/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>new task</title>
-    <link href="http://searene.github.io/2016/05/20/new-task/"/>
-    <id>http://searene.github.io/2016/05/20/new-task/</id>
-    <published>2016-05-20T07:07:35.000Z</published>
-    <updated>2016-05-23T17:38:39.692Z</updated>
-    
-    <content type="html"><![CDATA[<p>Today I added a new daily-recursive task to my taskwarrior list: </p>
-<p><strong>Read 5% of the book in my kindle</strong></p>
-<p>So right now I’ve four tasks I need to finish every day.</p>
-<ol>
-<li>Read 5% of the book in my kindle</li>
-<li>Run for at least 4 kilometers</li>
-<li>Play the guitar for at least 30 minutes</li>
-<li>Add 20 new cards to anki</li>
-</ol>
-<p>I also need to review cards in anki every day. So there are a lot to be done here, but I need to finish all of them, I need my life to be fulfilling.</p>
-<p>Let’s get back to the beginning. I said I needed to read a book every day, the book is called “The catcher in the rye”. It is in English, that’s why I’m reading it so slowly. A pretty famous book, I’ve already finished more than 20% of it, but I still have no clue why this book is so wide-spreading. It’s about a young man’s life, something would probably happen in one’s adolescence. Maybe this is way too far from me, after all I’m no longer a child any more. But I’m still determined to finish the book, because I dropped a lot of plans in the past, on account of the so-called meaninglessness of it. So I could barely finish anything in the past. I won’t do it again. A promise is a promise. Once I start a plan, I should never drop it unless I think it’s totally useless.</p>
-<p><img src="http://www.auburn.edu/academic/education/reading_genie/navig/read.gif" alt="reading"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Today I added a new daily-recursive task to my taskwarrior list: &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Read 5% of the book in my kindle&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;So righ
     
     </summary>
     

@@ -3,18 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Category: Math | Searene</title>
+    <title>Understanding poisson distribution | Searene</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+        <meta name="keywords" content="math,poisson,probability" />
+    
     <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Searene">
-<meta property="og:url" content="http://searene.github.io/categories/Math/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Understanding poisson distribution">
+<meta property="og:url" content="http://searene.github.io/2016/10/01/Understanding-poisson-distribution/index.html">
 <meta property="og:site_name" content="Searene">
 <meta property="og:description">
+<meta property="og:image" content="http://searene.github.io/image/call.jpg">
+<meta property="og:updated_time" content="2016-10-03T03:49:26.900Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Searene">
+<meta name="twitter:title" content="Understanding poisson distribution">
 <meta name="twitter:description">
+<meta name="twitter:image" content="http://searene.github.io/image/call.jpg">
     
 
     
@@ -131,217 +136,112 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">Math</em>
+    <a class="page-title-link" href="/categories/Math/">Math</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-Understanding-poisson-distribution" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/01/Understanding-poisson-distribution/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/call.jpg)" alt="Understanding poisson distribution" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://searene.github.io/2016/10/01/Understanding-poisson-distribution/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Math/">Math</a>
-            </p>
-            <p class="date"><time datetime="2016-10-01T15:34:25.000Z" itemprop="datePublished">2016-10-01</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/01/Understanding-poisson-distribution/">Understanding poisson distribution</a>
+        Understanding poisson distribution
         </h1>
     
 
-        <p class="article-excerpt">
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/2016/10/01/Understanding-poisson-distribution/" class="article-date">
+    <time datetime="2016-10-01T15:34:25.000Z" itemprop="datePublished">2016-10-01</time>
+</a>
             
-        </p>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poisson/">poisson</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/probability/">probability</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://searene.github.io/2016/10/01/Understanding-poisson-distribution/" data-id="cittin7o9001w79buklbxa0vx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/01/Proof-of-limit-f-x-g-x-c-d/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/Math_Business_sm.jpg)" alt="Proof of $$\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d$$" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://searene.github.io/2016/10/01/Proof-of-limit-f-x-g-x-c-d/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Math/">Math</a>
-            </p>
-            <p class="date"><time datetime="2016-10-01T11:29:59.000Z" itemprop="datePublished">2016-10-01</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/01/Proof-of-limit-f-x-g-x-c-d/">Proof of $$\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d$$</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Theorem: 
-$$c, d\in {\bf R},  \lim_{x\rightarrow \infty} f(x)=c&gt;0, \lim_{x\rightarrow \infty} g(x) =d&gt;0$$
-then
-$$\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d$$
-Proof: Because 
-
-$y(x)=ln(x)$ is c
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/01/Proof-of-the-limit-s-composition-law-when-x-approaches-infinity/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Limit-at-infinity-graph.png/306px-Limit-at-infinity-graph.png)" alt="Proof of the limit&#39;s composition law when x approaches infinity" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://searene.github.io/2016/10/01/Proof-of-the-limit-s-composition-law-when-x-approaches-infinity/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Math/">Math</a>
-            </p>
-            <p class="date"><time datetime="2016-10-01T05:20:32.000Z" itemprop="datePublished">2016-10-01</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/01/Proof-of-the-limit-s-composition-law-when-x-approaches-infinity/">Proof of the limit&#39;s composition law when x approaches infinity</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Theorem: If $f(x)$ is continous at $b$ and $\lim\limits_{x \to\infty}g(x) = b$, then 
-$$\lim\limits_{x \to \infty}f(g(x)) = f(b) = f(\lim\limits_{x\to \infty}g(x))\tag1$$
-Proof:  Because $f(x)$ is con
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/09/30/Calculate-1-lambda-n-n/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://www.codeforest.net/wp-content/uploads/2010/11/lambda.jpg)" alt="Calculate $$\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n$$" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Math/">Math</a>
-            </p>
-            <p class="date"><time datetime="2016-09-30T13:49:00.000Z" itemprop="datePublished">2016-09-30</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/09/30/Calculate-1-lambda-n-n/">Calculate $$\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n$$</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            I came upon the calculation of $\lim\limits_{n\to\infty}(1-\frac{\lambda_n}n)^n$ when I was reviewing Poisson distribution. Notice that $\lambda_n = np_n(n\in\mathbb{Z}_{\geq 0}, 0\leq p \leq 1)$ and 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-
+    </section>
 
                         </div>
                     </section>
@@ -377,6 +277,19 @@ Proof:  Because $f(x)$ is con
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/10/01/Proof-of-limit-f-x-g-x-c-d/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Proof of $$\lim_{x\rightarrow \infty} f(x)^{g(x)} = c^d$$</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -571,11 +484,13 @@ Proof:  Because $f(x)$ is con
     var disqus_shortname = 'searene';
     
     
+    var disqus_url = 'http://searene.github.io/2016/10/01/Understanding-poisson-distribution/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
