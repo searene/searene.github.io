@@ -180,7 +180,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2016/02/16/make-fcitx-work-in-sublime-text-3/" data-id="cittin7oz003279bulipevdd3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2016/02/16/make-fcitx-work-in-sublime-text-3/" data-id="cittjp81p0036eebuwhi0a3vo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -533,6 +533,20 @@ ga('send', 'pageview');
 </script>
 
         <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("code").map(function(){
+    match = /^\$(.*)\$$/.exec($(this).html());
+    if (match){
+      //$(this).after("<span class=mathjax_inline>" + match + "</span>");
+      //$(this).hide();
+      $(this).replaceWith("<span class=hpl_mathjax_inline>" + $(this).html() + "</span>");
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub,$(this).get(0)]);
+    }
+  });
+});
+</script>
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({

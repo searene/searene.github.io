@@ -185,7 +185,7 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            
+            IntroductionPoisson distribution can be derived from Binomial distribution when $\lim\limits_{n\to\infty}np = \lambda(\lambda\in\mathbb R)$, in which $n$ is the number of trials, $p$ is the probabilit
         </p>
     </div>
 </article>
@@ -550,6 +550,20 @@ $y(x)=ln(x)$ is c
 </script>
 
         <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("code").map(function(){
+    match = /^\$(.*)\$$/.exec($(this).html());
+    if (match){
+      //$(this).after("<span class=mathjax_inline>" + match + "</span>");
+      //$(this).hide();
+      $(this).replaceWith("<span class=hpl_mathjax_inline>" + $(this).html() + "</span>");
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub,$(this).get(0)]);
+    }
+  });
+});
+</script>
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
