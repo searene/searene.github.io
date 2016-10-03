@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2016-10-03T04:32:14.220Z</updated>
+  <updated>2016-10-03T08:46:55.673Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Understanding poisson distribution</title>
+    <title>Understand poisson distribution</title>
     <link href="http://searene.github.io/2016/10/01/Understanding-poisson-distribution/"/>
     <id>http://searene.github.io/2016/10/01/Understanding-poisson-distribution/</id>
     <published>2016-10-01T15:34:25.000Z</published>
-    <updated>2016-10-03T04:32:14.220Z</updated>
+    <updated>2016-10-03T08:46:55.673Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Poisson distribution can be derived from Binomial distribution when $\lim\limits_{n\to\infty}np = \lambda(\lambda\in\mathbb R)$, in which $n$ is the number of trials, $p$ is the probability of success in each trial. But how is the formula of poisson distribution obtained? Why is $p$ getting smaller when $n$ approaches infinity? I will try to answer these questions in this post.</p>
 <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>Imagine there’s a call center in your local city, it receives a certain amount of calls per day. Let’s say the expected value of the number of the received calls is $\lambda$. Now we need to calculate the probability of the number of received calls equaling $x$. How can we do it?</p>
@@ -76,6 +76,19 @@
 <p>Put $p_n = \frac{\lambda_n} n$ into $(3)$, we get</p>
 <p>\begin{equation}\begin{split} &amp;P(Y=x) \\<br>&amp;= \lim\limits_{n\to\infty}\binom n x(\frac{\lambda_n} n)^x(1-\frac{\lambda_n}n)^{(n-x)}\\<br>&amp;=\lim\limits_{n\to\infty}\frac{n(n-1)\cdots(n-x+1)}{x!\cdot n^x}\cdot{\lambda_n}^x\cdot(1-\frac{\lambda_n} n)^n\cdot(1-\frac{\lambda_n} n)^{-x}\\<br>&amp;=\lim\limits_{n\to\infty}\frac 1 {x!} \cdot 1 \cdot \underbrace{(1-\frac 1 n)\cdot(1-\frac 2 n)\cdots(1-\frac{x-1} n)}_1\cdot\underbrace{ {\lambda_n}^x}_{\lambda}\cdot\underbrace{(1-\frac{\lambda_n} n)^n}_{e^{-\lambda}}\cdot\underbrace{(1-\frac{\lambda_n} n)^{-x}}_1\\<br>&amp;=\frac{e^{-\lambda}{\lambda}^x}{x!}\end{split}\end{equation}</p>
 <p>You can find out why $\lim\limits_{n\to\infty}(1-\frac{\lambda_n} n)^n = e^{-\lambda}$ in <a href="https://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/">this post</a></p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><p><strong>Q</strong>: If I was given $n$ and $p_n$, and I got $\lambda$ using $\lambda = np_n$, then I calculate the probability of there exising $x$ events in the total amount of time using the following equation.</p>
+<p>$$P(X=x) = \frac{e^{-\lambda}{\lambda}^x}{x!}$$</p>
+<p> Is it the exact value I want or just an approximation?</p>
+<p><strong>A</strong>: This is just an approximation. The value you get is <strong>the number of pieces where events exist</strong>. There could be one event in a piece, there could be two or more events in a piece. So $P(X=x)$ not only includes the case where we want, but also the case where we don’t want, e.g. it also includes the case where $x+1$ events occur. So the value you got would be larger than the value you want.</p>
+<p><strong>Q</strong>: If I was given the expected value $\lambda$, and I calculate the probability using the following equation, then I calculate the probability of there exising $x$ events in the total amount of time using the following equation.</p>
+<p>$$P(X=x) = \frac{e^{-\lambda}{\lambda}^x}{x!}$$</p>
+<p> Is it the exact value I want or just an approximation?</p>
+<p><strong>A</strong>: Yes. When $n$ is not large, the difference between $\binom n x{p_n}^x(1-p_n)^{(n-x)}$ and $\frac{e^{-\lambda}{\lambda}^x}{x!}$ is that $p_n$ is not exactly the value we want. It includes the case where more than one call happens in a piece of time. When $n\to\infty$, the probability of this case happening $\to 0$, so the difference of the following cases $\to 0$.</p>
+<ul>
+<li><em>case1</em>: The probability of the number of pieces where events occur being $x$.</li>
+<li><em>case2</em>: The probability of the number of occurred events being $x$.</li>
+</ul>
+<p>So $\lim\limits_{n\to\infty}case1 = case2$, <em>case1</em> is $\binom n x {p_n}^x(1-p_n)^{(n-x)}$, so $\frac{e^{-\lambda}{\lambda}^x}{x!}$ is <em>case2</em>, which is the case we want.</p>
 ]]></content>
     
     <summary type="html">
