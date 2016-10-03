@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2016-10-03T09:17:07.510Z</updated>
+  <updated>2016-10-03T09:29:53.296Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://searene.github.io/2016/10/01/Understanding-poisson-distribution/"/>
     <id>http://searene.github.io/2016/10/01/Understanding-poisson-distribution/</id>
     <published>2016-10-01T15:34:25.000Z</published>
-    <updated>2016-10-03T09:17:07.510Z</updated>
+    <updated>2016-10-03T09:29:53.296Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Poisson distribution can be derived from Binomial distribution when $\lim\limits_{n\to\infty}np = \lambda(\lambda\in\mathbb R)$, in which $n$ is the number of trials, $p$ is the probability of success in each trial. But how is the formula of poisson distribution obtained? Why is $p$ getting smaller when $n$ approaches infinity? I will try to answer these questions in this post.</p>
 <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>Imagine there’s a call center in your local city, it receives a certain amount of calls per day. Let’s say the expected value of the number of the received calls is $\lambda$. Now we need to calculate the probability of the number of received calls equaling $x$. How can we do it?</p>
@@ -89,18 +89,21 @@
 <li>$X$: the number of pieces where one or more events exist</li>
 <li>$P_1$ refers to the case where $x$ events fall into $x$ pieces</li>
 <li>$P_2$ refers to the case where $x+1$ or more events fall into $x$ pieces</li>
-<li>$P_3$ refers to the case where $x$ events fall into $x-1$ or less pieces.</li>
 </ul>
 <p>The value we want would be</p>
 <p>$$P(Y = x) = P_1 + P_3$$</p>
 <ul>
+<li>$P_3$ refers to the case where $x$ events fall into $x-1$ or less pieces.</li>
 <li>Y: the total number of events occurring.</li>
 </ul>
 <p>As $n\to\infty$, $P_2\to 0$, $P_3\to 0$, so $P(X=x) \to P(Y=x)$</p>
 <p>So</p>
-<p>$$\lim\limits_{n\to\infty}P(X=x) = P(Y=x)$$</p>
+<p>$$\lim\limits_{n\to\infty}P(X=x) = \lim\limits_{n\to\infty}P(Y=x)$$</p>
 <p>Because</p>
 <p>$$P(X=x) = \binom n x {p_n}^x(1-p_n)^{(n-x)}$$</p>
+<p>So</p>
+<p>$$\lim\limits_{n\to\infty}P(Y=x) = \frac{e^{-\lambda}{\lambda}^x}{x!}$$</p>
+<p>Because P(Y=x) has nothing to do what $n$ is, so $\lim\limits_{n\to\infty}P(Y=x) = P(Y=x)$</p>
 <p>So</p>
 <p>$$P(Y=x) = \frac{e^{-\lambda}{\lambda}^x}{x!}$$</p>
 <p>That is, the number of total events is $\frac{e^{-\lambda}{\lambda}^x}{x!}$.</p>

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="IntroductionPoisson distribution can be derived from Binomial distribution when $\lim\limits_{n\to\infty}np = \lambda(\lambda\in\mathbb R)$, in which $n$ is the number of trials, $p$ is the probabilit">
 <meta property="og:image" content="http://searene.github.io/images/call.jpg">
-<meta property="og:updated_time" content="2016-10-03T09:17:07.510Z">
+<meta property="og:updated_time" content="2016-10-03T09:29:53.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Understand poisson distribution">
 <meta name="twitter:description" content="IntroductionPoisson distribution can be derived from Binomial distribution when $\lim\limits_{n\to\infty}np = \lambda(\lambda\in\mathbb R)$, in which $n$ is the number of trials, $p$ is the probabilit">
@@ -229,18 +229,21 @@ ga('send', 'pageview');
 <li>$X$: the number of pieces where one or more events exist</li>
 <li>$P_1$ refers to the case where $x$ events fall into $x$ pieces</li>
 <li>$P_2$ refers to the case where $x+1$ or more events fall into $x$ pieces</li>
-<li>$P_3$ refers to the case where $x$ events fall into $x-1$ or less pieces.</li>
 </ul>
 <p>The value we want would be</p>
 <p>$$P(Y = x) = P_1 + P_3$$</p>
 <ul>
+<li>$P_3$ refers to the case where $x$ events fall into $x-1$ or less pieces.</li>
 <li>Y: the total number of events occurring.</li>
 </ul>
 <p>As $n\to\infty$, $P_2\to 0$, $P_3\to 0$, so $P(X=x) \to P(Y=x)$</p>
 <p>So</p>
-<p>$$\lim\limits_{n\to\infty}P(X=x) = P(Y=x)$$</p>
+<p>$$\lim\limits_{n\to\infty}P(X=x) = \lim\limits_{n\to\infty}P(Y=x)$$</p>
 <p>Because</p>
 <p>$$P(X=x) = \binom n x {p_n}^x(1-p_n)^{(n-x)}$$</p>
+<p>So</p>
+<p>$$\lim\limits_{n\to\infty}P(Y=x) = \frac{e^{-\lambda}{\lambda}^x}{x!}$$</p>
+<p>Because P(Y=x) has nothing to do what $n$ is, so $\lim\limits_{n\to\infty}P(Y=x) = P(Y=x)$</p>
 <p>So</p>
 <p>$$P(Y=x) = \frac{e^{-\lambda}{\lambda}^x}{x!}$$</p>
 <p>That is, the number of total events is $\frac{e^{-\lambda}{\lambda}^x}{x!}$.</p>
