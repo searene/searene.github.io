@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://searene.github.io/2016/10/06/The-empty-set-is-the-subset-of-any-set/</loc>
+    
+    <lastmod>2016-10-06T04:21:59.496Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://searene.github.io/2016/10/01/Understanding-poisson-distribution/</loc>
     
-    <lastmod>2016-10-03T10:03:09.466Z</lastmod>
+    <lastmod>2016-10-03T13:24:15.386Z</lastmod>
     
   </url>
   
@@ -156,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2015/12/27/backup-script/</loc>
+    <loc>http://searene.github.io/2016/02/14/ImageResizer-an-anki-addon-to-resize-images/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
@@ -170,35 +177,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/02/14/PurgeAttributes-an-Anki-addon-to-purge-unnecessary-attributes/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2015/12/17/Something-About-Dnsmasq-On-Ubuntu-15-10/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2015/12/17/Specify-Port-For-Hexo-Git-Deployment/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2015/12/03/enlarge-the-size-of-a-vdi-of-virtualbox/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2015/12/16/Switch-CapsLock-And-Esc-And-Take-CapsLock-As-Control-When-It-Is-Pressed/</loc>
+    <loc>http://searene.github.io/2015/12/04/Ubuntu-crashes-when-entering-or-exiting-fullscreen-while-watching-youtube-videos/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
@@ -212,7 +191,21 @@
   </url>
   
   <url>
+    <loc>http://searene.github.io/2016/05/21/Midnight/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://searene.github.io/2015/12/09/get-selected-text-in-chrome/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2015/12/16/Switch-CapsLock-And-Esc-And-Take-CapsLock-As-Control-When-It-Is-Pressed/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
@@ -226,6 +219,13 @@
   </url>
   
   <url>
+    <loc>http://searene.github.io/2016/02/16/make-fcitx-work-in-sublime-text-3/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://searene.github.io/2015/12/25/map-Ctrl-V-as-Ctrl-Q-in-vim/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
@@ -233,7 +233,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2015/12/04/Ubuntu-crashes-when-entering-or-exiting-fullscreen-while-watching-youtube-videos/</loc>
+    <loc>http://searene.github.io/2015/12/27/backup-script/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
@@ -247,28 +247,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2015/12/21/Fix-The-Font-Rendering-Problem-In-Pycharm/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/05/21/Midnight/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/02/16/make-fcitx-work-in-sublime-text-3/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/05/21/watched-alien-2-today/</loc>
+    <loc>http://searene.github.io/2016/05/22/I-started-programming-and-running-today/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
@@ -282,21 +261,49 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/05/22/I-started-programming-and-running-today/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/02/14/ImageResizer-an-anki-addon-to-resize-images/</loc>
-    
-    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://searene.github.io/2016/04/13/WriteToDisk/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/05/21/watched-alien-2-today/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2015/12/21/Fix-The-Font-Rendering-Problem-In-Pycharm/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2015/12/17/Specify-Port-For-Hexo-Git-Deployment/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2015/12/17/Something-About-Dnsmasq-On-Ubuntu-15-10/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/02/14/PurgeAttributes-an-Anki-addon-to-purge-unnecessary-attributes/</loc>
+    
+    <lastmod>2016-05-23T17:38:39.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2015/12/03/enlarge-the-size-of-a-vdi-of-virtualbox/</loc>
     
     <lastmod>2016-05-23T17:38:39.692Z</lastmod>
     
