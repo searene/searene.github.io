@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2016-10-06T04:23:58.986Z</updated>
+  <updated>2016-10-06T04:24:30.486Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://searene.github.io/2016/10/06/The-empty-set-is-the-subset-of-any-set/"/>
     <id>http://searene.github.io/2016/10/06/The-empty-set-is-the-subset-of-any-set/</id>
     <published>2016-10-06T01:44:52.000Z</published>
-    <updated>2016-10-06T04:23:58.986Z</updated>
+    <updated>2016-10-06T04:24:30.486Z</updated>
     
     <content type="html"><![CDATA[<p>The following expression is true</p>
 <blockquote>
@@ -43,7 +43,7 @@
 <blockquote>
 <p>If there exists $x\in\varnothing$ such that $x\not\in A$, then we say $\varnothing\not\subset A$</p>
 </blockquote>
-<p>Since you can never find $x$ such that $x\in\varnothing$, so the condition could never be correct, so we have not enough evidence to make the conclusion($\varnothing\not\subset A$).</p>
+<p>Since you can never find $x$ such that $x\in\varnothing$, so the condition could never be correct, so we don’t have enough evidence to make the conclusion($\varnothing\not\subset A$).</p>
 <p>Notice the whole expression itself(If there exists $x\in\varnothing$ such that $x\not\in A$, then we say $\varnothing\not\subset A$) is correct since it’s a vacuous truth(the condition could never be true).</p>
 ]]></content>
     
