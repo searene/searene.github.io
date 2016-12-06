@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2016-12-06T14:19:26.297Z</updated>
+  <updated>2016-12-06T14:30:23.054Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://searene.github.io/2016/12/06/Install-fcitx-on-ubuntu-16-10/"/>
     <id>http://searene.github.io/2016/12/06/Install-fcitx-on-ubuntu-16-10/</id>
     <published>2016-12-06T14:13:57.000Z</published>
-    <updated>2016-12-06T14:19:26.297Z</updated>
+    <updated>2016-12-06T14:30:23.054Z</updated>
     
     <content type="html"><![CDATA[<p>Run the following command.</p>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install fcitx fcitx-<span class="keyword">table</span> fcitx-googlepinyin <span class="comment">fcitx-module-cloudpinyin</span></span><br></pre></td></tr></table></figure>
