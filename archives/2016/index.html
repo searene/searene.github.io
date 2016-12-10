@@ -283,9 +283,12 @@ Create a file brightness.service in /lib/systemd/system with the following conte
     
 
         <p class="article-excerpt">
-            Make CapsLock act as Esc when it is hit, and as Ctrl when it is held.
-To make it work, add this line in ~/.bashrc(if you use bash) or ~/.zshrc(if you use zsh).
-1setxkbmap -option 'caps:ctrl_modifier' 
+            On ubuntu 16.10, make CapsLock act as Esc when it is hit, and as Ctrl when it is held.
+To make it work, modify /etc/default/keyboard, change
+1XKBOPTIONS=""
+to
+1XKBOPTIONS="caps:ctrl_modifier"
+Then add
         </p>
     </div>
 </article>

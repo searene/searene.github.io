@@ -8,23 +8,32 @@
     
         <meta name="keywords" content="ubuntu,linux" />
     
-    <meta name="description" content="Make CapsLock act as Esc when it is hit, and as Ctrl when it is held.
-To make it work, add this line in ~/.bashrc(if you use bash) or ~/.zshrc(if you use zsh).
-1setxkbmap -option &apos;caps:ctrl_modifier&apos;">
+    <meta name="description" content="On ubuntu 16.10, make CapsLock act as Esc when it is hit, and as Ctrl when it is held.
+To make it work, modify /etc/default/keyboard, change
+1XKBOPTIONS=&quot;&quot;
+to
+1XKBOPTIONS=&quot;caps:ctrl_modifier&quot;
+Then add">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Super CapsLock On Ubuntu 16.10">
 <meta property="og:url" content="http://searene.github.io/2016/12/06/Super-CapsLock-On-Ubuntu-16-10/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="Make CapsLock act as Esc when it is hit, and as Ctrl when it is held.
-To make it work, add this line in ~/.bashrc(if you use bash) or ~/.zshrc(if you use zsh).
-1setxkbmap -option &apos;caps:ctrl_modifier&apos;">
+<meta property="og:description" content="On ubuntu 16.10, make CapsLock act as Esc when it is hit, and as Ctrl when it is held.
+To make it work, modify /etc/default/keyboard, change
+1XKBOPTIONS=&quot;&quot;
+to
+1XKBOPTIONS=&quot;caps:ctrl_modifier&quot;
+Then add">
 <meta property="og:image" content="http://searene.github.io/images/capslock.jpg">
-<meta property="og:updated_time" content="2016-12-06T14:08:49.748Z">
+<meta property="og:updated_time" content="2016-12-10T04:59:41.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Super CapsLock On Ubuntu 16.10">
-<meta name="twitter:description" content="Make CapsLock act as Esc when it is hit, and as Ctrl when it is held.
-To make it work, add this line in ~/.bashrc(if you use bash) or ~/.zshrc(if you use zsh).
-1setxkbmap -option &apos;caps:ctrl_modifier&apos;">
+<meta name="twitter:description" content="On ubuntu 16.10, make CapsLock act as Esc when it is hit, and as Ctrl when it is held.
+To make it work, modify /etc/default/keyboard, change
+1XKBOPTIONS=&quot;&quot;
+to
+1XKBOPTIONS=&quot;caps:ctrl_modifier&quot;
+Then add">
 <meta name="twitter:image" content="http://searene.github.io/images/capslock.jpg">
     
 
@@ -168,9 +177,14 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>Make CapsLock act as Esc when it is hit, and as Ctrl when it is held.</p>
-<p>To make it work, add this line in <code>~/.bashrc</code>(if you use bash) or <code>~/.zshrc</code>(if you use zsh).</p>
-<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setxkbmap -<span class="built_in">option</span> <span class="symbol">'caps</span>:ctrl_modifier' &amp;&amp; xcape -e <span class="symbol">'Caps_Lock</span>=<span class="type">Escape'</span></span><br></pre></td></tr></table></figure>
+            <p>On ubuntu 16.10, make CapsLock act as Esc when it is hit, and as Ctrl when it is held.</p>
+<p>To make it work, modify /etc/default/keyboard, change</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">XKBOPTIONS</span>=<span class="string">""</span></span><br></pre></td></tr></table></figure>
+<p>to</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">XKBOPTIONS</span>=<span class="string">"caps:ctrl_modifier"</span></span><br></pre></td></tr></table></figure>
+<p>Then add the following line in <code>~/.xsessionrc</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env zsh</span><br><span class="line"></span><br><span class="line">/usr/bin/xcape -e &apos;Caps_Lock=Escape&apos;</span><br></pre></td></tr></table></figure>
+<p>Reboot.</p>
 
         </div>
         <footer class="article-footer">
