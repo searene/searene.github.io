@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2016-12-06T14:30:23.054Z</updated>
+  <updated>2016-12-18T07:10:35.976Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>change openwrt source to UTSC</title>
+    <link href="http://searene.github.io/2016/12/18/change-openwrt-source-to-UTSC/"/>
+    <id>http://searene.github.io/2016/12/18/change-openwrt-source-to-UTSC/</id>
+    <published>2016-12-18T07:08:29.000Z</published>
+    <updated>2016-12-18T07:10:35.976Z</updated>
+    
+    <content type="html"><![CDATA[<p>The following steps only apply to Netgear 4300 and openwrt 15.05.1.</p>
+<p>Modify /etc/opkg.conf to the following lines.</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext <span class="regexp">/var/</span>opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line">option check_signature <span class="number">1</span></span><br><span class="line">src<span class="regexp">/gz chaos_calmer_base http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/base</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_luci http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/luci</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_management http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/management</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_packages http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/packages</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_routing http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/routing</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_telephony http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/telephony</span><br></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The following steps only apply to Netgear 4300 and openwrt 15.05.1.&lt;/p&gt;
+&lt;p&gt;Modify /etc/opkg.conf to the following lines.&lt;/p&gt;
+&lt;figure clas
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Install fcitx on ubuntu 16.10</title>
@@ -900,43 +923,6 @@
     </summary>
     
       <category term="Coding" scheme="http://searene.github.io/categories/Coding/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>my new goals and my new life</title>
-    <link href="http://searene.github.io/2016/05/25/my-new-goals-and-my-new-life/"/>
-    <id>http://searene.github.io/2016/05/25/my-new-goals-and-my-new-life/</id>
-    <published>2016-05-25T04:29:00.000Z</published>
-    <updated>2016-12-06T14:08:49.748Z</updated>
-    
-    <content type="html"><![CDATA[<p>I feel pretty bad recently, and it occurred to me that what made me feel bad was not the world, it was me, myself. I have to do something to fill my brain with energy, so I add a new task today, to program for my own project for at least 3 hours, apart from other coding and stuff.</p>
-<p>Though I program almost every day, I never set a goal for myself. This is really a problem, sometimes I’m just being lazy, which puts my project off again and again. So I decided to put an end to this bad behavior. There’s one thing that could achieve it, which is set a goal, a task, forcing myself to finish it every day.</p>
-<p>I reduced my running distance from 4km to 2km, because I figured that 4km is too much for me. I didn’t run in a very long time, I have to do it, it’s a very efficient way to keep me being energetic.</p>
-<p>This is my everyday task list</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ID Age  Recur Due Description                             Urg </span><br><span class="line"> <span class="number">8</span> <span class="number">2</span><span class="built_in">min</span>   P1D <span class="number">10</span>h run <span class="keyword">for</span> <span class="number">2</span>km                              <span class="number">8.6</span></span><br><span class="line"><span class="number">11</span> <span class="number">24</span>s    P1D <span class="number">10</span>h review <span class="keyword">the</span> <span class="keyword">words</span> <span class="keyword">in</span> anki                 <span class="number">8.6</span></span><br><span class="line"><span class="number">12</span> <span class="number">24</span>s    P1D <span class="number">10</span>h <span class="built_in">add</span> <span class="number">20</span> <span class="built_in">new</span> <span class="keyword">words</span> <span class="built_in">to</span> anki                 <span class="number">8.6</span></span><br><span class="line"> <span class="number">5</span> <span class="number">2</span><span class="built_in">min</span>   P1D <span class="number">11</span>h play <span class="keyword">the</span> guitar <span class="keyword">for</span> <span class="keyword">at</span> least <span class="number">30</span> minutes <span class="number">8.58</span></span><br><span class="line"> <span class="number">6</span> <span class="number">2</span><span class="built_in">min</span>   P1D <span class="number">11</span>h <span class="built_in">read</span> <span class="number">5</span>% <span class="keyword">of</span> <span class="keyword">the</span> book <span class="keyword">in</span> my kindle        <span class="number">8.58</span></span><br><span class="line"><span class="number">14</span> -      P1D <span class="number">11</span>h program <span class="keyword">for</span> my project                  <span class="number">8.58</span></span><br><span class="line"></span><br><span class="line"><span class="number">6</span> tasks</span><br></pre></td></tr></table></figure>
-<p>It would take about 20 + 15 + 30 + 30 + 30 + 180 = 305min ≈ 5 hours, A lot to be done every day, I will see if I can finish all of them.</p>
-<p>Then I thought about another thing. Though I created a task to program for at least 3 hours every day, I should have a goal for each hour. I made a list of what I should do about the project right now. Once I finish one of them, I check it.</p>
-<ol>
-<li><del>Rename deck</del></li>
-<li><del>Delete deck</del></li>
-<li><del>Add word</del></li>
-<li>The click event of <em>show answer</em> button in review page</li>
-<li>The whole front-end of the review page</li>
-<li>Time schedule for <em>Again</em>, <em>Hard</em>, <em>Good</em>, <em>Easy</em></li>
-</ol>
-<p>There are only these goals for now, I will add a new list if I finish all of them on the above list.</p>
-<p><strong>What I want ultimately is the sense of felicity, from the bottom of my heart.</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I feel pretty bad recently, and it occurred to me that what made me feel bad was not the world, it was me, myself. I have to do something
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://searene.github.io/categories/Journal/"/>
     
     
   </entry>
