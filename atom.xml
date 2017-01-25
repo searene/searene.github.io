@@ -139,11 +139,11 @@
     <link href="http://searene.github.io/2016/12/06/Start-Shadowsocks-Automatically-On-Ubuntu-16-10-Using-Systemd/"/>
     <id>http://searene.github.io/2016/12/06/Start-Shadowsocks-Automatically-On-Ubuntu-16-10-Using-Systemd/</id>
     <published>2016-12-06T13:58:26.000Z</published>
-    <updated>2016-12-06T14:08:49.748Z</updated>
+    <updated>2017-01-25T12:52:18.312Z</updated>
     
     <content type="html"><![CDATA[<p>Install <code>shadowsocks</code> globally(You have to add <code>sudo</code> here)</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip <span class="keyword">install</span> shadowsocks</span><br></pre></td></tr></table></figure>
-<p>Create a new file called <code>shadowsocks@.service</code> in <code>/lib/system.d/system</code></p>
+<p>Create a new file called <code>shadowsocks@.service</code> in <code>/lib/systemd/system</code></p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=Shadowsocks Client Service</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"><span class="section"></span><br><span class="line">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">User</span>=nobody</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/local/bin/sslocal -c /etc/shadowsocks/%i.json</span><br><span class="line"><span class="section"></span><br><span class="line">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
 <p>Put all your shadowsocks config files in /etc/shadowsocks, like this.</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls /etc/shadowsocks</span><br><span class="line">bandwagonhost<span class="selector-class">.json</span>  tencent<span class="selector-class">.json</span>  vultr.json</span><br></pre></td></tr></table></figure>

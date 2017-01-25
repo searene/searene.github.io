@@ -10,24 +10,24 @@
     
     <meta name="description" content="Install shadowsocks globally(You have to add sudo here)
 1sudo pip install shadowsocks
-Create a new file called shadowsocks@.service in /lib/system.d/system
-1234567891011[Unit]Description=Shadowsocks C">
+Create a new file called shadowsocks@.service in /lib/systemd/system
+1234567891011[Unit]Description=Shadowsocks Cl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Start Shadowsocks Automatically On Ubuntu 16.10 Using Systemd">
 <meta property="og:url" content="http://searene.github.io/2016/12/06/Start-Shadowsocks-Automatically-On-Ubuntu-16-10-Using-Systemd/index.html">
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="Install shadowsocks globally(You have to add sudo here)
 1sudo pip install shadowsocks
-Create a new file called shadowsocks@.service in /lib/system.d/system
-1234567891011[Unit]Description=Shadowsocks C">
+Create a new file called shadowsocks@.service in /lib/systemd/system
+1234567891011[Unit]Description=Shadowsocks Cl">
 <meta property="og:image" content="http://searene.github.io/images/systemd.jpg">
-<meta property="og:updated_time" content="2016-12-06T14:08:49.748Z">
+<meta property="og:updated_time" content="2017-01-25T12:52:18.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Start Shadowsocks Automatically On Ubuntu 16.10 Using Systemd">
 <meta name="twitter:description" content="Install shadowsocks globally(You have to add sudo here)
 1sudo pip install shadowsocks
-Create a new file called shadowsocks@.service in /lib/system.d/system
-1234567891011[Unit]Description=Shadowsocks C">
+Create a new file called shadowsocks@.service in /lib/systemd/system
+1234567891011[Unit]Description=Shadowsocks Cl">
 <meta name="twitter:image" content="http://searene.github.io/images/systemd.jpg">
     
 
@@ -173,7 +173,7 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
             <p>Install <code>shadowsocks</code> globally(You have to add <code>sudo</code> here)</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip <span class="keyword">install</span> shadowsocks</span><br></pre></td></tr></table></figure>
-<p>Create a new file called <code>shadowsocks@.service</code> in <code>/lib/system.d/system</code></p>
+<p>Create a new file called <code>shadowsocks@.service</code> in <code>/lib/systemd/system</code></p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=Shadowsocks Client Service</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"><span class="section"></span><br><span class="line">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">User</span>=nobody</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/local/bin/sslocal -c /etc/shadowsocks/%i.json</span><br><span class="line"><span class="section"></span><br><span class="line">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
 <p>Put all your shadowsocks config files in /etc/shadowsocks, like this.</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls /etc/shadowsocks</span><br><span class="line">bandwagonhost<span class="selector-class">.json</span>  tencent<span class="selector-class">.json</span>  vultr.json</span><br></pre></td></tr></table></figure>
@@ -188,7 +188,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.github.io/2016/12/06/Start-Shadowsocks-Automatically-On-Ubuntu-16-10-Using-Systemd/" data-id="ciwubcr77001i6axut02n5nmp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.github.io/2016/12/06/Start-Shadowsocks-Automatically-On-Ubuntu-16-10-Using-Systemd/" data-id="ciycyaghg001cyyxu8c9ted2y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -500,7 +500,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2016 Searene</p>
+                <p>&copy; 2017 Searene</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
