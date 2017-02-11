@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2016-12-18T07:10:35.976Z</updated>
+  <updated>2017-02-11T01:24:24.636Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -20,18 +20,17 @@
     <link href="http://searene.github.io/2016/12/18/change-openwrt-source-to-UTSC/"/>
     <id>http://searene.github.io/2016/12/18/change-openwrt-source-to-UTSC/</id>
     <published>2016-12-18T07:08:29.000Z</published>
-    <updated>2016-12-18T07:10:35.976Z</updated>
+    <updated>2017-02-11T01:24:24.636Z</updated>
     
     <content type="html"><![CDATA[<p>The following steps only apply to Netgear 4300 and openwrt 15.05.1.</p>
-<p>Modify /etc/opkg.conf to the following lines.</p>
+<p>Modify <code>/etc/opkg.conf</code> to the following lines.</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext <span class="regexp">/var/</span>opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line">option check_signature <span class="number">1</span></span><br><span class="line">src<span class="regexp">/gz chaos_calmer_base http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/base</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_luci http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/luci</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_management http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/management</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_packages http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/packages</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_routing http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/routing</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_telephony http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/telephony</span><br></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;The following steps only apply to Netgear 4300 and openwrt 15.05.1.&lt;/p&gt;
-&lt;p&gt;Modify /etc/opkg.conf to the following lines.&lt;/p&gt;
-&lt;figure clas
+&lt;p&gt;Modify &lt;code&gt;/etc/opkg.conf&lt;/code&gt; to the following lines.&lt;/p&gt;
     
     </summary>
     

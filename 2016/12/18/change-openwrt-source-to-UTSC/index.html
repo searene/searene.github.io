@@ -18,12 +18,14 @@ Modify /etc/opkg.conf to the following lines.
 <meta property="og:description" content="The following steps only apply to Netgear 4300 and openwrt 15.05.1.
 Modify /etc/opkg.conf to the following lines.
 1234567891011dest root /dest ram /tmplists_dir ext /var/opkg-listsoption overlay_root">
-<meta property="og:updated_time" content="2016-12-18T07:10:35.976Z">
+<meta property="og:image" content="http://searene.github.io/images/openwrt.png">
+<meta property="og:updated_time" content="2017-02-11T01:24:24.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="change openwrt source to UTSC">
 <meta name="twitter:description" content="The following steps only apply to Netgear 4300 and openwrt 15.05.1.
 Modify /etc/opkg.conf to the following lines.
 1234567891011dest root /dest ram /tmplists_dir ext /var/opkg-listsoption overlay_root">
+<meta name="twitter:image" content="http://searene.github.io/images/openwrt.png">
     
 
     
@@ -165,7 +167,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>The following steps only apply to Netgear 4300 and openwrt 15.05.1.</p>
-<p>Modify /etc/opkg.conf to the following lines.</p>
+<p>Modify <code>/etc/opkg.conf</code> to the following lines.</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext <span class="regexp">/var/</span>opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line">option check_signature <span class="number">1</span></span><br><span class="line">src<span class="regexp">/gz chaos_calmer_base http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/base</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_luci http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/luci</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_management http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/management</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_packages http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/packages</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_routing http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/routing</span><br><span class="line">src<span class="regexp">/gz chaos_calmer_telephony http:/</span><span class="regexp">/openwrt.proxy.ustclug.org/</span>chaos_calmer<span class="regexp">/15.05.1/</span>ar71xx<span class="regexp">/nand/</span>packages/telephony</span><br></pre></td></tr></table></figure>
 
         </div>
@@ -311,7 +313,7 @@ ga('send', 'pageview');
                             <a href="/2016/12/18/change-openwrt-source-to-UTSC/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/openwrt.png)" alt="change openwrt source to UTSC" class="thumbnail-image"></span>
     
     
 </a>
