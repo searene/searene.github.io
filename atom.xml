@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2017-02-11T01:24:24.636Z</updated>
+  <updated>2017-02-13T00:08:05.091Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>I arrived in Hangzhou yesterday</title>
+    <link href="http://searene.github.io/2017/02/13/I-arrived-in-Hangzhou-yesterday/"/>
+    <id>http://searene.github.io/2017/02/13/I-arrived-in-Hangzhou-yesterday/</id>
+    <published>2017-02-12T23:35:34.000Z</published>
+    <updated>2017-02-13T00:08:05.091Z</updated>
+    
+    <content type="html"><![CDATA[<p>I arrived in Hangzhou yesterday, and I could feel that the amounts of dopamine released in my brain fluctuated from time to time. At first I felt really happy, I was not sure why. Then I felt sort of upset when I got off the plane and headed towards my company. Maybe it was because I had to work again in my company, which was so boring and annoying. I think some people tend to release dopamine a lot, and they may never know what depression is like.</p>
+<p>I downloaded the movie <code>Passenger</code> from the Internet and watched it last night. To my suprise, although there were lots of negative comments on <code>douban</code>, I found the movie pretty interesting and compelling. Maybe it was due to the unbeatable charm of <code>Jennifer Lawrence</code>, she was so beautiful. That being said, the plot was not bad, and the film’s special effects were amazing! I really loved it. I even loved it to the extent that I couldn’t decide whether <code>Arrival</code> or <code>Passenger</code> was better, even though the former got a much higher mark on <code>douban</code> and <code>IMDB</code>.</p>
+<p><img src="/images/passenger-law.jpg" alt="Jennifer Lawrence on Passenger"></p>
+<p>Another thing. I decided to use <code>Wechat</code> as few as possible. I watched a Ted talk yesterday and the speaker said that falling into social media was really a bad thing for us. It might cause more anxiety and depression and made us even more lonely, no matter how many friends we had ONLINE. I thought that was absolutely correct. I felt more lonely when I talked in social media, our brain wasn’t design to talk like this. We had to communicate face to face, use our gestures and expressions to create a better conversation and relax ourselves. Really, few people cared about what I posted on moments, what was the purpose of that!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I arrived in Hangzhou yesterday, and I could feel that the amounts of dopamine released in my brain fluctuated from time to time. At firs
+    
+    </summary>
+    
+      <category term="Life" scheme="http://searene.github.io/categories/Life/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>change openwrt source to UTSC</title>
@@ -899,29 +923,6 @@
     </summary>
     
       <category term="Journal" scheme="http://searene.github.io/categories/Journal/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>shorten a string without cutting words</title>
-    <link href="http://searene.github.io/2016/05/26/shorten-a-string-without-cutting-words/"/>
-    <id>http://searene.github.io/2016/05/26/shorten-a-string-without-cutting-words/</id>
-    <published>2016-05-26T00:24:01.000Z</published>
-    <updated>2016-12-06T14:08:49.748Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>How to shortening a string without cutting words? For example, I have a string called <code>Hello World</code>, whose length is 11. I want to shorten its length to less than 6, which would be <code>Hello W</code>, but <code>W</code> is not a full word, we need to remove it. So the result is ony a word <code>Hello</code>. The following code is to solve the problem, written in python.</p>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">break_word</span><span class="params">(src, length)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> length &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">    <span class="keyword">elif</span> length &gt;= len(src):</span><br><span class="line">        <span class="keyword">return</span> src.rstrip()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(length, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">if</span> src[i] == <span class="string">' '</span>:</span><br><span class="line">            <span class="keyword">return</span> src[:i].rstrip()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestBreakWord</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_breakword</span><span class="params">(self)</span>:</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># zero length</span></span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World'</span>, <span class="number">0</span>), <span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># no word is hit</span></span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World'</span>, <span class="number">2</span>), <span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># exactly a word</span></span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World'</span>, <span class="number">5</span>), <span class="string">'Hello'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># exactly a word plus a space</span></span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World'</span>, <span class="number">6</span>), <span class="string">'Hello'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># the second word isn't hit</span></span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World'</span>, <span class="number">7</span>), <span class="string">'Hello'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># exactly two words</span></span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World'</span>, <span class="number">11</span>), <span class="string">'Hello World'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># two spaces</span></span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello  World'</span>, <span class="number">5</span>), <span class="string">'Hello'</span>)</span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello  World'</span>, <span class="number">6</span>), <span class="string">'Hello'</span>)</span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello  World'</span>, <span class="number">7</span>), <span class="string">'Hello'</span>)</span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello  World'</span>, <span class="number">8</span>), <span class="string">'Hello'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># space in the end</span></span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World '</span>, <span class="number">11</span>), <span class="string">'Hello World'</span>)</span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World '</span>, <span class="number">12</span>), <span class="string">'Hello World'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># two spaces in the end</span></span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World  '</span>, <span class="number">11</span>), <span class="string">'Hello World'</span>)</span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World  '</span>, <span class="number">12</span>), <span class="string">'Hello World'</span>)</span><br><span class="line">        self.assertEqual(break_word(<span class="string">'Hello World  '</span>, <span class="number">13</span>), <span class="string">'Hello World'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
-<h1 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h1><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">./words.py</span><br><span class="line"></span><br><span class="line">.</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran 1 <span class="built_in">test</span> <span class="keyword">in</span> 0.000s</span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line">Process finished with <span class="built_in">exit</span> code 0</span><br></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h1&gt;&lt;p&gt;How to shortening a string without cutting wor
-    
-    </summary>
-    
-      <category term="Coding" scheme="http://searene.github.io/categories/Coding/"/>
     
     
   </entry>
