@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://searene.github.io/2017/02/14/We-are-doomed-to-be-diverged/</loc>
-    
-    <lastmod>2017-02-14T14:24:42.958Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://searene.github.io/2017/02/13/I-arrived-in-Hangzhou-yesterday/</loc>
     
     <lastmod>2017-02-13T00:09:14.115Z</lastmod>
@@ -44,7 +37,14 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2015/12/04/Ubuntu-crashes-when-entering-or-exiting-fullscreen-while-watching-youtube-videos/</loc>
+    <loc>http://searene.github.io/2016/07/04/The-fee-paid-to-freelancer-is-not-refundable/</loc>
+    
+    <lastmod>2016-12-06T14:08:49.748Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/12/06/Auto-Adjust-Brightness-On-Ubuntu-16-10-Using-Systemd/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
@@ -177,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/07/04/The-fee-paid-to-freelancer-is-not-refundable/</loc>
-    
-    <lastmod>2016-12-06T14:08:49.748Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://searene.github.io/2015/12/07/Batch-Insert-Into-MySQL-With-Python/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
@@ -191,14 +184,14 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/10/01/Understanding-poisson-distribution/</loc>
+    <loc>http://searene.github.io/2015/12/04/Ubuntu-crashes-when-entering-or-exiting-fullscreen-while-watching-youtube-videos/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/02/14/GoldenDictMedia/</loc>
+    <loc>http://searene.github.io/2016/10/01/Understanding-poisson-distribution/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
@@ -240,7 +233,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/12/06/Auto-Adjust-Brightness-On-Ubuntu-16-10-Using-Systemd/</loc>
+    <loc>http://searene.github.io/2016/02/14/GoldenDictMedia/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
