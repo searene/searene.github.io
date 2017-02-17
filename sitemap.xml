@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://searene.github.io/about/index.html</loc>
+    
+    <lastmod>2017-02-17T23:24:28.663Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://searene.github.io/2017/02/13/I-arrived-in-Hangzhou-yesterday/</loc>
     
     <lastmod>2017-02-13T00:09:14.115Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://searene.github.io/2016/12/06/Install-fcitx-on-ubuntu-16-10/</loc>
     
     <lastmod>2016-12-06T14:30:23.054Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/07/04/The-fee-paid-to-freelancer-is-not-refundable/</loc>
-    
-    <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
   </url>
   
@@ -352,7 +352,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/about/index.html</loc>
+    <loc>http://searene.github.io/2016/07/04/The-fee-paid-to-freelancer-is-not-refundable/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
