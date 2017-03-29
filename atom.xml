@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2017-03-09T14:26:02.733Z</updated>
+  <updated>2017-03-29T15:18:01.569Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Where to go</title>
+    <link href="http://searene.github.io/2017/03/29/Where-to-go/"/>
+    <id>http://searene.github.io/2017/03/29/Where-to-go/</id>
+    <published>2017-03-29T14:49:23.000Z</published>
+    <updated>2017-03-29T15:18:01.569Z</updated>
+    
+    <content type="html"><![CDATA[<p>I haven’t been written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it, let alone read it. But anyway, I decided to write something tonight.</p>
+<p>I’m almost 27, I told my self. And it is 2017, 17 years after 2000, I could never figure out where those years went. So many years, I’m getting older every day. Does the performance in the work really matter, not sure, maybe not that important. So what really matters? I know it, I always know it, but I’m always afraid to face it.</p>
+<p>I started to solve the problems on leetcode, that was for my career. Sometimes I think maybe I just need to choose a life and go with it, but I really hope the life I chose would be perfect, or at least full of happiness and fulfillment, but actually it was not.</p>
+<p>I often thought of the Sergeant in Forrest Gump, he lost his legs during the war, he didn’t know what to do. He cursed his life, joked about God, but when he finally found his life, he didn’t say anything. He never mentioned whether God existed or not, maybe he also didn’t know. I often pondered over the same question, but I had no answer to it. Why wouldn’t God give me a better life, maybe he has his reason, I just need to go with it.</p>
+<p>It’s already late, I have to go to bed and sleep. I wrote some nonsense here, whatever.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I haven’t been written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://searene.github.io/categories/Journal/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Hadoop Internals -- Configuration</title>
@@ -891,56 +916,6 @@
       <category term="linux" scheme="http://searene.github.io/tags/linux/"/>
     
       <category term="firefox" scheme="http://searene.github.io/tags/firefox/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>connect to wifi via commandline on arch</title>
-    <link href="http://searene.github.io/2016/06/08/connect-to-wifi-via-commandline-on-arch/"/>
-    <id>http://searene.github.io/2016/06/08/connect-to-wifi-via-commandline-on-arch/</id>
-    <published>2016-06-08T12:16:30.000Z</published>
-    <updated>2016-12-06T14:08:49.748Z</updated>
-    
-    <content type="html"><![CDATA[<p>I just spent hours connecting to the wireless network on archlinux today. Finally I resorted to various tools in commandline. Here’s how I do it. Make sure you run the following commands as root to avoid some permission errors.</p>
-<h1 id="Find-out-SSID-of-the-target-wifi"><a href="#Find-out-SSID-of-the-target-wifi" class="headerlink" title="Find out SSID of the target wifi"></a>Find out SSID of the target wifi</h1><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iw <span class="built_in">dev</span> <span class="string">"your_interface"</span> <span class="built_in">scan</span> | less</span><br></pre></td></tr></table></figure>
-<p>Replace <em>your_interface</em> with your own one, usually it’s <em>wlp3s0</em> or <em>wlan0</em>. You can run <code>ifconfig</code> to find out the name of your interface</p>
-<p>You will get something like</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">BSS</span> <span class="selector-tag">fc</span><span class="selector-pseudo">:d7</span><span class="selector-pseudo">:33</span><span class="selector-pseudo">:59</span><span class="selector-pseudo">:74</span><span class="selector-pseudo">:74(on</span> <span class="selector-tag">wlp3s0</span>) <span class="selector-tag">--</span> <span class="selector-tag">associated</span></span><br><span class="line">        <span class="selector-tag">TSF</span>: 85505115422 <span class="selector-tag">usec</span> (0<span class="selector-tag">d</span>, 23<span class="selector-pseudo">:45</span><span class="selector-pseudo">:05)</span></span><br><span class="line">        <span class="selector-tag">freq</span>: 2412</span><br><span class="line">        <span class="selector-tag">beacon</span> <span class="selector-tag">interval</span>: 100 <span class="selector-tag">TUs</span></span><br><span class="line">        <span class="selector-tag">capability</span>: <span class="selector-tag">ESS</span> <span class="selector-tag">Privacy</span> <span class="selector-tag">ShortPreamble</span> <span class="selector-tag">ShortSlotTime</span> (0<span class="selector-tag">x0431</span>)</span><br><span class="line">        <span class="selector-tag">signal</span>: <span class="selector-tag">-54</span><span class="selector-class">.00</span> <span class="selector-tag">dBm</span></span><br><span class="line">        <span class="selector-tag">last</span> <span class="selector-tag">seen</span>: 136 <span class="selector-tag">ms</span> <span class="selector-tag">ago</span></span><br><span class="line">        <span class="selector-tag">Information</span> <span class="selector-tag">elements</span> <span class="selector-tag">from</span> <span class="selector-tag">Probe</span> <span class="selector-tag">Response</span> <span class="selector-tag">frame</span>:</span><br><span class="line">        <span class="selector-tag">SSID</span>: <span class="selector-tag">TP-LINK_7474</span></span><br><span class="line">        <span class="selector-tag">Supported</span> <span class="selector-tag">rates</span>: 1<span class="selector-class">.0</span>* 2<span class="selector-class">.0</span>* 5<span class="selector-class">.5</span>* 11<span class="selector-class">.0</span>* 6<span class="selector-class">.0</span> 9<span class="selector-class">.0</span> 12<span class="selector-class">.0</span> 18<span class="selector-class">.0</span> </span><br><span class="line">		...</span><br></pre></td></tr></table></figure>
-<p>The SSID is something after <em>SSID</em>. It’s <em>TP-LINK_7474</em> in my case.</p>
-<h1 id="Association"><a href="#Association" class="headerlink" title="Association"></a>Association</h1><p>After finding out your SSID, you would need to connect to it. There are two cases here, one is when there’s no encryption and one is when <em>WPA/WPA2</em> is enabled. Find the case that suits you most.</p>
-<h2 id="No-Encryption"><a href="#No-Encryption" class="headerlink" title="No Encryption"></a>No Encryption</h2><p>This is pretty easy, you only need one line here.</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iw dev wlan0 <span class="built_in">connect</span> <span class="string">"your_essid"</span></span><br></pre></td></tr></table></figure>
-<p><em>your_essid</em> is the name of the network you found out before, such as <em>TP-LINK_7474</em></p>
-<p>Then you will need to <a href="#Get-IP-Address">Get an IP address</a></p>
-<h2 id="WPA-WPA2"><a href="#WPA-WPA2" class="headerlink" title="WPA/WPA2"></a>WPA/WPA2</h2><p>You have a lot of work to be done here. First create a new file <code>/etc/wpa_supplicant/wpa_supplicant.conf</code>. Type in the following contents and save it.</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ctrl_interface</span>=/var/run/wpa_supplicant</span><br><span class="line"><span class="attr">update_config</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>Generate passphrase and save it to the above file. Replace <em>your_SSID</em> and <em>your_key</em> with your own ones.</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wp<span class="built_in">a_passphrase</span> <span class="string">"your_SSID"</span> <span class="string">"your_key"</span> &gt;&gt; /etc/wp<span class="built_in">a_supplicant</span>/wp<span class="built_in">a_supplicant</span>.conf</span><br></pre></td></tr></table></figure>
-<p>Check if wpa_supplicant is running.</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ps</span> -aux|<span class="keyword">grep</span> wpa_supplicant</span><br></pre></td></tr></table></figure>
-<p>If it’s running, just as follows</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">root     21108  0.0  0.0  43488  3260 ?        Ss   20:01   0:</span><span class="number">00</span> wp<span class="built_in">a_supplicant</span> -i wlp3s0 -B -c /etc/wp<span class="built_in">a_supplicant</span>/wp<span class="built_in">a_supplicant</span>.conf</span><br></pre></td></tr></table></figure>
-<p>Kill the process, and remove <code>/var/run/wpa_supplicant/</code> if it exists</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kill 21108</span><br><span class="line"><span class="keyword">rm</span> /<span class="keyword">var</span>/<span class="keyword">run</span>/wpa_supplicant -rf</span><br></pre></td></tr></table></figure>
-<p>If it’s not running or you’ve killed the running one, run the following command to start <code>wpa_supplicant</code>.</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wp<span class="built_in">a_supplicant</span> -B -i <span class="string">"your_interface"</span> -c /etc/wp<span class="built_in">a_supplicant</span>/wp<span class="built_in">a_supplicant</span>.conf</span><br></pre></td></tr></table></figure>
-<h1 id="Get-IP-Address"><a href="#Get-IP-Address" class="headerlink" title="Get IP Address"></a>Get IP Address</h1><p>After connect to the network, you need to get an IP using <code>dhcpcd</code></p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">dhcpcd</span> wlp3s0</span><br></pre></td></tr></table></figure>
-<p>Wait for several seconds. If everything went smoothly, you would be connected to the network successfully.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I just spent hours connecting to the wireless network on archlinux today. Finally I resorted to various tools in commandline. Here’s how 
-    
-    </summary>
-    
-      <category term="Coding" scheme="http://searene.github.io/categories/Coding/"/>
-    
-    
-      <category term="linux" scheme="http://searene.github.io/tags/linux/"/>
-    
-      <category term="network" scheme="http://searene.github.io/tags/network/"/>
     
   </entry>
   
