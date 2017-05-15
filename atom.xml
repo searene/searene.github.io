@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2017-05-15T13:48:50.417Z</updated>
+  <updated>2017-05-15T13:54:21.867Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="http://searene.github.io/2017/05/15/re-embrace-hexo-and-hueman/"/>
     <id>http://searene.github.io/2017/05/15/re-embrace-hexo-and-hueman/</id>
     <published>2017-05-15T13:24:18.000Z</published>
-    <updated>2017-05-15T13:48:50.417Z</updated>
+    <updated>2017-05-15T13:54:21.867Z</updated>
     
-    <content type="html"><![CDATA[<p>About a month ago, I started writing blogs in Chinese using WordPress. I stuck to the plan for about several days then decided to use English instead. The reason is unbelievably simple: Typing English characters is a lot easier than typing Chinese characters.</p>
+    <content type="html"><![CDATA[<p>About a month ago, I started writing blogs in Chinese using WordPress. I stuck to the plan for about several days then decided to use English instead. The reason is unbelievably simple: typing English characters is a lot easier than typing Chinese characters.</p>
 <p>Now today, which is about a month later, I decided to abandon WordPress altogether. WordPress is an excellent blogging platform, I have to admit it. But I cannot find a reliable way to use markdown in WordPress, and I also noticed some odd behaviors of the visual editor used in WordPress. Nothing is more convenient and portable than writing my blogs in vim using markdown. So finally I decided to abandon it and embrace hexo and hueman again.</p>
+<p>I will consider moving some of the blogs written in WordPress back in here.</p>
 ]]></content>
     
     <summary type="html">
@@ -42,22 +43,143 @@
   </entry>
   
   <entry>
+    <title>the machanism of garbage collectors in Java</title>
+    <link href="http://searene.github.io/2017/05/07/the-machanism-of-garbage-collectors-in-Java/"/>
+    <id>http://searene.github.io/2017/05/07/the-machanism-of-garbage-collectors-in-Java/</id>
+    <published>2017-05-07T14:01:33.000Z</published>
+    <updated>2017-05-15T14:20:27.823Z</updated>
+    
+    <content type="html"><![CDATA[<p>There are several garbage collectors in Java, each has its specific usage scenario. To understand garbage collection, we first have to understand how heaps are divided in Java.</p>
+<p>Heaps are divided into two parts in Java, one is called the Young Generation, and the other one is called the Old Generation. You may have seen something called the Permanent Generation in other tutorials/documentations. It exists in Java 7 and before, Oracle removed it in Java 8.</p>
+<p>The Young Generation is also divided into three parts:</p>
+<ol>
+<li>Eden Area</li>
+<li>Survivor Space 1</li>
+<li>Survivor Space 2</li>
+</ol>
+<p>The whole picture in Heap is as follows.</p>
+<p><img src="/images/The-Machanism-of-Garbage-Collectors-in-Java.png" alt="JVM heap memory"></p>
+<p>Basically, there are two types of garbage collections for most collectors:</p>
+<ol>
+<li>Young Generation Collection</li>
+<li>Old Generation Collection</li>
+</ol>
+<p>Young Generation Collection is meant to be time-efficient and frequent, this is different from the Old Generation Collection, which could take a long time, and it’s done less frequently. The Old Generation usually has larger heap space.</p>
+<h2 id="Serial-Collector"><a href="#Serial-Collector" class="headerlink" title="Serial Collector"></a>Serial Collector</h2><p><strong>Young Generation Collection Using the Serial Collector</strong><br>    When you <code>new</code> an object in the Java code, the space for that object will be allocated in the Eden Area. After a while, the Eden Area may be filled up, so live objects in it will be copied into one of the Survivor Space, let’s say it’s Survivor Space 1. Some large objects that won’t be fit in the Survivor Space will be copies into the Old Generation.</p>
+<p><img src="/images/The-Machanism-of-Garbage-Collectors-in-Java-1.png" alt="young generation in the Serial Collector - 1"></p>
+<p>After a while, some live objects in Survivor Space 1 become dead, i.e., they are not referenced by any other objects anymore, and some more space is allocated in the Eden Area for newly initiated objects.</p>
+<p>Now you can see, objects exist in Eden and Survivor Space 1, and Survivor Space 2 is empty. This is where the interesting thing begins. Because from now on, what the Young Generation does is to repeat the following process.</p>
+<p>When the Eden Area is filled up again. live objects in it will be copied into Survivor Space 2(Some large objects that are too large to fit in Survivor Space will be copied into the Old Generation). The live objects that are relatively young are copied into the Survivor Space 2, live objects that are relatively old(i.e., they survived through several Young Generation Collections) are copied into the Old Generation.</p>
+<p><img src="/images/The-Machanism-of-Garbage-Collectors-in-Java-3.png" alt="young generation in the Serial Collector - 2"></p>
+<p>Then all dead objects in the Eden and Survivor Space 1 will be garbage collected, the two survivor spaces swap roles, the Survivor Space 1 is empty while the Survivor Space 2 is not, and the above process will be repeated.</p>
+<p><strong>Old Generation Collection Using the Serial Collector</strong></p>
+<p>Old Generation Collection is divided into three steps, mark-sweep-compact. In the mark phase, the collector identifies live objects, the sweep phase sweeps over the generation and frees space taken by dead objects. Then the collector moves all live objects to the beginning of the old generation, which is called compaction. The compaction is for quick space allocation in the old generation later on.</p>
+<p><strong>When to Use the Serial Collector</strong></p>
+<p>The Serial Collector is done in a single-threaded way, so it’s meant to be run on client-style machines that do not require low pause times. And since it only takes a small amount of memory, the serial collector can perform very well with only 64MB heaps in most cases.</p>
+<h2 id="Parallel-Collector"><a href="#Parallel-Collector" class="headerlink" title="Parallel Collector"></a>Parallel Collector</h2><p><strong>Young Generation Collection Using the Parallel Collector</strong></p>
+<p>Young Generation collection in the parallel collector is the same as the Serial Collector, except that it’s done in parallel. The Parallel Collector fully utilizes the power of multiple threads and make the process of Young Generation Collection faster. Although the Young Generation Collection is still a stop-the-world action, the process would take less time and make less impact to the running program.</p>
+<p><strong>Old Generation Collection Using the Parallel Collector</strong></p>
+<p>Old Generation Collection using the Parallel Collector is the same as the Serial Collector.</p>
+<p><strong>When to Use the Parallel Collector</strong></p>
+<p>You can use the Parallel Collector when you have multiple CPU cores, whose power could be unleashed and utilized by it. But also notice that the Parallel Collector wouldn’t help you a lot if you need a much shorter pause time in GC, because it still takes a long time to finish the Old Generation Collection, which is done in a single-threaded way in the Parallel Collector.</p>
+<h2 id="Parallel-Compacting-Collector"><a href="#Parallel-Compacting-Collector" class="headerlink" title="Parallel Compacting Collector"></a>Parallel Compacting Collector</h2><p><strong>Young Generation Collection Using the Parallel Collector</strong></p>
+<p>Young Generation Collection using the Parallel Compacting Collector is the same as the Parallel Collector.</p>
+<p><strong>Old Generation Collection Using the Parallel Collector</strong></p>
+<p>Old Generation Collection in the Parallel Compacting Collector is done in a multi-threaded way, this is different from the Parallel Collector, whose uses only a single thread to complete Old Generation Collection.</p>
+<p>There are in total three phases regarding Old Generation Collection.</p>
+<p><strong>1. Mark(multi-thread)</strong></p>
+<p>First of all, the old generation is divided into several regions of the same fixed sizes. Then live objects that are directly reachable from the code are divided equally among multiple threads. Those threads work concurrently to mark all live objects in the old generation, storing the size and location of each live object.</p>
+<p><strong>2. Summary(single-thread)</strong></p>
+<p>Due to previous compactions, some portions on the left side of the old generation are typically denser than those on the right side of it. So the collector will search from the left side, calculate the density of live objects in each region until it reaches a point where the density is small enough to be considered eligible for garbage collection. All the regions to the left of the point are not worth garbage collecting, and they will not be moved, those regions are called <em>dense prefix</em>. All the regions to the right of the point will be garbage collected. After collection, the collector will store the location of the first live object in each region, which would be helpful in the compaction phase.</p>
+<p><strong>3. Compaction(multi-thread)</strong></p>
+<p>Live objects on the right side will be moved to the left side of the old generation, leaving a huge chunk of contiguous free memory on the right side. This process is called compaction.</p>
+<p><strong>When to Use the Parallel Compacting Collector</strong></p>
+<p>You can use the Parallel Compacting Collector if you have multiple CPU cores that could be utilized. The collector will take advantage of those CPU cores and make the total pause time shorter.</p>
+<h2 id="Concurrent-Mark-Sweep-CMS-Collector"><a href="#Concurrent-Mark-Sweep-CMS-Collector" class="headerlink" title="Concurrent Mark-Sweep(CMS) Collector"></a>Concurrent Mark-Sweep(CMS) Collector</h2><p><strong>Young Generation Collection Using the CMS Collector</strong></p>
+<p>Young Generation Collection using the CMS Collector is the same as the Parallel Collector.</p>
+<p><strong>Old Generation Collection Using the CMS Collector</strong></p>
+<p>There are four phases in total in the Old Generation Collection using the CMS Collector.</p>
+<p><strong>1. Initial Mark(single thread)</strong></p>
+<p>All live objects that are directly reachable from the code are marked as alive. It takes a short pause to do it.</p>
+<p><strong>2. Concurrent Mark(multi-thread)</strong></p>
+<p>While the application is running, the collector marks live objects that are transitively reachable from the above set obtained from the <em>Initial Mark</em>.</p>
+<p><strong>3. Remark(multi-thread)</strong></p>
+<p>Because the <em>Concurrent Mark</em> is conducted while the application is still running, some live objects cannot be detected in the second phase. So the application stops for a while, and the collector checks all objects that are modified during the <em>Concurrent Mark</em> phase, and mark all objects that turned garbage during the previous phase. After the <em>Remark</em> phase, all live objects are marked.</p>
+<p><strong>4. Sweep(multi-thread)</strong></p>
+<p>The collector conducts a <em>Sweep</em> operation to eliminate all garbage in the Old Generation.</p>
+<p><strong>Disadvantages of the CMS Collector</strong></p>
+<p>The <em>CMS Collector</em> is the only collector that has no <em>compact</em> phase, which means it cannot use the <em>bump-the-pointer</em> strategy(see reference below) to find free space.</p>
+<blockquote>
+<p><em>bump-the-pointer</em> strategy: This is a strategy used to allocate new space in the Old Generation. With this strategy, you only need to store the position of the last live object after each Old Generation Collection. When you need to allocate a space to store a new object, what you need to do is just to allocate the space right after the position and update the position to the new one. There are no live objects after that position because the Old Generation has been compacted before. The strategy is used in all above collectors except the <em>CMS Collector</em> because the <em>CMS Collector</em> doesn’t compact the Old Generation.</p>
+</blockquote>
+<p>So how does the <em>CMS Collector</em> find new space to allocate? Basically, it maintains a linked list internally, which connects all free space together. When an allocation is needed, the collector will traverse through the list and find the appropriate region to allocate the space.</p>
+<p>Another disadvantage of the <em>CMS Collector</em> is that it needs a bigger heap size because the <em>Concurrent Mark</em> phase proceeds while the application is still running, which means more space needs to be allocated when some garbage cannot be collected in time. So enough heap size must be prepared to store both uncollected garbage and newly allocated space.</p>
+<p><strong>When to Use the CMS Collector</strong></p>
+<p>The <em>CMS Collector</em> is typically used in the server side application, where large heap size and multiple CPU cores could be utilized. Those applications usually require a smaller pause time, which is exactly what <em>the CMS Collector</em> is good at.</p>
+<h2 id="G1-Garbage-First-Collector"><a href="#G1-Garbage-First-Collector" class="headerlink" title="G1(Garbage First) Collector"></a>G1(Garbage First) Collector</h2><p>G1 Collector is different from previous collectors. All the previous collectors have a young generation and an old generation of fixed-size. This is the not the case for the G1 Collector. For the G1 Collector, the entire heap is divided into approximately 2000 areas, the size of each area is around 1MB ~ 32MB. The type of these areas may be different, it may be eden, survivor area, or the old generation. The whole picture is as follows.</p>
+<p><img src="/images/The-Machanism-of-Garbage-Collectors-in-Java-4.png" alt="the CMS Collector"></p>
+<p>Although the size of each region is the same in the above picture, in reality, this may not be the case. The size of each region usually depends on how the collector optimizes the collection algorithm, and they are changing constantly.</p>
+<p>Notice that <em>Humongous Region</em> is used to store objects that are larger than 50% of the normal region size. Currently, no optimization is applied to this type of region, so avoid using objects that are too large.</p>
+<p><strong>Young Generation Collection Using the G1 Collector</strong></p>
+<ol>
+<li>Live objects in eden areas are copied into survivor areas.</li>
+<li>Some live objects that are out of the time threshold are copied into old generations.</li>
+<li>“Accounting” process is performed, which determines how much time is needed for the next Young GC based on the current stats and the predefined pause time.</li>
+<li>Resize eden/survivor regions based on the information obtained above.</li>
+</ol>
+<p><strong>Old Generation Collection Using the G1 Collector</strong></p>
+<ol>
+<li>Initial Mark: mark all survivor regions which may have references to objects in old generations. This step is done concurrently with Young GC. So although it’s still a stop-the-world operation(because the entire Young GC is a stop-the-world operation), it doesn’t take extra time to complete.</li>
+<li>Root region Scan: scan survivor regions for references into the old generation. It happens when the application is still running.</li>
+<li>Concurrent Mark: mark all live objects across the entire heap, this is done while the application is still running.</li>
+<li>Remark: stop the world and complete the marking process.</li>
+<li>Cleanup: <ul>
+<li>Perform accounting on live objects and completely free regions.(stop-the-world)</li>
+<li>Scrubs Remembered Sets.(stop-the-world)</li>
+<li>Reset empty regions and return them to the free list.(concurrent)</li>
+</ul>
+</li>
+<li>Copy: copy live objects from to new regions. This is a stop-the-world step. It can be seen as a kind of compaction.</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf</a></li>
+<li><a href="http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html" target="_blank" rel="external">http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html</a></li>
+<li><a href="http://stackoverflow.com/a/19303535/1031769" target="_blank" rel="external">http://stackoverflow.com/a/19303535/1031769</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;There are several garbage collectors in Java, each has its specific usage scenario. To understand garbage collection, we first have to un
+    
+    </summary>
+    
+      <category term="Coding" scheme="http://searene.github.io/categories/Coding/"/>
+    
+    
+      <category term="java" scheme="http://searene.github.io/tags/java/"/>
+    
+      <category term="jvm" scheme="http://searene.github.io/tags/jvm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Where to go</title>
     <link href="http://searene.github.io/2017/03/29/Where-to-go/"/>
     <id>http://searene.github.io/2017/03/29/Where-to-go/</id>
     <published>2017-03-29T14:49:23.000Z</published>
-    <updated>2017-03-29T15:18:01.569Z</updated>
+    <updated>2017-05-15T14:59:10.630Z</updated>
     
-    <content type="html"><![CDATA[<p>I haven’t been written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it, let alone read it. But anyway, I decided to write something tonight.</p>
-<p>I’m almost 27, I told my self. And it is 2017, 17 years after 2000, I could never figure out where those years went. So many years, I’m getting older every day. Does the performance in the work really matter, not sure, maybe not that important. So what really matters? I know it, I always know it, but I’m always afraid to face it.</p>
-<p>I started to solve the problems on leetcode, that was for my career. Sometimes I think maybe I just need to choose a life and go with it, but I really hope the life I chose would be perfect, or at least full of happiness and fulfillment, but actually it was not.</p>
-<p>I often thought of the Sergeant in Forrest Gump, he lost his legs during the war, he didn’t know what to do. He cursed his life, joked about God, but when he finally found his life, he didn’t say anything. He never mentioned whether God existed or not, maybe he also didn’t know. I often pondered over the same question, but I had no answer to it. Why wouldn’t God give me a better life, maybe he has his reason, I just need to go with it.</p>
+    <content type="html"><![CDATA[<p>I haven’t written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it, let alone read it. But anyway, I decided to write something tonight.</p>
+<p>I’m almost 27, I told my self. And it is 2017, 17 years after 2000, I could never figure out where those years went. So many years, I’m getting older every day. Does the performance in the work really matter? Not sure, maybe not that important. So what really matters? I know it, I always know it, but I’m always afraid to face it.</p>
+<p>I started trying to solve problems on leetcode, that was for my career. Sometimes I thought maybe I just needed to choose a life and went with it, but I really hoped the life I chose would be perfect, or at least full of happiness and fulfillment, but actually it was not.</p>
+<p>I often think of the Sergeant in Forrest Gump, he lost his legs during the war, he didn’t know what to do. He cursed his life, joked about God, but when he finally got a normal life, he didn’t say anything. He never mentioned whether God existed or not, maybe he still didn’t know. I often pondered over the same question, but I had no answer to it. Why wouldn’t God give me a better life? Maybe he has his reason, I just need to go with it.</p>
 <p>It’s already late, I have to go to bed and sleep. I wrote some nonsense here, whatever.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;I haven’t been written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it
+      &lt;p&gt;I haven’t written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it, let
     
     </summary>
     
@@ -71,9 +193,9 @@
     <link href="http://searene.github.io/2017/03/09/Hadoop-Internals-Configuration/"/>
     <id>http://searene.github.io/2017/03/09/Hadoop-Internals-Configuration/</id>
     <published>2017-03-09T13:49:00.000Z</published>
-    <updated>2017-03-09T14:26:02.733Z</updated>
+    <updated>2017-05-15T15:10:56.737Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>As what is called, <code>Configuration</code> is used to store all kinds of configurations in the hadoop platform, either they are from files(like <code>core-default.xml</code>) or from users(set via <code>conf.setInt(&quot;dfs.replication&quot;, 1)</code>). It would also warn you if you used a deprecated key. So how does it work? I will try to explain it in the source code level.</p>
+    <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>As what is called, <code>Configuration</code> is used to store all kinds of configurations in the hadoop platform, either they are from files(like <code>core-default.xml</code>) or from users(set via <code>conf.setInt(&quot;dfs.replication&quot;, 1)</code>). It would also warn you if you use a deprecated key. So how does it work? I will try to explain it in the source code level.</p>
 <h1 id="Serialization-and-Deserialization"><a href="#Serialization-and-Deserialization" class="headerlink" title="Serialization and Deserialization"></a>Serialization and Deserialization</h1><p>Configuration can be serialized in the file system and deserialized again into an instance. It implements the <code>Writable</code> interface to achieve this. There are only two methods in the <code>Writable</code> interface, <code>write</code> and <code>readFields</code>, just as follows.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Writable</span> </span>&#123;</span><br><span class="line">  <span class="comment">/** </span><br><span class="line">   * Serialize the fields of this object to &lt;code&gt;out&lt;/code&gt;.</span><br><span class="line">   * </span><br><span class="line">   * <span class="doctag">@param</span> out &lt;code&gt;DataOuput&lt;/code&gt; to serialize this object into.</span><br><span class="line">   * <span class="doctag">@throws</span> IOException</span><br><span class="line">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(DataOutput out)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/** </span><br><span class="line">   * Deserialize the fields of this object from &lt;code&gt;in&lt;/code&gt;.  </span><br><span class="line">   * </span><br><span class="line">   * &lt;p&gt;For efficiency, implementations should attempt to re-use storage in the </span><br><span class="line">   * existing object where possible.&lt;/p&gt;</span><br><span class="line">   * </span><br><span class="line">   * <span class="doctag">@param</span> in &lt;code&gt;DataInput&lt;/code&gt; to deseriablize this object from.</span><br><span class="line">   * <span class="doctag">@throws</span> IOException</span><br><span class="line">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">readFields</span><span class="params">(DataInput in)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>As you can see, we call <code>write</code> when we need to serialize a <code>Configuration</code> instance into file, and we call <code>readFields</code> when we need to deserialize it from file. In fact, I wrote several lines to show how to serialize and deserialize a <code>Configuration</code> instance.</p>
@@ -112,12 +234,12 @@
     <link href="http://searene.github.io/2017/02/13/I-arrived-in-Hangzhou-yesterday/"/>
     <id>http://searene.github.io/2017/02/13/I-arrived-in-Hangzhou-yesterday/</id>
     <published>2017-02-12T23:35:34.000Z</published>
-    <updated>2017-02-13T00:09:14.115Z</updated>
+    <updated>2017-05-15T13:52:41.033Z</updated>
     
     <content type="html"><![CDATA[<p>I arrived in Hangzhou yesterday, and I could feel that the amounts of dopamine released in my brain fluctuated from time to time. At first I felt really happy, I was not sure why. Then I felt sort of upset when I got off the plane and headed towards my company. Maybe it was because I had to work again in my company, which was so boring and annoying. I think some people tend to release dopamine a lot, and they may never know what depression is like.</p>
 <p>I downloaded the movie <code>Passenger</code> from the Internet and watched it last night. To my suprise, although there were lots of negative comments on <code>douban</code>, I found the movie pretty interesting and compelling. Maybe it was due to the unbeatable charm of <code>Jennifer Lawrence</code>, she was so beautiful. That being said, the plot was not bad, and the film’s special effects were amazing! I really loved it. I even loved it to the extent that I couldn’t decide whether <code>Arrival</code> or <code>Passenger</code> was better, even though the former got a much higher mark on <code>douban</code> and <code>IMDB</code>.</p>
 <p><img src="/images/passenger-law.jpg" alt="Jennifer Lawrence on Passenger"></p>
-<p>Another thing. I decided to use <code>Wechat</code> as few as possible. I watched a Ted talk yesterday and the speaker said that falling into social media was really a bad thing for us. It might cause more anxiety and depression and made us even more lonely, no matter how many friends we had ONLINE. I thought that was absolutely correct. I felt more lonely when I talked in social media, our brain wasn’t design to talk like this. We had to communicate face to face, use our gestures and expressions to create a better conversation and relax ourselves. Really, few people cared about what I posted on moments, what was the purpose of that!</p>
+<p>Another thing. I decided to use <code>Wechat</code> as few as possible. I watched a Ted talk yesterday and the speaker said that falling into social media was really a bad thing for us. It might cause more anxiety and depression and made us even more lonely, no matter how many friends we had ONLINE. I thought that was absolutely correct. I felt more lonely when I talked in social media, our brain wasn’t designed to talk like this. We have to communicate face to face, use our gestures and expressions to create a better conversation and relax ourselves. Really, few people care about what I post on moments, what is the purpose of that!</p>
 ]]></content>
     
     <summary type="html">
@@ -289,7 +411,7 @@
     <link href="http://searene.github.io/2016/10/07/beautify-i3wm/"/>
     <id>http://searene.github.io/2016/10/07/beautify-i3wm/</id>
     <published>2016-10-07T00:28:38.000Z</published>
-    <updated>2016-12-06T14:08:49.748Z</updated>
+    <updated>2017-05-15T14:42:31.767Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h1><p>I enjoy using i3wm, big time. You can switch to different windows/apps conveniently with it. The only problem to me is that it’s not beautiful enough, and it’s ridiculously small in my high-resolution screen. So I decided to change it a little bit.</p>
 <h1 id="Effect"><a href="#Effect" class="headerlink" title="Effect"></a>Effect</h1><p>Here is what you would get after applying the method.</p>
@@ -301,7 +423,7 @@
 <p>Then install <code>conky</code> and <code>font-awesome</code>, create a new file <code>~/.i3/conky/conkyrc</code>, put the following lines in it.</p>
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###    lovelybacon.deviantart.com   ####</span></span><br><span class="line"></span><br><span class="line">background <span class="keyword">no</span></span><br><span class="line">out_to_x <span class="keyword">no</span></span><br><span class="line">out_to_console yes</span><br><span class="line">update_interval <span class="number">1</span></span><br><span class="line">total_run_times <span class="number">0</span></span><br><span class="line">use_spacer none</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">TEXT</span><br><span class="line">$&#123;<span class="keyword">exec</span> acpi -b | awk <span class="string">"&#123;print $1&#125;"</span> | sed <span class="string">'s/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\3/'</span>&#125;% \</span><br><span class="line">$&#123;<span class="keyword">exec</span> acpi -b | awk <span class="string">"&#123;print $1&#125;"</span> | sed <span class="string">'s/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\2/'</span>&#125; \</span><br><span class="line">$&#123;if_mpd_playing&#125;$&#123;mpd_artist&#125;$&#123;mpd_title&#125;$&#123;endif&#125;     \</span><br><span class="line">   $&#123;downspeedf wlp3s<span class="number">0</span>&#125; | $&#123;upspeedf wlp3s<span class="number">0</span>&#125;     \</span><br><span class="line">  $&#123;wireless_link_qual_perc wlp3s<span class="number">0</span>&#125;  $&#123;wireless_essid wlp3s<span class="number">0</span>&#125;     \</span><br><span class="line">   $&#123;hwmon <span class="number">2</span> temp <span class="number">1</span>&#125; | $&#123;hwmon <span class="number">2</span> temp <span class="number">3</span>&#125;     \</span><br><span class="line">  $&#123;<span class="keyword">exec</span> amixer get Master -c <span class="number">0</span> -M | <span class="keyword">grep</span> -oE <span class="string">"[[:digit:]]*%"&#125;     \</span><br><span class="line">  <span class="subst">$&#123;<span class="keyword">time</span> %a %b %d&#125;</span>     \</span><br><span class="line">  <span class="subst">$&#123;<span class="keyword">time</span> %H:%M&#125;</span></span></span><br></pre></td></tr></table></figure>
 <p>Restart i3, the shortcut of mine is <code>Shift+$mod+r</code>, <code>$mod</code> could either be <code>Alt</code> or <code>Super key</code></p>
-<h1 id="Credit"><a href="#Credit" class="headerlink" title="Credit"></a>Credit</h1><p>The above contents are from <a href="http://lovelybacon.deviantart.com/art/i3bar-icons-white-edition-575375105" target="_blank" rel="external">lovelybacon.deviantart.com</a>, thanks for your amazing work. I only did a little modification.</p>
+<h1 id="Credit"><a href="#Credit" class="headerlink" title="Credit"></a>Credit</h1><p>The above contents are from <a href="http://lovelybacon.deviantart.com/art/i3bar-icons-white-edition-575375105" target="_blank" rel="external">lovelybacon.deviantart.com</a>, thanks for your amazing work. I only did a few modifications.</p>
 ]]></content>
     
     <summary type="html">
@@ -871,45 +993,21 @@
     <link href="http://searene.github.io/2016/07/04/The-fee-paid-to-freelancer-is-not-refundable/"/>
     <id>http://searene.github.io/2016/07/04/The-fee-paid-to-freelancer-is-not-refundable/</id>
     <published>2016-07-03T16:00:00.000Z</published>
-    <updated>2016-12-06T14:08:49.748Z</updated>
+    <updated>2017-05-15T15:06:55.320Z</updated>
     
-    <content type="html"><![CDATA[<p>About two days ago, I got a message from my phone that I was charged for ￥110.72. The money was taken directly from my credit card. At first, I thought the money was stolen using some high-end technology, but I was wrong. After having a conversation with the customer service of UnionPay, I got a keyword, freelancer.</p>
+    <content type="html"><![CDATA[<p>About two days ago, I got a message from my phone that I was charged for ￥110.72. The money was taken directly from my debit card. At first, I thought the money was stolen using some high-end technology, but I was wrong. After having a conversation with the customer service of UnionPay, I got a keyword, freelancer.</p>
 <p>Freelancer charged me via Paypal because to try the free trial, I had to verify my Paypal account in the freelancer website. After the free-trial period was over, it automatically charged me for £12.45 GBP to continue the current plan. I remember that the plan chosen for me at first was much more expensive, and I changed the plan to the lowest one in order to prevent any unnecessary payments as much as possible. I thought UnionPay couldn’t be used to pay in GBP, but clearly I was wrong.</p>
-<p>I issued a ticket to freelancer to try to get a refund, but I failed. It replied that this charge was not refundable. This is really bad. But luckily, it is not too much money. If I didn’t change the plan at first, I would be charged for a fat stack! I don’t want to continue to ask my money back right now, I’m way too lazy. Maybe I will deal with it sometime in the future.</p>
+<p>I issued a ticket to freelancer to try to get a refund, but I failed. It replied that this charge was not refundable. This is really bad. But luckily, there is not too much money. If I didn’t change the plan at first, I would be charged for a fat stack! I don’t want to continue to ask my money back right now, I’m way too lazy. Maybe I will deal with it sometime in the future.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;About two days ago, I got a message from my phone that I was charged for ￥110.72. The money was taken directly from my credit card. At fi
+      &lt;p&gt;About two days ago, I got a message from my phone that I was charged for ￥110.72. The money was taken directly from my debit card. At fir
     
     </summary>
     
       <category term="Journal" scheme="http://searene.github.io/categories/Journal/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>I finished reading &quot;The catcher in the rhy&quot;</title>
-    <link href="http://searene.github.io/2016/06/15/I-finished-reading-The-catcher-in-the-rhy/"/>
-    <id>http://searene.github.io/2016/06/15/I-finished-reading-The-catcher-in-the-rhy/</id>
-    <published>2016-06-14T23:16:44.000Z</published>
-    <updated>2016-12-06T14:08:49.748Z</updated>
-    
-    <content type="html"><![CDATA[<p>I finished reading “The catcher in the rhy” yesterday. I don’t think this is an excellent book. The main character in this book just hates everything. I have no idea why he thinks in this way, though he is only 12 years old. Anyway, he is more mature than me when I was 12 years old, absolutely.</p>
-<p>I used to read English books in order to improve my English and enlarge my vocabulary. But I think that’s not important now. I mean, learning English is not that important. So why am I still reading these books? Maybe reading books in Chinese will be faster. Honestly I don’t know. I still hope reading in English constantly will help me in the future sometime.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I finished reading “The catcher in the rhy” yesterday. I don’t think this is an excellent book. The main character in this book just hate
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://searene.github.io/categories/Journal/"/>
-    
-    
-      <category term="book" scheme="http://searene.github.io/tags/book/"/>
     
   </entry>
   
