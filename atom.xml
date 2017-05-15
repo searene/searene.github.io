@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2017-03-29T15:18:01.569Z</updated>
+  <updated>2017-05-15T13:48:50.417Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>re-embrace hexo and hueman</title>
+    <link href="http://searene.github.io/2017/05/15/re-embrace-hexo-and-hueman/"/>
+    <id>http://searene.github.io/2017/05/15/re-embrace-hexo-and-hueman/</id>
+    <published>2017-05-15T13:24:18.000Z</published>
+    <updated>2017-05-15T13:48:50.417Z</updated>
+    
+    <content type="html"><![CDATA[<p>About a month ago, I started writing blogs in Chinese using WordPress. I stuck to the plan for about several days then decided to use English instead. The reason is unbelievably simple: Typing English characters is a lot easier than typing Chinese characters.</p>
+<p>Now today, which is about a month later, I decided to abandon WordPress altogether. WordPress is an excellent blogging platform, I have to admit it. But I cannot find a reliable way to use markdown in WordPress, and I also noticed some odd behaviors of the visual editor used in WordPress. Nothing is more convenient and portable than writing my blogs in vim using markdown. So finally I decided to abandon it and embrace hexo and hueman again.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;About a month ago, I started writing blogs in Chinese using WordPress. I stuck to the plan for about several days then decided to use Eng
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://searene.github.io/categories/Journal/"/>
+    
+    
+      <category term="hexo" scheme="http://searene.github.io/tags/hexo/"/>
+    
+      <category term="hueman" scheme="http://searene.github.io/tags/hueman/"/>
+    
+  </entry>
   
   <entry>
     <title>Where to go</title>
@@ -884,38 +910,6 @@
     
     
       <category term="book" scheme="http://searene.github.io/tags/book/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>install flash plugin in firefox on arch linux</title>
-    <link href="http://searene.github.io/2016/06/15/install-flash-plugin-in-firefox-on-arch-linux/"/>
-    <id>http://searene.github.io/2016/06/15/install-flash-plugin-in-firefox-on-arch-linux/</id>
-    <published>2016-06-14T23:06:33.000Z</published>
-    <updated>2016-12-06T14:08:49.748Z</updated>
-    
-    <content type="html"><![CDATA[<p>First, install <code>flashplugin</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S flashplugin</span><br></pre></td></tr></table></figure>
-<p>Then if you launch firefox, you will find out that there’s no sound when playing flash in it. Launch it from the terminal, you will find out the reason.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed to open VDPAU backend libvdpau_va_gl.so: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
-<p>So you need to install <code>libvdpau-va-gl</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S libvdpau-va-gl</span><br></pre></td></tr></table></figure>
-<p>Launch again, everything is fine now.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;First, install &lt;code&gt;flashplugin&lt;/code&gt;.&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/spa
-    
-    </summary>
-    
-      <category term="Coding" scheme="http://searene.github.io/categories/Coding/"/>
-    
-    
-      <category term="linux" scheme="http://searene.github.io/tags/linux/"/>
-    
-      <category term="firefox" scheme="http://searene.github.io/tags/firefox/"/>
     
   </entry>
   
