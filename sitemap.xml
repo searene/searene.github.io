@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://searene.github.io/2017/05/15/what-this-refers-to-in-javascript/</loc>
-    
-    <lastmod>2017-05-16T15:13:12.227Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://searene.github.io/2017/05/15/what-does-this-refer-to-in-javascript/</loc>
     
     <lastmod>2017-05-16T15:09:19.780Z</lastmod>
@@ -96,6 +89,13 @@
     <loc>http://searene.github.io/2016/12/06/Install-fcitx-on-ubuntu-16-10/</loc>
     
     <lastmod>2016-12-06T14:30:23.054Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://searene.github.io/2016/07/17/Hexo-Source-Code-Demystified/</loc>
+    
+    <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
   </url>
   
@@ -381,13 +381,6 @@
   
   <url>
     <loc>http://searene.github.io/2016/05/24/I-still-didn-t-go-jogging-today/</loc>
-    
-    <lastmod>2016-12-06T14:08:49.748Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://searene.github.io/2016/07/17/Hexo-Source-Code-Demystified/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     

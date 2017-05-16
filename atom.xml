@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.github.io/"/>
-  <updated>2017-05-16T15:13:12.227Z</updated>
+  <updated>2017-05-16T15:09:19.780Z</updated>
   <id>http://searene.github.io/</id>
   
   <author>
@@ -14,95 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>what does &quot;this&quot; refers to in javascript?</title>
-    <link href="http://searene.github.io/2017/05/15/what-this-refers-to-in-javascript/"/>
-    <id>http://searene.github.io/2017/05/15/what-this-refers-to-in-javascript/</id>
-    <published>2017-05-15T15:30:32.000Z</published>
-    <updated>2017-05-16T15:13:12.227Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p><code>this</code> in javascript is always a mysterious thing. Some programmers have written a lot of javascript code yet still cannot tell the value of <code>this</code> every now and then. So today, I decided to write an article about it to solve the problem once and for all. I think you would be able to fully understand what <code>this</code> refers to in almost all situations after you read this article.</p>
-<h1 id="Rule-1-Basic-Rule"><a href="#Rule-1-Basic-Rule" class="headerlink" title="Rule 1: Basic Rule"></a>Rule 1: Basic Rule</h1><div style="background-color: #fff5cc; border-color: #ffe273; padding: 10px; border-left: 10px solid #ffe273"><strong>Rule 1</strong>: <code>this</code> is injected into context when the function which contains <code>this</code> gets executed, and the injected value is the object that invokes the function.</div>
-
-<p>This is the most important rule. Maybe you haven’t fully understood its meaning, let’s use several examples to illustrate what it means.</p>
-<h4 id="when-the-function-is-invoked-by-an-object"><a href="#when-the-function-is-invoked-by-an-object" class="headerlink" title="when the function is invoked by an object."></a>when the function is invoked by an object.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this?</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
-<p>Before trying to get the value of <code>this</code> in the above code, let’s recall the first part of <strong>Rule 1</strong> beforehand.</p>
-<blockquote>
-<p><code>this</code> is injected into context when the function which  contains <code>this</code> gets executed.</p>
-</blockquote>
-<p>What does it mean? Actually it means that <code>this</code> doesn’t have a value before running <code>obj.foo();</code>. The value of <code>this</code> is injected into <code>foo</code> when running the last line of the above code. So talking about the value of <code>this</code> is meaningless without invoking the function.</p>
-<p>Now we know that <code>this</code> is injected into <code>foo</code> only when <code>obj.foo()</code> gets executed. The question left is what the injected value is. Let’s recall the second part of <strong>Rule 1</strong>.</p>
-<blockquote>
-<p>the injected value is the object that invokes the function.</p>
-</blockquote>
-<p>Who invokes <code>foo</code>? <code>obj</code>! Problem solved, <code>this</code> refers to <code>obj</code> here.</p>
-<div style="border: 1px solid #c8c8c8; padding: 10px; border-radius: 5px;">answer: <strong>obj</strong></div>
-
-<h4 id="when-the-function-is-invoked-all-by-itself"><a href="#when-the-function-is-invoked-all-by-itself" class="headerlink" title="when the function is invoked all by itself."></a>when the function is invoked all by itself.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
-<p>This is different, nothing invoked <code>foo()</code>, right? Well, not exactly. In fact, <code>foo()</code> is same as <code>window.foo()</code>, so <code>this</code> refers to <code>window</code> here, which is the global object in javascript.</p>
-<div style="border: 1px solid #c8c8c8; padding: 10px; border-radius: 5px;">answer: <strong>window</strong></div>
-
-<h4 id="when-the-function-is-assigned-to-another-function"><a href="#when-the-function-is-assigned-to-another-function" class="headerlink" title="when the function is assigned to another function"></a>when the function is assigned to another function</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this?</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> bar = obj.foo;</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
-<p>This time the function gets executed is not <code>obj.foo</code>, it’s <code>bar</code>, because <code>obj.foo</code> is assigned to <code>bar</code>.</p>
-<p><code>this</code> refers to object that invokes <code>bar</code> instead of <code>obj.foo</code> in this case, because <code>obj.foo</code> has been assigned to <code>bar</code>. Who invokes <code>bar</code>? <code>window</code>. So <code>this</code> refers to <code>window</code> here.</p>
-<div style="border: 1px solid #c8c8c8; padding: 10px; border-radius: 5px;">answer: <strong>window</strong></div>
-
-<h1 id="Rule-2-Eval"><a href="#Rule-2-Eval" class="headerlink" title="Rule 2: Eval"></a>Rule 2: Eval</h1><div style="background-color: #fff5cc; border-color: #ffe273; padding: 10px; border-left: 10px solid #ffe273"><strong>Rule 2</strong>: <code>this</code> is the same as the one in the context when evaluated using <code>eval</code> directly, and is equal to <code>window</code> when evaluated using <code>eval</code> indirectly.</div>
-
-<p>Using <code>eval</code> directly means something like: <code>eval(&#39;this&#39;)</code>.<br>Using <code>eval</code> indirectly means something like <code>(1, eval)(&#39;this&#39;)</code>.</p>
-<p>Let’s look at the code first.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">eval</span>(<span class="string">'this'</span>)); <span class="comment">// this?</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
-<p>To solve the problem, let’s first insert another line in the above code.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// &lt;-- insert this line</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">eval</span>(<span class="string">'this'</span>)); <span class="comment">// this?</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
-<p>Do you know what <code>this</code> in the inserted line refers to? Of course it’s <code>obj</code>, we have talked about it a while before. So what’s the value of <code>eval(&#39;this&#39;)</code>? It’s exactly the same, <code>obj</code>! It doesn’t change.</p>
-<div style="border: 1px solid #c8c8c8; padding: 10px; border-radius: 5px;">answer: <strong>obj</strong></div>
-
-<p>What if we use <code>eval</code> indirectly?</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log((<span class="number">1</span>, <span class="built_in">eval</span>)(<span class="string">'this'</span>)); <span class="comment">// this?</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
-<p>When <code>eval</code> is used indirectly, <code>this</code> in it refers to <code>window</code>, simple rule.</p>
-<div style="border: 1px solid #c8c8c8; padding: 10px; border-radius: 5px;">answer: <strong>window</strong></div>
-
-<h1 id="Rule-3-Arrow-Functions"><a href="#Rule-3-Arrow-Functions" class="headerlink" title="Rule 3: Arrow Functions"></a>Rule 3: Arrow Functions</h1><div style="background-color: #fff5cc; border-color: #ffe273; padding: 10px; border-left: 10px solid #ffe273"><strong>Rule 3</strong>: <code>this</code> in arrow functions is the same as <code>this</code> in the outer context.</div>
-
-<p>Still, code first.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;</span><br><span class="line">        foo: () =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this?</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    obj.foo();</span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
-<p>OK, this time, <code>this</code> is used in an arrow function. According to <strong>Rule 3</strong>, we have to find out what <code>this</code> is in the outer context with respect to the arrow function <code>obj.foo</code>. Some people don’t know what <em>outer context</em> is. Actually, the outer context can be seen as the context where <code>obj.foo</code> gets executed.</p>
-<p>Let’s insert another line in the above code.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;</span><br><span class="line">        foo: () =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this?</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// &lt;-- insert this line</span></span><br><span class="line">    obj.foo();</span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
-<p>Do you know what <code>this</code> refers to in the inserted line? Of course, it refers to <code>window</code>, because it’s <code>window</code> that invokes <code>bar</code>. So what <code>this</code> refers to in the original code(the 4th line)? It’s the same! Because the outer context of <code>obj.foo</code> is exactly the context where the inserted line is in.</p>
-<div style="border: 1px solid #c8c8c8; padding: 10px; border-radius: 5px;">answer: <strong>window</strong></div>
-
-<h1 id="Rule-4-Event-handler"><a href="#Rule-4-Event-handler" class="headerlink" title="Rule 4: Event handler"></a>Rule 4: Event handler</h1><div style="background-color: #fff5cc; border-color: #ffe273; padding: 10px; border-left: 10px solid #ffe273"><strong>Rule 4</strong>: <code>this</code> refers to <code>window</code> when used an inline event handler, and refers to the attached DOM element when used in a separate event hanlder.</div>
-
-<h4 id="inline-event-handler"><a href="#inline-event-handler" class="headerlink" title="inline event handler"></a>inline event handler</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"foo()"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>this</code> is used in an inline event handler <code>foo</code> here, so <code>this</code> refers to <code>window</code>.</p>
-<div style="border: 1px solid #c8c8c8; padding: 10px; border-radius: 5px;">answer: <strong>window</strong></div>
-
-<h4 id="separate-event-handler"><a href="#separate-event-handler" class="headerlink" title="separate event handler"></a>separate event handler</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">        <span class="keyword">var</span> button = <span class="built_in">document</span>.getElementById(<span class="string">"button"</span>);</span><br><span class="line">        button.onclick = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>this</code> is used in a separate event handler <code>foo</code> here. So it refers to the DOM element <code>button</code> according to <strong>Rule 4</strong>. In fact, we can also use <strong>Rule 1</strong> to get the same answer. Because each time the button is clicked, <code>button.onclicked</code> is executed. Who invokes the <code>onclick</code> function? <code>button</code>. So the answer is <code>button</code>.</p>
-<div style="border: 1px solid #c8c8c8; padding: 10px; border-radius: 5px;">answer: <strong>button(DOM element)</strong></div>
-
-<h1 id="Rule-5-JQuery"><a href="#Rule-5-JQuery" class="headerlink" title="Rule 5: JQuery"></a>Rule 5: JQuery</h1><div style="background-color: #fff5cc; border-color: #ffe273; padding: 10px; border-left: 10px solid #ffe273"><strong>Rule 5</strong>: <code>this</code> in most JQuery callbacks refers to the attached JQuery element</div>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/jquery-2.2.4.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">        $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="keyword">this</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>According to <strong>Rule 5</strong>, <code>this</code> refers to <code>$(&quot;button&quot;)</code> here. You may wonder why it is the case. In fact, JQuery calls the callback using something like this:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">click</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">	callback.call($(<span class="string">"button"</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>callback.call($(&quot;button&quot;))</code> is the same as <code>callback()</code>, except that it sets the <code>this</code> in <code>callback</code> as <code>$(&quot;button&quot;)</code>, so you can happily use <code>this</code> as the JQuery element inside the callback function.</p>
-<div style="border: 1px solid #c8c8c8; padding: 10px; border-radius: 5px;">answer: <strong>button(JQuery object)</strong></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h1&gt;&lt;p&gt;&lt;code&gt;this&lt;/code&gt; in javascrip
-    
-    </summary>
-    
-      <category term="Coding" scheme="http://searene.github.io/categories/Coding/"/>
-    
-    
-      <category term="javascript" scheme="http://searene.github.io/tags/javascript/"/>
-    
-  </entry>
   
   <entry>
     <title>what does &quot;this&quot; refer to in javascript?</title>
@@ -1138,6 +1049,32 @@
     
       <category term="Coding" scheme="http://searene.github.io/categories/Coding/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>今天发现了一个新的比较有趣的youtube频道：DNews</title>
+    <link href="http://searene.github.io/2016/07/13/%E4%BB%8A%E5%A4%A9%E5%8F%91%E7%8E%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%AF%94%E8%BE%83%E6%9C%89%E8%B6%A3%E7%9A%84youtube%E9%A2%91%E9%81%93%EF%BC%9ADNews/"/>
+    <id>http://searene.github.io/2016/07/13/今天发现了一个新的比较有趣的youtube频道：DNews/</id>
+    <published>2016-07-12T16:00:00.000Z</published>
+    <updated>2016-12-06T14:08:49.748Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是youtube推荐的，当时看的视频是<a href="https://www.youtube.com/watch?v=VCPuufwOGMM" target="_blank" rel="external">Why Does This U.S. Town Ban WiFi And Cell Phones?</a> 挺有意思的，视频开头有点悬疑片的味道。</p>
+<p>大体扫了一下频道视频列表，主要应该是以科普为主，不过都是一些比较有趣的话题。可以没事看看。</p>
+<p>频道地址：<a href="https://www.youtube.com/watch?v=VCPuufwOGMM" target="_blank" rel="external">https://www.youtube.com/DNews/featured</a></p>
+<p>频道截图：<img src="http://i.imgur.com/A7Qkb7t.png" alt="Dnews"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是youtube推荐的，当时看的视频是&lt;a href=&quot;https://www.youtube.com/watch?v=VCPuufwOGMM&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Why Does This U.S. Town Ban WiFi
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://searene.github.io/categories/Journal/"/>
+    
+    
+      <category term="youtube" scheme="http://searene.github.io/tags/youtube/"/>
     
   </entry>
   
