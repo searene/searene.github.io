@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://searene.github.io/2016/02/14/GoldenDictMedia/</loc>
+    
+    <lastmod>2017-05-16T15:59:52.340Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://searene.github.io/2017/05/15/what-does-this-refer-to-in-javascript/</loc>
     
     <lastmod>2017-05-16T15:09:19.780Z</lastmod>
@@ -93,13 +100,6 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2015/12/06/Configure-Win7-Support-For-UTC/</loc>
-    
-    <lastmod>2016-12-06T14:08:49.748Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://searene.github.io/2016/05/28/It-s-pretty-hard-to-concentrate-these-days/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
@@ -156,7 +156,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2015/12/21/Fix-The-Font-Rendering-Problem-In-Pycharm/</loc>
+    <loc>http://searene.github.io/2016/06/15/I-finished-reading-The-catcher-in-the-rhy/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/06/15/I-finished-reading-The-catcher-in-the-rhy/</loc>
+    <loc>http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/02/14/GoldenDictMedia/</loc>
+    <loc>http://searene.github.io/2016/05/22/I-started-programming-and-running-today/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
@@ -205,7 +205,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/05/22/I-started-programming-and-running-today/</loc>
+    <loc>http://searene.github.io/2016/05/24/I-struggled-to-finish-my-tasks-today/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
@@ -233,14 +233,14 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/05/24/I-struggled-to-finish-my-tasks-today/</loc>
+    <loc>http://searene.github.io/2016/12/06/Auto-Adjust-Brightness-On-Ubuntu-16-10-Using-Systemd/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/09/30/Calculate-1-lambda-n-n/</loc>
+    <loc>http://searene.github.io/2016/05/24/I-still-didn-t-go-jogging-today/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
@@ -345,14 +345,14 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/05/24/I-still-didn-t-go-jogging-today/</loc>
+    <loc>http://searene.github.io/2015/12/06/Configure-Win7-Support-For-UTC/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/12/06/Auto-Adjust-Brightness-On-Ubuntu-16-10-Using-Systemd/</loc>
+    <loc>http://searene.github.io/2016/02/14/ImageResizer-an-anki-addon-to-resize-images/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
@@ -373,7 +373,7 @@
   </url>
   
   <url>
-    <loc>http://searene.github.io/2016/02/14/ImageResizer-an-anki-addon-to-resize-images/</loc>
+    <loc>http://searene.github.io/2015/12/21/Fix-The-Font-Rendering-Problem-In-Pycharm/</loc>
     
     <lastmod>2016-12-06T14:08:49.748Z</lastmod>
     
