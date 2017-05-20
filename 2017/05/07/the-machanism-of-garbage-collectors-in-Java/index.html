@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="There are several garbage collectors in Java, each has its specific usage scenario. To understand garbage collection, we first have to understand how heaps are divided in Java. Heaps are divided into">
 <meta property="og:image" content="http://searene.me/images/Blog_Trash-1.jpg">
-<meta property="og:updated_time" content="2017-05-15T14:20:27.823Z">
+<meta property="og:updated_time" content="2017-05-20T17:02:58.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="the machanism of garbage collectors in Java">
 <meta name="twitter:description" content="There are several garbage collectors in Java, each has its specific usage scenario. To understand garbage collection, we first have to understand how heaps are divided in Java. Heaps are divided into">
@@ -223,9 +223,8 @@ ga('send', 'pageview');
 <p>The collector conducts a <em>Sweep</em> operation to eliminate all garbage in the Old Generation.</p>
 <p><strong>Disadvantages of the CMS Collector</strong></p>
 <p>The <em>CMS Collector</em> is the only collector that has no <em>compact</em> phase, which means it cannot use the <em>bump-the-pointer</em> strategy(see reference below) to find free space.</p>
-<blockquote>
-<p><em>bump-the-pointer</em> strategy: This is a strategy used to allocate new space in the Old Generation. With this strategy, you only need to store the position of the last live object after each Old Generation Collection. When you need to allocate a space to store a new object, what you need to do is just to allocate the space right after the position and update the position to the new one. There are no live objects after that position because the Old Generation has been compacted before. The strategy is used in all above collectors except the <em>CMS Collector</em> because the <em>CMS Collector</em> doesn’t compact the Old Generation.</p>
-</blockquote>
+<div style="background-color: #fff5cc; border-color: #ffe273; padding: 10px; border-left: 10px solid #ffe273"><strong>bump-the-pointer</strong> strategy: This is a strategy used to allocate new space in the Old Generation. With this strategy, you only need to store the position of the last live object after each Old Generation Collection. When you need to allocate a space to store a new object, what you need to do is just to allocate the space right after the position and update the position to the new one. There are no live objects after that position because the Old Generation has been compacted before. The strategy is used in all above collectors except the <em>CMS Collector</em> because the <em>CMS Collector</em> doesn’t compact the Old Generation.</div>
+
 <p>So how does the <em>CMS Collector</em> find new space to allocate? Basically, it maintains a linked list internally, which connects all free space together. When an allocation is needed, the collector will traverse through the list and find the appropriate region to allocate the space.</p>
 <p>Another disadvantage of the <em>CMS Collector</em> is that it needs a bigger heap size because the <em>Concurrent Mark</em> phase proceeds while the application is still running, which means more space needs to be allocated when some garbage cannot be collected in time. So enough heap size must be prepared to store both uncollected garbage and newly allocated space.</p>
 <p><strong>When to Use the CMS Collector</strong></p>
