@@ -3,23 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>I struggled to finish my tasks today | Searene</title>
+    <title>An Illustration of Various Encoding Schemes | Searene</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="encoding" />
     
-    <meta name="description" content="Today I was in a pretty bad mood, but I still finished my tasks. Because I know, whether I’m in a good or bad mood, I have to live any way. And if I do nothing, things would become worse. In fact, if">
+    <meta name="description" content="What are encoding schemes?Encoding schemes are ways to store and retrieve characters in computers. For example, in ISO-8859-1(which is one of various encoding schemes), we use 01100001 to denote a, an">
+<meta name="keywords" content="encoding">
 <meta property="og:type" content="article">
-<meta property="og:title" content="I struggled to finish my tasks today">
-<meta property="og:url" content="http://searene.me/2016/05/24/I-struggled-to-finish-my-tasks-today/index.html">
+<meta property="og:title" content="An Illustration of Various Encoding Schemes">
+<meta property="og:url" content="http://searene.me/2017/05/26/An-Illustration-of-Various-Encoding-Schemes/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="Today I was in a pretty bad mood, but I still finished my tasks. Because I know, whether I’m in a good or bad mood, I have to live any way. And if I do nothing, things would become worse. In fact, if">
-<meta property="og:image" content="https://i.ytimg.com/vi/IZ-hGkrer60/hqdefault.jpg">
-<meta property="og:updated_time" content="2016-12-06T14:08:49.748Z">
+<meta property="og:description" content="What are encoding schemes?Encoding schemes are ways to store and retrieve characters in computers. For example, in ISO-8859-1(which is one of various encoding schemes), we use 01100001 to denote a, an">
+<meta property="og:image" content="http://searene.me/images/green-lit-numbers.jpg">
+<meta property="og:updated_time" content="2017-05-26T14:09:02.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I struggled to finish my tasks today">
-<meta name="twitter:description" content="Today I was in a pretty bad mood, but I still finished my tasks. Because I know, whether I’m in a good or bad mood, I have to live any way. And if I do nothing, things would become worse. In fact, if">
-<meta name="twitter:image" content="https://i.ytimg.com/vi/IZ-hGkrer60/hqdefault.jpg">
+<meta name="twitter:title" content="An Illustration of Various Encoding Schemes">
+<meta name="twitter:description" content="What are encoding schemes?Encoding schemes are ways to store and retrieve characters in computers. For example, in ISO-8859-1(which is one of various encoding schemes), we use 01100001 to denote a, an">
+<meta name="twitter:image" content="http://searene.me/images/green-lit-numbers.jpg">
     
 
     
@@ -136,31 +137,50 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Journal/">Journal</a>
+    <a class="page-title-link" href="/categories/Coding/">Coding</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-I-struggled-to-finish-my-tasks-today" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-An-Illustration-of-Various-Encoding-Schemes" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        I struggled to finish my tasks today
+        An Illustration of Various Encoding Schemes
         </h1>
     
 
             </header>
         
         <div class="article-subtitle">
-            <a href="/2016/05/24/I-struggled-to-finish-my-tasks-today/" class="article-date">
-    <time datetime="2016-05-24T14:55:00.000Z" itemprop="datePublished">2016-05-24</time>
+            <a href="/2017/05/26/An-Illustration-of-Various-Encoding-Schemes/" class="article-date">
+    <time datetime="2017-05-26T14:04:58.000Z" itemprop="datePublished">2017-05-26</time>
 </a>
             
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encoding/">encoding</a></li></ul>
+
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>Today I was in a pretty bad mood, but I still finished my tasks. Because I know, whether I’m in a good or bad mood, I have to live any way. And if I do nothing, things would become worse. In fact, if I immersed myself in doing anything at all, I would probably focuse in that stuff, and forget about other things, including my trouble. So concentrating is pretty good for me. I need to learn to concentrate in any circumstances.</p>
+            <h2 id="What-are-encoding-schemes"><a href="#What-are-encoding-schemes" class="headerlink" title="What are encoding schemes?"></a>What are encoding schemes?</h2><p>Encoding schemes are ways to store and retrieve characters in computers. For example, in <code>ISO-8859-1</code>(which is one of various encoding schemes), we use <code>01100001</code> to denote <code>a</code>, and <code>00111111</code> to denote <code>?</code>. Because computers only know how to store and fetch <code>0</code> and <code>1</code>, we must have a way to store other characters like alphabets, or even Chinese characters.</p>
+<h2 id="Some-of-the-frequently-used-encoding-schemes"><a href="#Some-of-the-frequently-used-encoding-schemes" class="headerlink" title="Some of the frequently used encoding schemes"></a>Some of the frequently used encoding schemes</h2><p><strong>ISO-8859-1</strong></p>
+<p>ISO-8859-1 is also called LATIN-1, which is a deprecated encoding scheme. It can only store the 256 characters in the ASCII table.</p>
+<p>For example, let’s write a text file with the following contents:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&amp;1231208ABCabc中文</div></pre></td></tr></table></figure>
+<p>Let’s see how the computer stores it. Type the command <code>xxd -b resources/test/ASCII.txt</code> to display the real contents the computer stores.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">00000000: 00100110 00110001 00110010 00110011 00110001 00110010 &amp;12312</div><div class="line">00000006: 00110000 00111000 01000001 01000010 01000011 01100001 08ABCa</div><div class="line">0000000c: 01100010 01100011 00111111 00111111 bc??</div></pre></td></tr></table></figure>
+<p>We can see that <code>&amp;</code> was stored as <code>00100110</code>, and <code>1</code> was stored as <code>00110001</code>. This is exactly how ISO-8859-1 processes characters. It maps each character to a unique byte. Refer to the code page displayed in <a href="https://en.wikipedia.org/wiki/ISO/IEC*8859-1" target="_blank" rel="external">Wikipedia</a> to see the map. Because ISO-8859-1 doesn’t have a way to store Chinese characters, we can see that 中文 are mapped to</p>
+<p>Because ISO-8859-1 doesn’t have a way to store Chinese characters, we can see that 中文 are mapped to <code>00111111 00111111</code>, which are just two question marks in ISO-8859-1.</p>
+<p><strong>Unicode</strong></p>
+<p>You may notice that ISO-8859-1 can only store 256 characters, this is not enough. How can we store Chinese characters, which include way more characters than 256? Here comes <em>Unicode</em>.<br>Unicode is a computing industry standard that is able to store millions of characters in computers. Basically it’s just a huge map, which maps every character in this world to a number, which takes 1 ~ 4 bytes depending on what the character is.</p>
+<p>For example, <code>A</code> is mapped to <code>0x41</code>, <code>w</code> is mapped to <code>ox77</code>, <code>中</code> is mapped to <code>0x4E2D</code>. Each character in this world has its number mapped. You can find the whole mapping table in <a href="https://unicode-table.com/en/#control-character" target="_blank" rel="external">here</a>.</p>
+<p><strong>UTF-8</strong></p>
+<p><em>Unicode</em> may have solved the problem, right? Why would we need <em>UTF-8</em>, and what is <em>UTF-8</em>? To find out the reason, first we need to find out if <em>Unicode</em> could solve our problem directly.</p>
+<p>Say I want to store <code>AA</code> on my disk. In Unicode, <code>A</code> is mapped to <code>0x41</code>, so what I need to do is just store <code>0x4141</code> in my computer, right? No, it’s not going to work. How can we know what <code>0x4141</code> is if we try to decode it? Is it <code>AA</code>, or just a character whose mapping number is exactly <code>0x4141</code>? Because a Unicode character takes 1 ~ 4 bytes, you will never know the boundary of each character if you store it directly on the disk.</p>
+<p>How can we solve the problem? The simplest method is to store each character in 4 bytes, if a character’s mapping number is less than 4 bytes, left padding it with zeros, so <code>A</code> would become <code>0x00000041</code> instead of just <code>0x41</code>, that’s a way, it would work, but since most characters take less than 4 bytes in Unicode, it would waste a lot of space if we use this method. So here comes UTF-8.</p>
+<p>In UTF-8, the first 128 characters in the ASCII table take only 1 byte each.<br>For those characters, the first bit in each byte is 0. When we need to denote a character that is not one of those characters, like <code>中</code>, which takes 2 bytes in Unicode, we set the first bit of its first byte to 1, and set the rest bits according to the Unicode Standard. More detailed can be seen from <a href="https://en.wikipedia.org/wiki/UTF-8#Description" target="_blank" rel="external">here</a>.</p>
+<p><strong>So we can say that Unicode is just a standard, UTF-8 is a way to implement the standard, which specifies in detail how to store the Unicode number onto disk.</strong></p>
 
         </div>
         <footer class="article-footer">
@@ -168,7 +188,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.me/2016/05/24/I-struggled-to-finish-my-tasks-today/" data-id="cj35xabjp000tdmrfaqc8v6ht" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.me/2017/05/26/An-Illustration-of-Various-Encoding-Schemes/" data-id="cj35xabiw0001dmrfp74csjvx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -280,20 +300,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2016/05/25/my-new-goals-and-my-new-life/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            my new goals and my new life
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2016/05/24/I-still-didn-t-go-jogging-today/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/05/18/kafka-in-a-nutshell/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">I still didn&#39;t go jogging today</p>
+        <p class="article-nav-title">kafka in a nutshell</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -493,7 +503,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'searene';
     
     
-    var disqus_url = 'http://searene.me/2016/05/24/I-struggled-to-finish-my-tasks-today/';
+    var disqus_url = 'http://searene.me/2017/05/26/An-Illustration-of-Various-Encoding-Schemes/';
     
     (function() {
     var dsq = document.createElement('script');
