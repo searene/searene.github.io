@@ -335,6 +335,9 @@ code {
 #main .main-body-content:after {
   clear: both;
 }
+.line:after {
+  content: '\200b';
+}
 #header {
   background: #26272b;
   padding-bottom: 60px;
