@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="As we know that Kafka is very fast, much faster than most of its competitors. So what’s the reason here? Avoid Random Disk AccessKafka writes everything into disk in order and consumers fetch data in">
 <meta property="og:image" content="http://searene.me/images/fast.png">
-<meta property="og:updated_time" content="2017-07-09T01:40:32.883Z">
+<meta property="og:updated_time" content="2017-07-09T01:44:49.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Why is Kafka so fast">
 <meta name="twitter:description" content="As we know that Kafka is very fast, much faster than most of its competitors. So what’s the reason here? Avoid Random Disk AccessKafka writes everything into disk in order and consumers fetch data in">
@@ -195,6 +195,10 @@ ga('send', 'pageview');
 <p>As you can see, it’s redundant to copy data between the Kernel Context and the Application Context. Can we avoid it? Yes, using Zero Copy we can copy data directly from the Kernel Context to the Kernel Context.</p>
 <p><img src="/images/zero-copy.png" alt="zero copy"></p>
 <h1 id="Batch-Data"><a href="#Batch-Data" class="headerlink" title="Batch Data"></a>Batch Data</h1><p>Kafka only sends data when <code>batch.size</code> is reached instead of one by one. Assuming the bandwidth is 10MB/s, sending 10MB data in one go is much faster than sending 10000 messages one by one(assuming each message takes 100 bytes).</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="https://www.slideshare.net/baniuyao/kafka-24299168https://www.slideshare.net/baniuyao/kafka-24299168" target="_blank" rel="external">https://www.slideshare.net/baniuyao/kafka-24299168</a></li>
+<li><a href="https://toutiao.io/posts/508935/app_preview" target="_blank" rel="external">https://toutiao.io/posts/508935/app_preview</a></li>
+</ul>
 
         </div>
         <footer class="article-footer">
