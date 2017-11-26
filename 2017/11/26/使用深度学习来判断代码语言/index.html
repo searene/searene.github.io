@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="介绍本篇文章介绍了如何使用深度学习来判断代码语言。以下面这段代码为例。 12def test():    print(&quot;something&quot;) 如果用本篇文章所介绍的程序来判断这段代码的话，我们得到的答案就是python，这也是正确答案。事实上，通过初步测试，该程度的准确度在90%左右。相信通过增加训练数据、参数微调等方式，我们还可以得到更加理想的结果。 运行我们首先尝试运行一下程序，以便对本篇文">
 <meta property="og:image" content="http://searene.me/images/deep-learning.jpg">
-<meta property="og:updated_time" content="2017-11-26T08:12:46.996Z">
+<meta property="og:updated_time" content="2017-11-26T08:15:26.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用深度学习来判断代码语言">
 <meta name="twitter:description" content="介绍本篇文章介绍了如何使用深度学习来判断代码语言。以下面这段代码为例。 12def test():    print(&quot;something&quot;) 如果用本篇文章所介绍的程序来判断这段代码的话，我们得到的答案就是python，这也是正确答案。事实上，通过初步测试，该程度的准确度在90%左右。相信通过增加训练数据、参数微调等方式，我们还可以得到更加理想的结果。 运行我们首先尝试运行一下程序，以便对本篇文">
@@ -205,7 +205,7 @@ ga('send', 'pageview');
 </ol>
 <h1 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h1><p>在在介绍检测原理之前，我们首先简单介绍一下代码结构，不要担心，这大概只会占用1～2分钟左右的时间，通过了解代码结构，我们可以对程序有一个大概的了解。</p>
 <ul>
-<li>有resources/code/train：训练数据，下面所有的子文件夹的名字都是程序语言，每个子文件夹的下面又包含了10个左右的代码文件，所使用的语言就是其所在的文件夹的名字。<img src="/home/searene/Desktop/2017-11-25-231347_448x544_scrot.png" alt="2017-11-25-231347_448x544_scrot"></li>
+<li>有resources/code/train：训练数据，下面所有的子文件夹的名字都是程序语言，每个子文件夹的下面又包含了10个左右的代码文件，所使用的语言就是其所在的文件夹的名字。<img src="/images/2017-11-25-231347_448x544_scrot.png" alt="train文件夹结构]"></li>
 <li>resources/code/test：与<code>resources/code/train</code>代码结构相同，但与之不同的是，<code>test</code>文件夹下的代码用于评估模型的准确度，而非训练。</li>
 <li><code>models</code>文件夹和<code>vocab_tokenizer</code>：训练结果。</li>
 <li>src/config.py：保存程序运行所需要的一些常量。</li>
