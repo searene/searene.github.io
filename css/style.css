@@ -338,6 +338,9 @@ code {
 .line:after {
   content: '\200b';
 }
+li p {
+  display: inline;
+}
 #header {
   background: #26272b;
   padding-bottom: 60px;
