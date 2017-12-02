@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Searene">
 <meta property="og:description" content="PrefaceI used rsync to deploy my website for the past few days, but it seemed that there were some bugs with hexo rsync deployment, I could only use rsync by running rsync -a localfiles username@serve">
 <meta property="og:image" content="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/03/1458791372git.png">
-<meta property="og:updated_time" content="2016-12-06T14:08:49.748Z">
+<meta property="og:updated_time" content="2017-12-02T15:34:56.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="set up a git server to deploy with hexo">
 <meta name="twitter:description" content="PrefaceI used rsync to deploy my website for the past few days, but it seemed that there were some bugs with hexo rsync deployment, I could only use rsync by running rsync -a localfiles username@serve">
@@ -202,6 +202,8 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown git:git /usr/share/nginx/html -R</div></pre></td></tr></table></figure>
 <p>Set up the git hook for deployment, it will automatically sync your files from <code>website.git</code> to <code>/usr/share/nginx/html</code> every time it receives a <code>push</code> operation.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">su git</div><div class="line"><span class="built_in">cd</span> ~/website.git/hooks/</div><div class="line">cat &lt;&lt;EOT &gt; post-receive</div><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="built_in">unset</span> $(git rev-parse --local-env-vars)</div><div class="line"><span class="built_in">cd</span> /usr/share/nginx/html</div><div class="line">git fetch origin</div><div class="line">git reset --hard origin/master</div><div class="line">EOT</div></pre></td></tr></table></figure>
+<p>Then set the permission to make the git hook work.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod ug+x ~/website.git/hooks/post-receive</div></pre></td></tr></table></figure>
 <p>To avoid the authorization issue, add the public key of <code>root</code> to the <code>authorized_keys</code> of user <code>git</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su <span class="comment"># switch to user root</span></div><div class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; /home/git/.ssh/authorized_keys</div></pre></td></tr></table></figure>
 <h1 id="Test-The-Result"><a href="#Test-The-Result" class="headerlink" title="Test The Result"></a>Test The Result</h1><p>OK, now we are ready to go. Turn to the client side and deploy your files with hexo-git-deployer</p>
