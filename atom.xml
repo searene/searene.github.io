@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.me/"/>
-  <updated>2017-12-09T10:10:51.109Z</updated>
+  <updated>2017-12-17T09:57:20.373Z</updated>
   <id>http://searene.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My Last Weekend At Cisco</title>
+    <link href="http://searene.me/2017/12/17/My-Last-Weekend-At-Cisco/"/>
+    <id>http://searene.me/2017/12/17/My-Last-Weekend-At-Cisco/</id>
+    <published>2017-12-17T09:05:54.000Z</published>
+    <updated>2017-12-17T09:57:20.373Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today is my last weekend at Cisco, and I’m about to leave the company at the next Friday. My next employer is Alibaba, which is more cruel and fierce than Cisco, I’m not sure if this is the right choice, maybe there is no right choice at all.</p><p>I remember that when I arrived at Hangzhou one and a half years ago, my ID card was just expired. And since Hangzhou was holding the G20 event at that time, no hotel dared to accept me. So I wandered around the street for the whole night, and what was worse, since I was carrying my baggage, I couldn’t sleep for a single minute because I was afraid my baggage could be stolen by some random guy on the street.</p><p>It was blazing hot at the time, I walked into an ATM booth and tried to sleep there because it had an air conditioner, but I was asked out after several minutes since sleeping in there was not allowed.</p><p>While I was walking on the street, I thought a lot. I thought about why I would choose Hangzhou, why this world was so terrible, why everything was falling into the wrong place. Finally the sun rose and I called my friends at Hangzhou so I could have a rest at his house for a while. I rent a house that afternoon, which I’m still living in it.</p><p>All right, besides those nonsense, it’s time for me to talk about Cisco. Cisco is a really good company, I mean, really good. I could never imagine a company so kind, it gives the best to the employees. It’s also a good thing for me to join such a company on graduation, so I could know that there are still good companies out there, that care about its employees, even in this more and more competitive society.</p><p>I chose Alibaba so I could learn cooler stuff, and it offered a higher salary package. I couldn’t find a concrete reason to decline the offer, so I joined. No matter whether I would thrive or suffer in the new company, I have to accept.</p><p>I’m about to turn 30 in the next few years, yet I’m still lonely.</p><p>Maybe I’ve said too much, while staying at the office, all alone.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Today is my last weekend at Cisco, and I’m about to leave the company at the next Friday. My next employer is Alibaba, which is more crue
+      
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://searene.me/categories/Journal/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Use Deep Learning to Detect Programming Languages</title>
@@ -497,29 +520,6 @@
       <category term="java" scheme="http://searene.me/tags/java/"/>
     
       <category term="hadoop" scheme="http://searene.me/tags/hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>I arrived in Hangzhou yesterday</title>
-    <link href="http://searene.me/2017/02/13/I-arrived-in-Hangzhou-yesterday/"/>
-    <id>http://searene.me/2017/02/13/I-arrived-in-Hangzhou-yesterday/</id>
-    <published>2017-02-12T23:35:34.000Z</published>
-    <updated>2017-10-05T08:10:12.326Z</updated>
-    
-    <content type="html"><![CDATA[<p>I arrived in Hangzhou yesterday, and I could feel that the amounts of dopamine released in my brain fluctuated from time to time. At first I felt really happy, I was not sure why. Then I felt sort of upset when I got off the plane and headed towards my company. Maybe it was because I had to work again in my company, which was so boring and annoying. I think some people tend to release dopamine a lot, and they may never know what depression is like.</p><p>I downloaded the movie <code>Passenger</code> from the Internet and watched it last night. To my suprise, although there were lots of negative comments on <code>douban</code>, I found the movie pretty interesting and compelling. Maybe it was due to the unbeatable charm of <code>Jennifer Lawrence</code>, she was so beautiful. That being said, the plot was not bad, and the film’s special effects were amazing! I really loved it. I even loved it to the extent that I couldn’t decide whether <code>Arrival</code> or <code>Passenger</code> was better, even though the former got a much higher mark on <code>douban</code> and <code>IMDB</code>.</p><p><img src="/images/passenger-law.jpg" alt="Jennifer Lawrence on Passenger"></p><p>Another thing. I decided to use <code>Wechat</code> as few as possible. I watched a Ted talk yesterday and the speaker said that falling into social media was really a bad thing for us. It might cause more anxiety and depression and made us even more lonely, no matter how many friends we had ONLINE. I think that is absolutely correct. I felt more lonely when I talked in social media, our brain wasn’t designed to talk like this. We have to communicate face to face, use our gestures and expressions to create a better conversation and relax ourselves. Really, few people care about what I post on moments, what is the purpose of that!</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;I arrived in Hangzhou yesterday, and I could feel that the amounts of dopamine released in my brain fluctuated from time to time. At firs
-      
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://searene.me/categories/Journal/"/>
-    
     
   </entry>
   
