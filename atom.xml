@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.me/"/>
-  <updated>2017-12-23T07:00:41.929Z</updated>
+  <updated>2017-12-24T00:25:48.263Z</updated>
   <id>http://searene.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Life will never be the same again</title>
+    <link href="http://searene.me/2017/12/24/Life-will-never-be-the-same-again/"/>
+    <id>http://searene.me/2017/12/24/Life-will-never-be-the-same-again/</id>
+    <published>2017-12-23T23:50:41.000Z</published>
+    <updated>2017-12-24T00:25:48.263Z</updated>
+    
+    <content type="html"><![CDATA[<p>I had a dream last night about my middle school classmate, we made an appointment that we would meet after school. I was fond of her in my dream, and she might be the same, too. My math teacher found out about this, and told me that love was not allowed. So I can only keep my distance from her after school. Finally I arrived at my home and we talked for a while.</p><p>Only when I woke up did I realize that this was just a dream. This kind of emotion has been long gone for years, and I’m already 28 instead of 18. For recent years, I’ve always been overwhelmed by all sorts of things in my work and my life. So what about my love? I have no idea. I cannot even remember the feeling of falling in love with someone, only the dream reminded me of that.</p><p>In these years, I started questioning everything, started asking myself what had gone wrong in my life. Did the God give me enough for me to live a happy life? I’m not sure about that. What I do know is, the God didn’t give me something in the first place, some people say that this is the beauty of life, that the world is colorful because of this, but maybe the reason you say so is because you already have a good life.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I had a dream last night about my middle school classmate, we made an appointment that we would meet after school. I was fond of her in m
+      
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://searene.me/categories/Journal/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Write Machine Learning Algorithms From Scratch: Random Forest</title>
@@ -495,29 +518,6 @@
     
     
       <category term="javascript" scheme="http://searene.me/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Where to go</title>
-    <link href="http://searene.me/2017/03/29/Where-to-go/"/>
-    <id>http://searene.me/2017/03/29/Where-to-go/</id>
-    <published>2017-03-29T14:49:23.000Z</published>
-    <updated>2017-05-15T14:59:10.630Z</updated>
-    
-    <content type="html"><![CDATA[<p>I haven’t written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it, let alone read it. But anyway, I decided to write something tonight.</p><p>I’m almost 27, I told my self. And it is 2017, 17 years after 2000, I could never figure out where those years went. So many years, I’m getting older every day. Does the performance in the work really matter? Not sure, maybe not that important. So what really matters? I know it, I always know it, but I’m always afraid to face it.</p><p>I started trying to solve problems on leetcode, that was for my career. Sometimes I thought maybe I just needed to choose a life and went with it, but I really hoped the life I chose would be perfect, or at least full of happiness and fulfillment, but actually it was not.</p><p>I often think of the Sergeant in Forrest Gump, he lost his legs during the war, he didn’t know what to do. He cursed his life, joked about God, but when he finally got a normal life, he didn’t say anything. He never mentioned whether God existed or not, maybe he still didn’t know. I often pondered over the same question, but I had no answer to it. Why wouldn’t God give me a better life? Maybe he has his reason, I just need to go with it.</p><p>It’s already late, I have to go to bed and sleep. I wrote some nonsense here, whatever.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;I haven’t written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it, let
-      
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://searene.me/categories/Journal/"/>
-    
     
   </entry>
   
