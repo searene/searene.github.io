@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.me/"/>
-  <updated>2018-01-09T15:24:17.816Z</updated>
+  <updated>2018-01-20T08:42:01.726Z</updated>
   <id>http://searene.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>We are either young or old, never something in between</title>
+    <link href="http://searene.me/2018/01/20/We-are-either-young-or-old-never-something-in-between/"/>
+    <id>http://searene.me/2018/01/20/We-are-either-young-or-old-never-something-in-between/</id>
+    <published>2018-01-20T07:55:01.000Z</published>
+    <updated>2018-01-20T08:42:01.726Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today I watched ビリギャル(垫底辣妹)，it told a story of how a bad student strove for a top university and finally succeeded. While moved by the movie plot, I also realized I was not a student any more, life would never the same.</p><p>I remember that my teacher often told me school might be the best place you could ever stay in your entire life, where there was no trouble , no frustration, you got a lot of classmates to study with, to play with, to strive for the same goal together with. Life would never be the same when you went to the society, where life might become so unfair and frustrating to the extent that you had never imagine.</p><p>Well, this is so true, but this is not the worst part. The worst part is you will never be as young as before. You have to grow up, grow old, and grow older, until someday you start wondering what is going wrong with you. But actually nothing is going wrong, this is just life.</p><p>I once heard a theory that you would only consider yourself as young, or old in the audience, never something in between. It’s true. Life flies by so fast, you may not even notice that. And here we are, 2018, I didn’t notice it either. But it came, so I became older, once again. I cannot prevent the process, and the process will be faster and faster as we grow older.</p><p>I miss those days when I was still in school, when everything was new. When I still believed in love, when I had lots of friends to play with, when I still looked forward to the future. It’s not the same any more. No matter how hard I strive, I will never get younger. Not to say that my life isn’t getting better, either. Every day is an ordinary day, every day is the same. I go to work, I earn my money, then I don’t know what to do with my money, I just want to go back to the past, when I don’t have money but I’m still young, when everything is possible.</p><p><img src="/images/128910133_14610369084721n.jpg" alt="垫底辣妹"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Today I watched ビリギャル(垫底辣妹)，it told a story of how a bad student strove for a top university and finally succeeded. While moved by the mo
+      
+    
+    </summary>
+    
+      <category term="Journey" scheme="http://searene.me/categories/Journey/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Write Machine Learning Algorithms From Scratch: Random Forest</title>
@@ -495,29 +518,6 @@
     
     
       <category term="javascript" scheme="http://searene.me/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Where to go</title>
-    <link href="http://searene.me/2017/03/29/Where-to-go/"/>
-    <id>http://searene.me/2017/03/29/Where-to-go/</id>
-    <published>2017-03-29T14:49:23.000Z</published>
-    <updated>2017-05-15T14:59:10.630Z</updated>
-    
-    <content type="html"><![CDATA[<p>I haven’t written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it, let alone read it. But anyway, I decided to write something tonight.</p><p>I’m almost 27, I told my self. And it is 2017, 17 years after 2000, I could never figure out where those years went. So many years, I’m getting older every day. Does the performance in the work really matter? Not sure, maybe not that important. So what really matters? I know it, I always know it, but I’m always afraid to face it.</p><p>I started trying to solve problems on leetcode, that was for my career. Sometimes I thought maybe I just needed to choose a life and went with it, but I really hoped the life I chose would be perfect, or at least full of happiness and fulfillment, but actually it was not.</p><p>I often think of the Sergeant in Forrest Gump, he lost his legs during the war, he didn’t know what to do. He cursed his life, joked about God, but when he finally got a normal life, he didn’t say anything. He never mentioned whether God existed or not, maybe he still didn’t know. I often pondered over the same question, but I had no answer to it. Why wouldn’t God give me a better life? Maybe he has his reason, I just need to go with it.</p><p>It’s already late, I have to go to bed and sleep. I wrote some nonsense here, whatever.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;I haven’t written my blog for a long time, partly it’s due to my sheer laziness, partly because I gathered nobody would even find it, let
-      
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://searene.me/categories/Journal/"/>
-    
     
   </entry>
   
