@@ -3,24 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>backup script | Searene</title>
+    <title>Go to KTV alone | Searene</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="python,linux" />
+        <meta name="keywords" content="" />
     
-    <meta name="description" content="Recently I made a backup script with python2.7, and it worked fine by now. So I think it might be a good idea to share it here. Install megaFuseThe first thing you need to do is to install megaFuse In">
-<meta name="keywords" content="python,linux">
+    <meta name="description" content="I went to KTV alone last weekend. On the one hand, going to KTV alone is somewhat embarrassing and uncomfortable, I want to train myself to be comfortable with the uncomfortable. On the other hand, I">
 <meta property="og:type" content="article">
-<meta property="og:title" content="backup script">
-<meta property="og:url" content="http://searene.me/2015/12/27/backup-script/index.html">
+<meta property="og:title" content="Go to KTV alone">
+<meta property="og:url" content="http://searene.me/2018/04/03/Go-to-KTV-alone/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="Recently I made a backup script with python2.7, and it worked fine by now. So I think it might be a good idea to share it here. Install megaFuseThe first thing you need to do is to install megaFuse In">
-<meta property="og:image" content="http://3.bp.blogspot.com/-K8PhVRHMmMQ/TyExkSKTRoI/AAAAAAAAFR0/zO8hnnIRykc/s1600/backup.png">
-<meta property="og:updated_time" content="2016-12-06T14:08:49.748Z">
+<meta property="og:description" content="I went to KTV alone last weekend. On the one hand, going to KTV alone is somewhat embarrassing and uncomfortable, I want to train myself to be comfortable with the uncomfortable. On the other hand, I">
+<meta property="og:image" content="http://searene.me/images/1_1354265864.jpg">
+<meta property="og:updated_time" content="2018-04-02T23:35:32.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="backup script">
-<meta name="twitter:description" content="Recently I made a backup script with python2.7, and it worked fine by now. So I think it might be a good idea to share it here. Install megaFuseThe first thing you need to do is to install megaFuse In">
-<meta name="twitter:image" content="http://3.bp.blogspot.com/-K8PhVRHMmMQ/TyExkSKTRoI/AAAAAAAAFR0/zO8hnnIRykc/s1600/backup.png">
+<meta name="twitter:title" content="Go to KTV alone">
+<meta name="twitter:description" content="I went to KTV alone last weekend. On the one hand, going to KTV alone is somewhat embarrassing and uncomfortable, I want to train myself to be comfortable with the uncomfortable. On the other hand, I">
+<meta name="twitter:image" content="http://searene.me/images/1_1354265864.jpg">
     
 
     
@@ -137,47 +136,34 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Coding/">Coding</a>
+    <a class="page-title-link" href="/categories/Journal/">Journal</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-backup-script" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Go-to-KTV-alone" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        backup script
+        Go to KTV alone
         </h1>
     
 
             </header>
         
         <div class="article-subtitle">
-            <a href="/2015/12/27/backup-script/" class="article-date">
-    <time datetime="2015-12-27T14:50:08.000Z" itemprop="datePublished">2015-12-27</time>
+            <a href="/2018/04/03/Go-to-KTV-alone/" class="article-date">
+    <time datetime="2018-04-02T23:10:10.000Z" itemprop="datePublished">2018-04-03</time>
 </a>
             
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>Recently I made a backup script with python2.7, and it worked fine by now. So I think it might be a good idea to share it here.</p>
-<h1 id="Install-megaFuse"><a href="#Install-megaFuse" class="headerlink" title="Install megaFuse"></a>Install megaFuse</h1><p>The first thing you need to do is to install <a href="https://github.com/matteoserva/MegaFuse" target="_blank" rel="external">megaFuse</a></p>
-<h2 id="Install-additional-packages"><a href="#Install-additional-packages" class="headerlink" title="Install additional packages:"></a>Install additional packages:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libcrypto++-dev libcurl4-openssl-dev libdb5.1++-dev libfreeimage-dev libreadline-dev libfuse-dev</div></pre></td></tr></table></figure>
-<h2 id="Compile-megaFuse"><a href="#Compile-megaFuse" class="headerlink" title="Compile megaFuse"></a>Compile megaFuse</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> MegaFuse</div><div class="line">make</div></pre></td></tr></table></figure>
-<h2 id="Fill-in-your-mega-username-password-and-mountpoint-in-megafuse-conf-just-as-follows"><a href="#Fill-in-your-mega-username-password-and-mountpoint-in-megafuse-conf-just-as-follows" class="headerlink" title="Fill in your mega username, password and mountpoint in megafuse.conf, just as follows:"></a>Fill in your mega username, password and mountpoint in <code>megafuse.conf</code>, just as follows:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">USERNAME = username@email.com</div><div class="line">PASSWORD = your_password</div><div class="line">MOUNTPOINT = /media/mega</div></pre></td></tr></table></figure>
-<h2 id="Enable-MegaFuse"><a href="#Enable-MegaFuse" class="headerlink" title="Enable MegaFuse"></a>Enable MegaFuse</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ./MegaFuse <span class="_">-f</span> -o allow_other -o uid=1000</div></pre></td></tr></table></figure>
-<h2 id="Run-MegaFuse-at-system-boot"><a href="#Run-MegaFuse-at-system-boot" class="headerlink" title="Run MegaFuse at system boot"></a>Run MegaFuse at system boot</h2><p>Save the following code as a bash file, e.g. <code>start_mega.sh</code>. Then run the file automatically every time the OS boots by using <code>Startup Applications</code> on ubuntu, note that you should modify <code>/path/to/MegaFuse</code> to the correct one</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"></div><div class="line">sleep 100</div><div class="line"><span class="built_in">echo</span> <span class="string">"yourpassword"</span> | sudo -S /path/to/MegaFuse/MegaFuse -c /path/to/MegaFuse/megafuse.conf <span class="_">-f</span> -o allow_other -o uid=1000</div></pre></td></tr></table></figure>
-<p>Why do you need <code>sleep 100</code>? I don’t know either. I tried to add the line <code>/path/to/MegaFuse -c /path/to/megafuse.conf -f -o allow_other -o uid=1000</code> in the file <code>/etc/rc.local</code> before, but it failed. I don’t know why. And it almost caused my PC fail to boot because it output way too many errors in <code>/var/log/syslog</code> file. Finally I decided to put it in <code>Startup Applications</code>. Notice that I used <code>sudo</code> here, and you have to put your password in plaintext. This is a security risk. But I don’t know to make it work without it, because you need to have root permission to mount it. If you know how to work without <code>sudo</code>, I’d like to hear your opinion.</p>
-<h1 id="MegaTools"><a href="#MegaTools" class="headerlink" title="MegaTools"></a>MegaTools</h1><p>You also need <a href="https://megatools.megous.com/" target="_blank" rel="external">MegaTools</a> to run this script, I put the tools in <code>/usr/local/bin/</code> to make it work.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">~/Development/demos$ ls /usr/local/bin|grep mega</div><div class="line">megacopy</div><div class="line">megadf</div><div class="line">megadl</div><div class="line">megaget</div><div class="line">megals</div><div class="line">megamkdir</div><div class="line">megaput</div><div class="line">megareg</div><div class="line">megarm</div></pre></td></tr></table></figure>
-<h1 id="my-python-backup-script"><a href="#my-python-backup-script" class="headerlink" title="my python backup script"></a>my python backup script</h1><p>My backup script was written with python. But I think maybe bash script would be easier. Anyway, this is my backup file</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> subprocess</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> datetime</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> logging</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line"></div><div class="line">    <span class="comment"># the location in mega where you want to put your files</span></div><div class="line">    BACKUP_DIRECOTORY = <span class="string">"Backups"</span></div><div class="line"></div><div class="line">    <span class="comment"># local location in which mega was mounted using MegaFuse</span></div><div class="line">    MOUNTED_LOCATION = <span class="string">"/media/mega"</span></div><div class="line"></div><div class="line">    <span class="comment"># BACKUP_LIST: files you want to back up</span></div><div class="line">    <span class="comment">#     file: the file that you want to backup</span></div><div class="line">    <span class="comment">#     count: how many versions you want to keep</span></div><div class="line">    <span class="comment">#     name: backup basename</span></div><div class="line">    BACKUP_LIST = [</div><div class="line">            &#123;<span class="string">'file'</span>: <span class="string">'/var/www/html'</span>,</div><div class="line">             <span class="string">'count'</span>: <span class="number">3</span>,</div><div class="line">             <span class="string">'name'</span>: <span class="string">'html'</span>&#125;,</div><div class="line">            &#123;<span class="string">'file'</span>: <span class="string">'/home/searene/Documents/blog/source/_posts'</span>,</div><div class="line">             <span class="string">'count'</span>: <span class="number">3</span>,</div><div class="line">             <span class="string">'name'</span> : <span class="string">'blog'</span>&#125;</div><div class="line">            ]</div><div class="line"></div><div class="line">    devnull = open(os.devnull, <span class="string">'w'</span>)</div><div class="line"></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY)):</div><div class="line">        os.makedirs(os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY))</div><div class="line"></div><div class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> BACKUP_LIST:</div><div class="line">        today = datetime.datetime.today()</div><div class="line">        backup_path = os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY, f[<span class="string">'name'</span>])</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(backup_path):</div><div class="line">            os.makedirs(backup_path)</div><div class="line">        backup_name = <span class="string">'&#123;&#125;-TIME-&#123;&#125;.tar.gz'</span>.format(os.path.join(backup_path, f[<span class="string">'name'</span>]), today.strftime(<span class="string">"%Y-%m-%d-%H-%M-%S"</span>))</div><div class="line"></div><div class="line">        logging.info(<span class="string">'tar...'</span>)</div><div class="line">        subprocess.call([<span class="string">'tar'</span>, <span class="string">'-zcvf'</span>, backup_name, f[<span class="string">'file'</span>]], stdout=devnull)</div><div class="line">        file_list = subprocess.check_output([<span class="string">'/usr/local/bin/megals'</span>, backup_path]).split(<span class="string">'\n'</span>)</div><div class="line">        file_list = [x <span class="keyword">for</span> x <span class="keyword">in</span> file_list <span class="keyword">if</span> re.match(<span class="string">r'&#123;&#125;-TIME-.*'</span>.format(f[<span class="string">'name'</span>]), x)]</div><div class="line">        <span class="keyword">if</span> len(file_list) &gt; f[<span class="string">'count'</span>]:</div><div class="line">            redundant_files = sorted(file_list, reverse=<span class="keyword">True</span>)[f[<span class="string">'count'</span>]:]</div><div class="line">            <span class="keyword">for</span> f <span class="keyword">in</span> redundant_files:</div><div class="line">                logging.info(<span class="string">'&#123;&#125; is deprecated, removing'</span>.format(redundant_files))</div><div class="line">                subprocess.call([<span class="string">'rm'</span>, os.path.join(backup_path, f)])</div></pre></td></tr></table></figure>
-<h1 id="run-the-backup-script-every-day-at-5-00pm"><a href="#run-the-backup-script-every-day-at-5-00pm" class="headerlink" title="run the backup script every day at 5:00pm"></a>run the backup script every day at 5:00pm</h1><p>run <code>crontab -e</code>, add the following line</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 17 * * * python /home/searene/Tools/backupMega.py</div></pre></td></tr></table></figure>
+            <p>I went to KTV alone last weekend. On the one hand, going to KTV alone is somewhat embarrassing and uncomfortable, I want to train myself to be comfortable with the uncomfortable. On the other hand, I want to check if I have a talent for singing, without being affected by others.</p>
+<p>Well, I successfully paid in front of a waiter and a waitress. Although the price is slightly higher than what I found in Meituan, I didn’t care too much about it. I was also given two bottles of water and a bowl of popcorns for free. You can see that it’s obviously for lovers, yet I’m all alone, whatever.</p>
+<p>Then I started singing. After about 5 minutes, I became hoarse, and singing high notes became very difficult for me. Then I realized that I was not suitable to be a singer, God doesn’t give me a good throat. The physical conditions are extremely important. I once heard that when colleges enroll music students, they usually check their physical conditions, like your voice, how high you can reach, etc. They don’t care about your skills, whether you are able to make trills, whether your breath is correct, etc. All of them can be trained, except your physical conditions. If you don’t have a good throat, you won’t be able to be a good singer, period.</p>
+<p>Anyway, it’s just an experience. Although I’m not able to be a singer, it may not be a bad thing. I just need to know it.</p>
 
         </div>
         <footer class="article-footer">
@@ -185,7 +171,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.me/2015/12/27/backup-script/" data-id="cjfivhufn0046zzrfcw8wtpmt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.me/2018/04/03/Go-to-KTV-alone/" data-id="cjfivhudq000nzzrfi48hc0eg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -297,20 +283,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2016/01/10/django-db-utils-IntegrityError-duplicate-key-value-violates-unique-constraint/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            django.db.utils.IntegrityError: duplicate key value violates unique constraint
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2015/12/26/auto-save-in-vim/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/01/live-a-quite-life/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">auto save in vim</p>
+        <p class="article-nav-title">live a quite life</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -510,7 +486,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'searene';
     
     
-    var disqus_url = 'http://searene.me/2015/12/27/backup-script/';
+    var disqus_url = 'http://searene.me/2018/04/03/Go-to-KTV-alone/';
     
     (function() {
     var dsq = document.createElement('script');
