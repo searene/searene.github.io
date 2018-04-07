@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.me/"/>
-  <updated>2018-04-02T23:35:32.163Z</updated>
+  <updated>2018-04-07T03:11:28.155Z</updated>
   <id>http://searene.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Went to Qiandao Lake</title>
+    <link href="http://searene.me/2018/04/07/Went-to-Qiandao-Lake/"/>
+    <id>http://searene.me/2018/04/07/Went-to-Qiandao-Lake/</id>
+    <published>2018-04-07T02:48:09.000Z</published>
+    <updated>2018-04-07T03:11:28.155Z</updated>
+    
+    <content type="html"><![CDATA[<p>Qingming Festival of 2018 falls on April 5 to April 7 in China, and I, along with two of my college classmates, planed to go to Qiandao Lake for two days.</p><p>Qiandao Lake is about 150km away from my house, we started at about 10:00 AM, and arrived at around 2:30 PM. All of us were exhausted, after having our lunch at a local restaurant, we all went to sleep. In fact, we did almost nothing but driving/watching TV on the first day.</p><p>When the second day came, we decided to go around by boat and have some fun. The boat was bigger than I thought, which might be able to hold around 100 people.</p><p><img src="/images/IMG_20180406_084153.jpg" alt=""></p><p>There were even bigger ones, which looked like a building.</p><p><img src="/images/IMG_20180406_123639.jpg" alt=""></p><p>I found that the scenery was not bad, maybe slightly better than I thought. This is small island.</p><p><img src="/images/IMG_20180406_090110.jpg" alt=""></p><p><img src="/images/IMG_20180406_094127.jpg" alt=""></p><p><img src="/images/IMG_20180406_095808.jpg" alt=""></p><p>On our way back, we were hit by another car in the highway. This was intense. Luckily no one got hurt. We didn’t finish dealing with the accident until 8 o’clock, during which we called the police and the insurance company. Since we were the one that got hit, we didn’t need to assume any responsibility. And for the other car, all the money was covered by the insurance company, so no one needed to worry about that.</p><p>Then we drove to my company and had a supper around it, it was about 9 o’clock at that time. We were all pretty tired. We went to our home respectively and the travel was over.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Qingming Festival of 2018 falls on April 5 to April 7 in China, and I, along with two of my college classmates, planed to go to Qiandao L
+      
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://searene.me/categories/Journal/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Go to KTV alone</title>
@@ -487,31 +510,6 @@
       <category term="hexo" scheme="http://searene.me/tags/hexo/"/>
     
       <category term="hueman" scheme="http://searene.me/tags/hueman/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>An Illustration of Various Encoding Schemes</title>
-    <link href="http://searene.me/2017/05/13/An-Illustration-of-Various-Encoding-Schemes/"/>
-    <id>http://searene.me/2017/05/13/An-Illustration-of-Various-Encoding-Schemes/</id>
-    <published>2017-05-13T14:04:58.000Z</published>
-    <updated>2017-05-26T14:12:08.309Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="What-are-encoding-schemes"><a href="#What-are-encoding-schemes" class="headerlink" title="What are encoding schemes?"></a>What are encoding schemes?</h2><p>Encoding schemes are ways to store and retrieve characters in computers. For example, in <code>ISO-8859-1</code>(which is one of various encoding schemes), we use <code>01100001</code> to denote <code>a</code>, and <code>00111111</code> to denote <code>?</code>. Because computers only know how to store and fetch <code>0</code> and <code>1</code>, we must have a way to store other characters like alphabets, or even Chinese characters.</p><h2 id="Some-of-the-frequently-used-encoding-schemes"><a href="#Some-of-the-frequently-used-encoding-schemes" class="headerlink" title="Some of the frequently used encoding schemes"></a>Some of the frequently used encoding schemes</h2><p><strong>ISO-8859-1</strong></p><p>ISO-8859-1 is also called LATIN-1, which is a deprecated encoding scheme. It can only store the 256 characters in the ASCII table.</p><p>For example, let’s write a text file with the following contents:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&amp;1231208ABCabc中文</div></pre></td></tr></table></figure><p>Let’s see how the computer stores it. Type the command <code>xxd -b resources/test/ASCII.txt</code> to display the real contents the computer stores.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">00000000: 00100110 00110001 00110010 00110011 00110001 00110010 &amp;12312</div><div class="line">00000006: 00110000 00111000 01000001 01000010 01000011 01100001 08ABCa</div><div class="line">0000000c: 01100010 01100011 00111111 00111111 bc??</div></pre></td></tr></table></figure><p>We can see that <code>&amp;</code> was stored as <code>00100110</code>, and <code>1</code> was stored as <code>00110001</code>. This is exactly how ISO-8859-1 processes characters. It maps each character to a unique byte. Refer to the code page displayed in <a href="https://en.wikipedia.org/wiki/ISO/IEC*8859-1" target="_blank" rel="external">Wikipedia</a> to see the map. Because ISO-8859-1 doesn’t have a way to store Chinese characters, we can see that 中文 are mapped to</p><p>Because ISO-8859-1 doesn’t have a way to store Chinese characters, we can see that 中文 are mapped to <code>00111111 00111111</code>, which are just two question marks in ISO-8859-1.</p><p><strong>Unicode</strong></p><p>You may notice that ISO-8859-1 can only store 256 characters, this is not enough. How can we store Chinese characters, which include way more characters than 256? Here comes <em>Unicode</em>.<br>Unicode is a computing industry standard that is able to store millions of characters in computers. Basically it’s just a huge map, which maps every character in this world to a number, which takes 1 ~ 4 bytes depending on what the character is.</p><p>For example, <code>A</code> is mapped to <code>0x41</code>, <code>w</code> is mapped to <code>ox77</code>, <code>中</code> is mapped to <code>0x4E2D</code>. Each character in this world has its number mapped. You can find the whole mapping table in <a href="https://unicode-table.com/en/#control-character" target="_blank" rel="external">here</a>.</p><p><strong>UTF-8</strong></p><p><em>Unicode</em> may have solved the problem, right? Why would we need <em>UTF-8</em>, and what is <em>UTF-8</em>? To find out the reason, first we need to find out if <em>Unicode</em> could solve our problem directly.</p><p>Say I want to store <code>AA</code> on my disk. In Unicode, <code>A</code> is mapped to <code>0x41</code>, so what I need to do is just store <code>0x4141</code> in my computer, right? No, it’s not going to work. How can we know what <code>0x4141</code> is if we try to decode it? Is it <code>AA</code>, or just a character whose mapping number is exactly <code>0x4141</code>? Because a Unicode character takes 1 ~ 4 bytes, you will never know the boundary of each character if you store it directly on the disk.</p><p>How can we solve the problem? The simplest method is to store each character in 4 bytes, if a character’s mapping number is less than 4 bytes, left padding it with zeros, so <code>A</code> would become <code>0x00000041</code> instead of just <code>0x41</code>, that’s a way, it would work, but since most characters take less than 4 bytes in Unicode, it would waste a lot of space if we use this method. So here comes UTF-8.</p><p>In UTF-8, the first 128 characters in the ASCII table take only 1 byte each.<br>For those characters, the first bit in each byte is 0. When we need to denote a character that is not one of those characters, like <code>中</code>, which takes 2 bytes in Unicode, we set the first bit of its first byte to 1, and set the rest bits according to the Unicode Standard. More detailed can be seen from <a href="https://en.wikipedia.org/wiki/UTF-8#Description" target="_blank" rel="external">here</a>.</p><p><strong>So we can say that Unicode is just a standard, UTF-8 is a way to implement the standard, which specifies in detail how to store the Unicode number onto disk.</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;What-are-encoding-schemes&quot;&gt;&lt;a href=&quot;#What-are-encoding-schemes&quot; class=&quot;headerlink&quot; title=&quot;What are encoding schemes?&quot;&gt;&lt;/a&gt;What are e
-      
-    
-    </summary>
-    
-      <category term="Coding" scheme="http://searene.me/categories/Coding/"/>
-    
-    
-      <category term="encoding" scheme="http://searene.me/tags/encoding/"/>
     
   </entry>
   
