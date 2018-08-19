@@ -15,19 +15,19 @@
     
         <meta name="keywords" content="linux,archlinux,network-manager" />
     
-    <meta name="description" content="I use archlinux and network-manager, and I would fail to connect to a certain wifi every now and then, while the other wifi worked pretty well. I didn’t figure out the reason, but I found a solution.">
+    <meta name="description" content="I use archlinux and network-manager, and every now and then, I failed to connect to a certain wifi, while the other wifi worked pretty well. I didn’t figure out the reason, but I found a solution. Fir">
 <meta name="keywords" content="linux,archlinux,network-manager">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Solve the problem of failing to connect to certain Wifi occasionally when using NetworkManger on archlinux">
 <meta property="og:url" content="http://searene.me/2018/08/19/Solve-the-problem-of-failing-to-connect-to-certain-Wifi-occasionally-when-using-NetworkManger-on-archlinux/index.html">
 <meta property="og:site_name" content="Searene">
-<meta property="og:description" content="I use archlinux and network-manager, and I would fail to connect to a certain wifi every now and then, while the other wifi worked pretty well. I didn’t figure out the reason, but I found a solution.">
+<meta property="og:description" content="I use archlinux and network-manager, and every now and then, I failed to connect to a certain wifi, while the other wifi worked pretty well. I didn’t figure out the reason, but I found a solution. Fir">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://searene.me/images/wifi_678x452.png">
-<meta property="og:updated_time" content="2018-08-19T04:53:48.297Z">
+<meta property="og:updated_time" content="2018-08-19T04:55:43.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Solve the problem of failing to connect to certain Wifi occasionally when using NetworkManger on archlinux">
-<meta name="twitter:description" content="I use archlinux and network-manager, and I would fail to connect to a certain wifi every now and then, while the other wifi worked pretty well. I didn’t figure out the reason, but I found a solution.">
+<meta name="twitter:description" content="I use archlinux and network-manager, and every now and then, I failed to connect to a certain wifi, while the other wifi worked pretty well. I didn’t figure out the reason, but I found a solution. Fir">
 <meta name="twitter:image" content="http://searene.me/images/wifi_678x452.png">
     
 
@@ -171,7 +171,7 @@ ga('send', 'pageview');
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>I use archlinux and network-manager, and I would fail to connect to a certain wifi every now and then, while the other wifi worked pretty well. I didn’t figure out the reason, but I found a solution.</p>
+            <p>I use archlinux and network-manager, and every now and then, I failed to connect to a certain wifi, while the other wifi worked pretty well. I didn’t figure out the reason, but I found a solution.</p>
 <p>First check which wifi connections do you have.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ls /etc/NetworkManager/system-connections</span><br><span class="line">AndroidAP	OpenWrt15</span><br></pre></td></tr></table></figure>
 <p>Suppose we have a problem connecting to <code>OpenWrt15</code>, what we need to do is just run the following command to move <code>OpenWrt15</code> to another location(Warning: make sure you know the wifi password of <code>OpenWrt15</code> before moving the file, because you will need to re-input the password again later on. Usually you can find the password in the <code>OpenWrt15</code> file)</p>
