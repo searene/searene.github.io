@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -13,7 +13,7 @@
     <title>backup script | Searene</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="linux,python" />
+        <meta name="keywords" content="linux,python">
     
     <meta name="description" content="Recently I made a backup script with python2.7, and it worked fine by now. So I think it might be a good idea to share it here. Install megaFuseThe first thing you need to do is to install megaFuse In">
 <meta name="keywords" content="linux,python">
@@ -64,7 +64,7 @@ ga('send', 'pageview');
     
 
 </head>
-
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -82,13 +82,13 @@ ga('send', 'pageview');
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Coding/">Coding</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Journal/">Journal</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Journey/">Journey</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Math/">Math</a></li></ul>
                                     
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
@@ -97,14 +97,14 @@ ga('send', 'pageview');
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -183,7 +183,7 @@ ga('send', 'pageview');
 <h1 id="MegaTools"><a href="#MegaTools" class="headerlink" title="MegaTools"></a>MegaTools</h1><p>You also need <a href="https://megatools.megous.com/" target="_blank" rel="noopener">MegaTools</a> to run this script, I put the tools in <code>/usr/local/bin/</code> to make it work.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">~/Development/demos$ ls /usr/local/bin|grep mega</span><br><span class="line">megacopy</span><br><span class="line">megadf</span><br><span class="line">megadl</span><br><span class="line">megaget</span><br><span class="line">megals</span><br><span class="line">megamkdir</span><br><span class="line">megaput</span><br><span class="line">megareg</span><br><span class="line">megarm</span><br></pre></td></tr></table></figure>
 <h1 id="my-python-backup-script"><a href="#my-python-backup-script" class="headerlink" title="my python backup script"></a>my python backup script</h1><p>My backup script was written with python. But I think maybe bash script would be easier. Anyway, this is my backup file</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># the location in mega where you want to put your files</span></span><br><span class="line">    BACKUP_DIRECOTORY = <span class="string">"Backups"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># local location in which mega was mounted using MegaFuse</span></span><br><span class="line">    MOUNTED_LOCATION = <span class="string">"/media/mega"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># BACKUP_LIST: files you want to back up</span></span><br><span class="line">    <span class="comment">#     file: the file that you want to backup</span></span><br><span class="line">    <span class="comment">#     count: how many versions you want to keep</span></span><br><span class="line">    <span class="comment">#     name: backup basename</span></span><br><span class="line">    BACKUP_LIST = [</span><br><span class="line">            &#123;<span class="string">'file'</span>: <span class="string">'/var/www/html'</span>,</span><br><span class="line">             <span class="string">'count'</span>: <span class="number">3</span>,</span><br><span class="line">             <span class="string">'name'</span>: <span class="string">'html'</span>&#125;,</span><br><span class="line">            &#123;<span class="string">'file'</span>: <span class="string">'/home/searene/Documents/blog/source/_posts'</span>,</span><br><span class="line">             <span class="string">'count'</span>: <span class="number">3</span>,</span><br><span class="line">             <span class="string">'name'</span> : <span class="string">'blog'</span>&#125;</span><br><span class="line">            ]</span><br><span class="line"></span><br><span class="line">    devnull = open(os.devnull, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY)):</span><br><span class="line">        os.makedirs(os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> BACKUP_LIST:</span><br><span class="line">        today = datetime.datetime.today()</span><br><span class="line">        backup_path = os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY, f[<span class="string">'name'</span>])</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(backup_path):</span><br><span class="line">            os.makedirs(backup_path)</span><br><span class="line">        backup_name = <span class="string">'&#123;&#125;-TIME-&#123;&#125;.tar.gz'</span>.format(os.path.join(backup_path, f[<span class="string">'name'</span>]), today.strftime(<span class="string">"%Y-%m-%d-%H-%M-%S"</span>))</span><br><span class="line"></span><br><span class="line">        logging.info(<span class="string">'tar...'</span>)</span><br><span class="line">        subprocess.call([<span class="string">'tar'</span>, <span class="string">'-zcvf'</span>, backup_name, f[<span class="string">'file'</span>]], stdout=devnull)</span><br><span class="line">        file_list = subprocess.check_output([<span class="string">'/usr/local/bin/megals'</span>, backup_path]).split(<span class="string">'\n'</span>)</span><br><span class="line">        file_list = [x <span class="keyword">for</span> x <span class="keyword">in</span> file_list <span class="keyword">if</span> re.match(<span class="string">r'&#123;&#125;-TIME-.*'</span>.format(f[<span class="string">'name'</span>]), x)]</span><br><span class="line">        <span class="keyword">if</span> len(file_list) &gt; f[<span class="string">'count'</span>]:</span><br><span class="line">            redundant_files = sorted(file_list, reverse=<span class="keyword">True</span>)[f[<span class="string">'count'</span>]:]</span><br><span class="line">            <span class="keyword">for</span> f <span class="keyword">in</span> redundant_files:</span><br><span class="line">                logging.info(<span class="string">'&#123;&#125; is deprecated, removing'</span>.format(redundant_files))</span><br><span class="line">                subprocess.call([<span class="string">'rm'</span>, os.path.join(backup_path, f)])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># the location in mega where you want to put your files</span></span><br><span class="line">    BACKUP_DIRECOTORY = <span class="string">"Backups"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># local location in which mega was mounted using MegaFuse</span></span><br><span class="line">    MOUNTED_LOCATION = <span class="string">"/media/mega"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># BACKUP_LIST: files you want to back up</span></span><br><span class="line">    <span class="comment">#     file: the file that you want to backup</span></span><br><span class="line">    <span class="comment">#     count: how many versions you want to keep</span></span><br><span class="line">    <span class="comment">#     name: backup basename</span></span><br><span class="line">    BACKUP_LIST = [</span><br><span class="line">            &#123;<span class="string">'file'</span>: <span class="string">'/var/www/html'</span>,</span><br><span class="line">             <span class="string">'count'</span>: <span class="number">3</span>,</span><br><span class="line">             <span class="string">'name'</span>: <span class="string">'html'</span>&#125;,</span><br><span class="line">            &#123;<span class="string">'file'</span>: <span class="string">'/home/searene/Documents/blog/source/_posts'</span>,</span><br><span class="line">             <span class="string">'count'</span>: <span class="number">3</span>,</span><br><span class="line">             <span class="string">'name'</span> : <span class="string">'blog'</span>&#125;</span><br><span class="line">            ]</span><br><span class="line"></span><br><span class="line">    devnull = open(os.devnull, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY)):</span><br><span class="line">        os.makedirs(os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> BACKUP_LIST:</span><br><span class="line">        today = datetime.datetime.today()</span><br><span class="line">        backup_path = os.path.join(MOUNTED_LOCATION, BACKUP_DIRECOTORY, f[<span class="string">'name'</span>])</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(backup_path):</span><br><span class="line">            os.makedirs(backup_path)</span><br><span class="line">        backup_name = <span class="string">'&#123;&#125;-TIME-&#123;&#125;.tar.gz'</span>.format(os.path.join(backup_path, f[<span class="string">'name'</span>]), today.strftime(<span class="string">"%Y-%m-%d-%H-%M-%S"</span>))</span><br><span class="line"></span><br><span class="line">        logging.info(<span class="string">'tar...'</span>)</span><br><span class="line">        subprocess.call([<span class="string">'tar'</span>, <span class="string">'-zcvf'</span>, backup_name, f[<span class="string">'file'</span>]], stdout=devnull)</span><br><span class="line">        file_list = subprocess.check_output([<span class="string">'/usr/local/bin/megals'</span>, backup_path]).split(<span class="string">'\n'</span>)</span><br><span class="line">        file_list = [x <span class="keyword">for</span> x <span class="keyword">in</span> file_list <span class="keyword">if</span> re.match(<span class="string">r'&#123;&#125;-TIME-.*'</span>.format(f[<span class="string">'name'</span>]), x)]</span><br><span class="line">        <span class="keyword">if</span> len(file_list) &gt; f[<span class="string">'count'</span>]:</span><br><span class="line">            redundant_files = sorted(file_list, reverse=<span class="literal">True</span>)[f[<span class="string">'count'</span>]:]</span><br><span class="line">            <span class="keyword">for</span> f <span class="keyword">in</span> redundant_files:</span><br><span class="line">                logging.info(<span class="string">'&#123;&#125; is deprecated, removing'</span>.format(redundant_files))</span><br><span class="line">                subprocess.call([<span class="string">'rm'</span>, os.path.join(backup_path, f)])</span><br></pre></td></tr></table></figure>
 <h1 id="run-the-backup-script-every-day-at-5-00pm"><a href="#run-the-backup-script-every-day-at-5-00pm" class="headerlink" title="run the backup script every day at 5:00pm"></a>run the backup script every day at 5:00pm</h1><p>run <code>crontab -e</code>, add the following line</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 17 * * * python /home/searene/Tools/backupMega.py</span><br></pre></td></tr></table></figure>
 
@@ -193,7 +193,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.me/2015/12/27/backup-script/" data-id="cjl0ddz16004fecrf5z5lit2y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.me/2015/12/27/backup-script/" data-id="cjvut4cd3004dmusblxa8b3sl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -332,7 +332,26 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">recents</h3>
         <div class="widget">
-            <ul id="recent-post" class="">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/05/19/Happily-ever-after/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/20160226192037-succeed-adventure-sunrise-successful-man-top-mountain.jpeg)" alt="Happily ever after" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Journal/">Journal</a></p>
+                            <p class="item-title"><a href="/2019/05/19/Happily-ever-after/" class="title">Happily ever after</a></p>
+                            <p class="item-date"><time datetime="2019-05-19T09:31:35.000Z" itemprop="datePublished">2019-05-19</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -410,25 +429,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/05/The-meaning-of-life/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/980x.png)" alt="The meaning of life" class="thumbnail-image"></span>
-    
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Journal/">Journal</a></p>
-                            <p class="item-title"><a href="/2018/03/05/The-meaning-of-life/" class="title">The meaning of life</a></p>
-                            <p class="item-date"><time datetime="2018-03-05T10:53:53.000Z" itemprop="datePublished">2018-03-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -438,7 +438,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a><span class="category-list-count">49</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journey/">Journey</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a><span class="category-list-count">49</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journey/">Journey</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -448,7 +448,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">14</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -505,7 +505,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 Searene</p>
+                <p>&copy; 2019 Searene</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
@@ -543,7 +543,7 @@ ga('send', 'pageview');
 
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
-</script>
+
 
         <!-- mathjax config similar to math.stackexchange -->
 

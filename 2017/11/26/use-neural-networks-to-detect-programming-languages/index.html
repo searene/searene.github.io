@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -13,7 +13,7 @@
     <title>Use Deep Learning to Detect Programming Languages | Searene</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Neural Network" />
+        <meta name="keywords" content="Neural Network">
     
     <meta name="description" content="IntroductionThis post introduces a way to use deep learning to detect programming languages. Take the following code as an example. 12def test():    print(&quot;something&quot;) We will get an answer python if">
 <meta name="keywords" content="Neural Network">
@@ -64,7 +64,7 @@ ga('send', 'pageview');
     
 
 </head>
-
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -82,13 +82,13 @@ ga('send', 'pageview');
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Coding/">Coding</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Journal/">Journal</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Journey/">Journey</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Math/">Math</a></li></ul>
                                     
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
@@ -97,14 +97,14 @@ ga('send', 'pageview');
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -232,7 +232,7 @@ ga('send', 'pageview');
 <p>So, as you can see, the vocabulary is just a list of words, that’s it.</p>
 <h2 id="Build-vocab-tokenizer"><a href="#Build-vocab-tokenizer" class="headerlink" title="Build vocab_tokenizer"></a>Build vocab_tokenizer</h2><p>The next step is to build <code>vocab_tokenizer</code>. So what is <code>vocab_tokenzier</code>? It’s a simple variable, you can imagine it as a dictionary, which maps each word in the vocabulary to a number. Why would we map those words to numbers? Because our neural network is only able to run with numbers, rather than strings.</p>
 <p>We use <code>Tokenizer</code> provided by <code>Keras</code> to build <code>vocab_tokenizer</code>.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_vocab_tokenizer_from_set</span><span class="params">(vocab)</span>:</span></span><br><span class="line">    vocab_tokenizer = Tokenizer(lower=<span class="keyword">False</span>, filters=<span class="string">""</span>)</span><br><span class="line">    vocab_tokenizer.fit_on_texts(vocab)</span><br><span class="line">    <span class="keyword">return</span> vocab_tokenizer</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_vocab_tokenizer_from_set</span><span class="params">(vocab)</span>:</span></span><br><span class="line">    vocab_tokenizer = Tokenizer(lower=<span class="literal">False</span>, filters=<span class="string">""</span>)</span><br><span class="line">    vocab_tokenizer.fit_on_texts(vocab)</span><br><span class="line">    <span class="keyword">return</span> vocab_tokenizer</span><br></pre></td></tr></table></figure>
 <p>Then we save this <code>vocab_tokenizer</code> as a file, to be used later.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_vocab_tokenizer</span><span class="params">(vocab_tokenzier_location, vocab_tokenizer)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(vocab_tokenzier_location, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(vocab_tokenizer, f, protocol=pickle.HIGHEST_PROTOCOL)</span><br></pre></td></tr></table></figure>
 <h2 id="Build-Word-Vectors"><a href="#Build-Word-Vectors" class="headerlink" title="Build Word Vectors"></a>Build Word Vectors</h2><p>Before diving into word vectors, we first need to know what they are.</p>
@@ -266,11 +266,11 @@ ga('send', 'pageview');
 <li>Flatten, Dense: convert the multi-dimensional array into one-dimensional, and output the prediction.</li>
 </ol>
 <p>Key code is as follows.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_model</span><span class="params">(train_data_dir, vocab_tokenizer, word2vec)</span>:</span></span><br><span class="line">    weight_matrix = build_weight_matrix(vocab_tokenizer, word2vec)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># build the embedding layer</span></span><br><span class="line">    input_dim = len(vocab_tokenizer.word_index) + <span class="number">1</span></span><br><span class="line">    output_dim = get_word2vec_dimension(word2vec)</span><br><span class="line">    x_train, y_train = load_data(train_data_dir, vocab_tokenizer)</span><br><span class="line"></span><br><span class="line">    embedding_layer = Embedding(input_dim, output_dim, weights=[weight_matrix], input_length=input_length,</span><br><span class="line">                                trainable=<span class="keyword">False</span>)</span><br><span class="line">    model = Sequential()</span><br><span class="line">    model.add(embedding_layer)</span><br><span class="line">    model.add(Conv1D(filters=<span class="number">128</span>, kernel_size=<span class="number">5</span>, activation=<span class="string">"relu"</span>))</span><br><span class="line">    model.add(MaxPooling1D(pool_size=<span class="number">2</span>))</span><br><span class="line">    model.add(Flatten())</span><br><span class="line">    model.add(Dense(len(all_languages), activation=<span class="string">"sigmoid"</span>))</span><br><span class="line">    logging.info(model.summary())</span><br><span class="line">    model.compile(loss=<span class="string">'binary_crossentropy'</span>, optimizer=<span class="string">'adam'</span>, metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line">    model.fit(x_train, y_train, epochs=<span class="number">10</span>, verbose=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> model</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_model</span><span class="params">(train_data_dir, vocab_tokenizer, word2vec)</span>:</span></span><br><span class="line">    weight_matrix = build_weight_matrix(vocab_tokenizer, word2vec)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># build the embedding layer</span></span><br><span class="line">    input_dim = len(vocab_tokenizer.word_index) + <span class="number">1</span></span><br><span class="line">    output_dim = get_word2vec_dimension(word2vec)</span><br><span class="line">    x_train, y_train = load_data(train_data_dir, vocab_tokenizer)</span><br><span class="line"></span><br><span class="line">    embedding_layer = Embedding(input_dim, output_dim, weights=[weight_matrix], input_length=input_length,</span><br><span class="line">                                trainable=<span class="literal">False</span>)</span><br><span class="line">    model = Sequential()</span><br><span class="line">    model.add(embedding_layer)</span><br><span class="line">    model.add(Conv1D(filters=<span class="number">128</span>, kernel_size=<span class="number">5</span>, activation=<span class="string">"relu"</span>))</span><br><span class="line">    model.add(MaxPooling1D(pool_size=<span class="number">2</span>))</span><br><span class="line">    model.add(Flatten())</span><br><span class="line">    model.add(Dense(len(all_languages), activation=<span class="string">"sigmoid"</span>))</span><br><span class="line">    logging.info(model.summary())</span><br><span class="line">    model.compile(loss=<span class="string">'binary_crossentropy'</span>, optimizer=<span class="string">'adam'</span>, metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line">    model.fit(x_train, y_train, epochs=<span class="number">10</span>, verbose=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> model</span><br></pre></td></tr></table></figure>
 <p>All right, we built our neural network, not a trivial achievement! Then let’s write a function, which uses the neural network to detect test code, check out its accuracy.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_model</span><span class="params">(test_data_dir, vocab_tokenizer, model)</span>:</span></span><br><span class="line">    x_test, y_test = load_data(test_data_dir, vocab_tokenizer)</span><br><span class="line">    loss, acc = model.evaluate(x_test, y_test, verbose=<span class="number">0</span>)</span><br><span class="line">    logging.info(<span class="string">'Test Accuracy: %f'</span> % (acc * <span class="number">100</span>))</span><br></pre></td></tr></table></figure>
 <p>As what we have got before, the test accuracy is around 94%~95%, which is good enough. Let’s save the neural network as files, so we can load it when detecting.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_model</span><span class="params">(model, model_file_location, weights_file_location)</span>:</span></span><br><span class="line">    os.makedirs(os.path.dirname(model_file_location), exist_ok=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">with</span> open(model_file_location, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(model.to_json())</span><br><span class="line">    model.save_weights(weights_file_location)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_model</span><span class="params">(model, model_file_location, weights_file_location)</span>:</span></span><br><span class="line">    os.makedirs(os.path.dirname(model_file_location), exist_ok=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">with</span> open(model_file_location, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(model.to_json())</span><br><span class="line">    model.save_weights(weights_file_location)</span><br></pre></td></tr></table></figure>
 <h2 id="Load-the-Neural-Network-For-Detection"><a href="#Load-the-Neural-Network-For-Detection" class="headerlink" title="Load the Neural Network For Detection"></a>Load the Neural Network For Detection</h2><p>This part is simple, we only need to load <code>vocab_tokenizer</code> and the neural network for detection. The code is as follows.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">vocab_tokenizer = load_vocab_tokenizer(config.vocab_tokenizer_location)</span><br><span class="line">model = load_model(config.model_file_location, config.weights_file_location)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">to_language</span><span class="params">(binary_list)</span>:</span></span><br><span class="line">    i = np.argmax(binary_list)</span><br><span class="line">    <span class="keyword">return</span> all_languages[i]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_neural_network_input</span><span class="params">(code)</span>:</span></span><br><span class="line">    encoded_sentence = load_encoded_sentence_from_string(code, vocab_tokenizer)</span><br><span class="line">    <span class="keyword">return</span> pad_sequences([encoded_sentence], maxlen=input_length)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detect</span><span class="params">(code)</span>:</span></span><br><span class="line">    y_proba = model.predict(get_neural_network_input(code))</span><br><span class="line">    <span class="keyword">return</span> to_language(y_proba)</span><br></pre></td></tr></table></figure>
 <p>Use it like this.</p>
@@ -298,7 +298,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://searene.me/2017/11/26/use-neural-networks-to-detect-programming-languages/" data-id="cjl0ddz2h007zecrfer2xc84j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://searene.me/2017/11/26/use-neural-networks-to-detect-programming-languages/" data-id="cjvut4cem0081musbbfmdispj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -437,7 +437,26 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">recents</h3>
         <div class="widget">
-            <ul id="recent-post" class="">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/05/19/Happily-ever-after/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/20160226192037-succeed-adventure-sunrise-successful-man-top-mountain.jpeg)" alt="Happily ever after" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Journal/">Journal</a></p>
+                            <p class="item-title"><a href="/2019/05/19/Happily-ever-after/" class="title">Happily ever after</a></p>
+                            <p class="item-date"><time datetime="2019-05-19T09:31:35.000Z" itemprop="datePublished">2019-05-19</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -515,25 +534,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/05/The-meaning-of-life/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/980x.png)" alt="The meaning of life" class="thumbnail-image"></span>
-    
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Journal/">Journal</a></p>
-                            <p class="item-title"><a href="/2018/03/05/The-meaning-of-life/" class="title">The meaning of life</a></p>
-                            <p class="item-date"><time datetime="2018-03-05T10:53:53.000Z" itemprop="datePublished">2018-03-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -543,7 +543,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a><span class="category-list-count">49</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journey/">Journey</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a><span class="category-list-count">49</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journey/">Journey</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -553,7 +553,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">14</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -610,7 +610,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 Searene</p>
+                <p>&copy; 2019 Searene</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
@@ -648,7 +648,7 @@ ga('send', 'pageview');
 
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
-</script>
+
 
         <!-- mathjax config similar to math.stackexchange -->
 
