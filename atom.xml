@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://searene.me/"/>
-  <updated>2020-06-26T09:47:52.380Z</updated>
+  <updated>2020-07-10T15:10:36.947Z</updated>
   <id>http://searene.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nothing makes sense</title>
+    <link href="http://searene.me/2020/07/10/Nothing-makes-sense/"/>
+    <id>http://searene.me/2020/07/10/Nothing-makes-sense/</id>
+    <published>2020-07-10T14:52:12.000Z</published>
+    <updated>2020-07-10T15:10:36.947Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today I felt pretty upset. I talked for a while with one of my female colleagues, I asked her if I would ever come into a girl that liked me. The reason why I asked this question was that I lacked confidence in myself. She didn’t answer me directly. She talked indirectly about something that was related to the topic. Meanwhile, she mentioned that most girls she knew liked men who talked few but were confident. I talk few, but I don’t feel confident. I’m an indecisive person, which is the opposite of the man she described.</p><p>I felt sad. I don’t know why. Maybe it’s because I’m not young any more, yet still I’m single. I have nothing to show for, yet I cannot work too hard because my health condition doesn’t allow me to do that. I want to become the man that a lot of girls like but I just cannot. The most important characteristics that a successful man should have are the ones that are too hard to get for me. For example, high IQ, health, perseverance, hard-working, none of them is related to me any more. I feel sad, and I cannot change myself. I go to gym every day to fix my health problem but I’m still unhealthy. I’m always wondering if I can fix my problem but no one can answer. And time passes by, I’m getting older. I’m still alone, Loneliness is my fate.</p><p>I even cried for a little bit tonight. I know it’s not good for a man to cry, which is deemed to be weak. But I need to vent. I have no one to talk about my problem, I have to find some way to relieve. But crying wouldn’t solve my problem, and it didn’t solve my problem.</p><p>I don’t know what to do. Time still passes by, I’m still lonely, maybe, I will keep being lonely, that is my fate. This world doesn’t make sense.</p><p>I need to endure the loneliness. I shouldn’t talk too much to others, it’s not good.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Today I felt pretty upset. I talked for a while with one of my female colleagues, I asked her if I would ever come into a girl that liked
+      
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://searene.me/categories/Journal/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>I had a dream last night</title>
@@ -476,33 +499,6 @@
     
     
       <category term="java" scheme="http://searene.me/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Leetcode: Combination Sum II</title>
-    <link href="http://searene.me/2017/07/15/Leetcode-Combination-Sum-II/"/>
-    <id>http://searene.me/2017/07/15/Leetcode-Combination-Sum-II/</id>
-    <published>2017-07-15T00:33:03.000Z</published>
-    <updated>2017-07-15T00:44:59.809Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>Given a collection of candidate numbers (<strong>C</strong>) and a target number (<strong>T</strong>), find all unique combinations in <strong>C</strong> where the candidate numbers sums to <strong>T</strong>.</p><p>Each number in <strong>C</strong> may only be used <strong>once</strong> in the combination.</p><p><strong>Note:</strong></p><ul><li>All numbers (including target) will be positive integers.</li><li>The solution set must not contain duplicate combinations.</li></ul><p>For example, given candidate set <code>[10, 1, 2, 7, 6, 1, 5]</code> and target <code>8</code>,<br>A solution set is: </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [1, 7],</span><br><span class="line">  [1, 2, 5],</span><br><span class="line">  [2, 6],</span><br><span class="line">  [1, 1, 6]</span><br><span class="line">]</span><br></pre></td></tr></table></figure><hr><h1 id="Leetcode-Link"><a href="#Leetcode-Link" class="headerlink" title="Leetcode Link"></a>Leetcode Link</h1><p><a href="https://leetcode.com/problems/combination-sum-ii/#/description" target="_blank" rel="noopener">https://leetcode.com/problems/combination-sum-ii/#/description</a></p><h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>This problem can be solved using DFS:</p><ul><li>Get the result starting with the <strong>first</strong> number</li><li>Get the result starting with the <strong>second</strong> number</li><li>…</li><li>Get the result starting with the <strong>last</strong> number</li></ul><p>But we need to sort the array first in order to remove duplicate records.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combinationSum2(<span class="keyword">int</span>[] candidates, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">if</span>(candidates == <span class="keyword">null</span> || candidates.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(candidates);</span><br><span class="line">        <span class="keyword">return</span> combinationSum2(candidates, target, <span class="keyword">new</span> ArrayList&lt;&gt;(), <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> List&lt;List&lt;Integer&gt;&gt; combinationSum2(<span class="keyword">int</span>[] candidates, <span class="keyword">int</span> target, List&lt;Integer&gt; prefix, <span class="keyword">int</span> startPos) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(target == <span class="number">0</span>) &#123;</span><br><span class="line">            result.add(<span class="keyword">new</span> ArrayList&lt;&gt;(prefix));</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(target &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = startPos; i &lt; candidates.length; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(i &gt; startPos &amp;&amp; candidates[i] == candidates[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                prefix.add(candidates[i]);</span><br><span class="line">                List&lt;List&lt;Integer&gt;&gt; subResult = combinationSum2(candidates, target - candidates[i], prefix, i + <span class="number">1</span>);</span><br><span class="line">                prefix.remove(prefix.size() - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">                result.addAll(subResult);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Given a collection of candidate numbers (&lt;strong&gt;C
-      
-    
-    </summary>
-    
-      <category term="Coding" scheme="http://searene.me/categories/Coding/"/>
-    
-    
-      <category term="leetcode" scheme="http://searene.me/tags/leetcode/"/>
-    
-      <category term="algorithm" scheme="http://searene.me/tags/algorithm/"/>
     
   </entry>
   
