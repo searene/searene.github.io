@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -82,13 +82,13 @@ ga('send', 'pageview');
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Coding/">Coding</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Journal/">Journal</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Journey/">Journey</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Life/">Life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Math/">Math</a></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
@@ -97,14 +97,14 @@ ga('send', 'pageview');
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -184,7 +184,7 @@ ga('send', 'pageview');
 <p>You have to declare your background page (<code>event.js</code>) and relative permissions in <code>manifest.json</code>, the sample file is as follows:</p>
 <h2 id="manifest-json"><a href="#manifest-json" class="headerlink" title="manifest.json"></a>manifest.json</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"manifest_version"</span>: <span class="number">2</span>,</span><br><span class="line">		<span class="attr">"name"</span>: <span class="string">"sample"</span>,</span><br><span class="line">		<span class="attr">"description"</span>: <span class="string">"a sample manifest.json"</span>,</span><br><span class="line">		<span class="attr">"version"</span>: <span class="string">"1.0"</span>,</span><br><span class="line">		<span class="attr">"permissions"</span>: [</span><br><span class="line">			<span class="string">"storage"</span></span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"icons"</span>: &#123; </span><br><span class="line">			<span class="attr">"16"</span>: <span class="string">"img/icon16.png"</span>,</span><br><span class="line">			<span class="attr">"48"</span>: <span class="string">"img/icon48.png"</span>,</span><br><span class="line">			<span class="attr">"128"</span>: <span class="string">"img/icon128.png"</span> </span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="attr">"background"</span>: &#123;</span><br><span class="line">			<span class="attr">"scripts"</span>: [<span class="string">"event.js"</span>],</span><br><span class="line">			<span class="attr">"persistent"</span>: <span class="literal">false</span></span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="attr">"browser_action"</span>: &#123;</span><br><span class="line">			<span class="attr">"default_icon"</span>: &#123;                    </span><br><span class="line">				<span class="attr">"19"</span>: <span class="string">"img/icon48.png"</span>,          </span><br><span class="line">				<span class="attr">"38"</span>: <span class="string">"img/icon48.png"</span>          </span><br><span class="line">			&#125;,</span><br><span class="line">			<span class="attr">"default_popup"</span>: <span class="string">"popup.html"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="attr">"content_security_policy"</span>: <span class="string">"script-src 'self' https://ssl.google-analytics.com; object-src 'self'"</span>,</span><br><span class="line">		<span class="attr">"web_accessible_resources"</span>: [</span><br><span class="line">			<span class="string">"img/icon128.png"</span></span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"permissions"</span>: [</span><br><span class="line">			<span class="string">"tabs"</span>, </span><br><span class="line">		<span class="string">"http://*/*"</span>, </span><br><span class="line">		<span class="string">"https://*/*"</span></span><br><span class="line">		]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Finally, this is what <code>popup.html</code> looks like</p>
-<h2 id="popup-html"><a href="#popup-html" class="headerlink" title="popup.html"></a>popup.html</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"popup.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"output"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="popup-html"><a href="#popup-html" class="headerlink" title="popup.html"></a>popup.html</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"popup.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"output"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>You can find the demo source code <a href="https://github.com/searene/demos/tree/master/GetSelectedTextInChromeExtention" target="_blank" rel="noopener">here</a></p>
 <p>This is the whole picture:</p>
 <p><a href="http://i.stack.imgur.com/mHkC2.png" target="_blank" rel="noopener"><img src="http://i.stack.imgur.com/mHkC2.png" alt="the whole picture"></a></p>
@@ -197,7 +197,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://searene.github.io/2015/12/09/get-selected-text-in-chrome/" data-id="ckz0ngzk5005kpbyh383ynbqc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://searene.github.io/2015/12/09/get-selected-text-in-chrome/" data-id="ckz1dy9r6005ka7yhwgz60qi5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -336,7 +336,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">recents</h3>
         <div class="widget">
-            <ul id="recent-post" class>
+            <ul id="recent-post" class="">
                 
                     <li>
                         
@@ -547,7 +547,7 @@ ga('send', 'pageview');
 
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
-
+</script>
 
         <!-- mathjax config similar to math.stackexchange -->
 
